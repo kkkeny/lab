@@ -1,0 +1,117 @@
+<!DOCTYPE html PUBLIC "-//W3C//Dli XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/Dli/xhtml1-transitional.dli">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no"/>
+<meta name="format-detection" content="telephone=no"/>
+<meta name="format-detection" content="email=no"/>
+
+<title></title>
+<style type=text/css>
+body,div,ul,li,a,span,h1{
+	margin: 0px;
+	padding: 0px;
+}
+body{
+	font-family: "宋体", Arial, Helvetica, sans-serif;
+}
+a{
+	text-decoration: none;
+	display: block;
+	width: 400px;
+	height: 15px;
+}
+#main{
+	width:400px;
+	height:100px;
+	margin: 0 auto;
+}
+.selector1{-color: red;}
+.selector2{_color: red;}
+
+.selector3{ !color:red; }
+.selector4{ $color:red; }
+.selector5{ &color:red; }
+.selector6{ *color:red; }
+.selector7{ (color:red; }
+.selector8{ )color:red; }
+.selector9{ =color:red; }
+.selector10{ %color:red; }
+.selector11{ +color:red; }
+.selector12{ @color:red; }
+.selector13{ ,color:red; }
+.selector14{ .color:red; }
+.selector15{ /color:red; }
+.selector17{ `color:red; }
+.selector18{ [color:red; }
+.selector19{ ]color:red; }
+.selector20{ #color:red; }
+.selector21{ ~color:red; }
+.selector22{ ?color:red; } 
+.selector23{ :color:red; }
+.selector24{ <color:red; }
+.selector25{ >color:red; }
+.selector26{ |color:red; }
+.selector27{ *color:red; }
+.selector28{ /color:red; }
+
+.selector29{ background: blue !ie; }
+
+.selector30{ background: blue\0/; }
+
+.selector31:nth-of-type(1n){ background:blue\9; }
+
+.selector32{ background:blue\9; }
+.selector33{ background/*\**/: blue\9; }
+
+.selector35{ background/**/:blue; }
+
+</style>
+</head>
+<body>
+<div id="main">
+	<h1>IE6:</h1>
+	<a href="" class="selector1"> -color:red; </a>
+	<a href="" class="selector2"> _color:red; </a>
+	<h1>IE6/7:</h1>
+	<a href="" class="selector3"> !color:red; </a>
+	<a href="" class="selector4"> $color:red; </a>
+	<a href="" class="selector5"> &color:red; </a>
+	<a href="" class="selector6"> *color:red; </a>
+	<a href="" class="selector7"> (color:red; </a>
+	<a href="" class="selector8"> )color:red; </a>
+	<a href="" class="selector9"> =color:red; </a>
+	<a href="" class="selector10"> %color:red; </a>
+	<a href="" class="selector11"> +color:red; </a>
+	<a href="" class="selector12"> @color:red; </a>
+	<a href="" class="selector13"> ,color:red; </a>
+	<a href="" class="selector14"> .color:red; </a>
+	<a href="" class="selector15"> /color:red; </a>
+	<a href="" class="selector17"> 'color:red; </a>
+	<a href="" class="selector18"> [color:red; </a>
+	<a href="" class="selector19"> ]color:red; </a>
+	<a href="" class="selector20"> #color:red; </a>
+	<a href="" class="selector21"> ~color:red; </a>
+	<a href="" class="selector22"> ?color:red; </a>
+	<a href="" class="selector23"> :color:red; </a>
+	<a href="" class="selector24"> <color:red; </a>
+	<a href="" class="selector25"> >color:red; </a>
+	<a href="" class="selector26"> |color:red; </a>
+	<a href="" class="selector27"> *color:red; </a>
+	<a href="" class="selector28"> /color:red; </a>	
+	<h1>IE6/7:</h1>
+	<a href="" class="selector29"> background:blue!ie </a>	
+	<h1>IE8/9:(无效）</h1>
+	<a href="" class="selector30"> background:blue\0/  </a>	
+	<h1>IE9/10:(无效)</h1>
+	<a href="" class="selector31"> .selector:nth-of-type(1n){background:blue\9;} </a>	
+	<h1>IE6/7/8/9/10:（ie6和7有效）</h1>
+	<a href="" class="selector32"> background:blue\9 </a>
+	<a href="" class="selector33"> background/*\**/: black\9;</a>	
+	<h1>butIE6：（IE6和谷歌有效）</h1>
+	<a href="" class="selector35"> background/**/:blue（IE6和谷歌有效） </a>
+</div>
+</body>
+</html>

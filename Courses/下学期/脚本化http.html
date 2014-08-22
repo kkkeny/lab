@@ -1,0 +1,267 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<style>
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote {
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: "Helvetica Neue", Helvetica, "Hiragino Sans GB", Arial, sans-serif;
+    font-size: 13px;
+    line-height: 18px;
+    color: #737373;
+    background-color: white;
+    margin: 10px 13px 10px 13px;
+}
+table {
+	margin: 10px 0 15px 0;
+	border-collapse: collapse;
+}
+td,th {	
+	border: 1px solid #ddd;
+	padding: 3px 10px;
+}
+th {
+	padding: 5px 10px;	
+}
+
+a {
+    color: #0069d6;
+}
+a:hover {
+    color: #0050a3;
+    text-decoration: none;
+}
+a img {
+    border: none;
+}
+p {
+    margin-bottom: 9px;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: #404040;
+    line-height: 36px;
+}
+h1 {
+    margin-bottom: 18px;
+    font-size: 30px;
+}
+h2 {
+    font-size: 24px;
+}
+h3 {
+    font-size: 18px;
+}
+h4 {
+    font-size: 16px;
+}
+h5 {
+    font-size: 14px;
+}
+h6 {
+    font-size: 13px;
+}
+hr {
+    margin: 0 0 19px;
+    border: 0;
+    border-bottom: 1px solid #ccc;
+}
+blockquote {
+    padding: 13px 13px 21px 15px;
+    margin-bottom: 18px;
+    font-family:georgia,serif;
+    font-style: italic;
+}
+blockquote:before {
+    content:"\201C";
+    font-size:40px;
+    margin-left:-10px;
+    font-family:georgia,serif;
+    color:#eee;
+}
+blockquote p {
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 18px;
+    margin-bottom: 0;
+    font-style: italic;
+}
+code, pre {
+    font-family: Monaco, Andale Mono, Courier New, monospace;
+}
+code {
+    background-color: #fee9cc;
+    color: rgba(0, 0, 0, 0.75);
+    padding: 1px 3px;
+    font-size: 12px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+pre {
+    display: block;
+    padding: 14px;
+    margin: 0 0 18px;
+    line-height: 16px;
+    font-size: 11px;
+    border: 1px solid #d9d9d9;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+pre code {
+    background-color: #fff;
+    color:#737373;
+    font-size: 11px;
+    padding: 0;
+}
+@media screen and (min-width: 914px) {
+    body {
+        width: 854px;
+        margin:10px auto;
+    }
+}
+@media print {
+	body,code,pre code,h1,h2,h3,h4,h5,h6 {
+		color: black;
+	}
+	table, pre {
+		page-break-inside: avoid;
+	}
+}
+</style>
+<title>脚本化http</title>
+
+</head>
+<body>
+<h1>脚本化http</h1>
+
+<h2>什么是http</h2>
+
+<pre><code>http Hypertext Transfer Protocol 
+规定了浏览器如何请求文档
+如何向服务器传送表单内容
+如何响应请求和传送
+
+有资源地址就会有请求 例如link img script iframe
+
+http://www.cnblogs.com/zrtqsk/p/3746891.html
+http://www.cnblogs.com/wunaozai/p/3733432.html
+http://my.oschina.net/u/142836/blog/170179
+</code></pre>
+
+<h2>XMLHttpRequest</h2>
+
+<ol>
+<li>创建一个XMLHttpRequest 对象</li>
+<li>指定一个http请求地址 并向服务器提交数据</li>
+<li><p>同步或者异步的处理 服务器端的响应</p>
+
+<pre><code> //i7+ and not ie
+ var request = new XMLHttpRequest();
+
+ //ie 5-6
+ var request = new ActiveXObject('Msxml2.XMLHTTP');
+ var request = new ActiveXObject('Microsoft.XMLHTTP');
+
+ function getRequestInstance(){
+     var req = null;
+     try{
+         req = new XMLHttpRequest();
+     }catch{
+         try{
+             req = new ActiveXObject('Msxml2.XMLHTTP');
+         }catch{
+             req = new ActiveXObject('Microsoft.XMLHTTP');
+         }
+     }
+     return req;
+ }
+
+
+ var  request = getRequestInstance();
+
+ /**
+     @param string {GET|POST} request method  
+     @param string 
+     @param boolean 同步方式请求 还是异步方式请求
+     @param string 授权
+     @param string 
+ */
+ request.open('GET|POST', URL, sync, username, password)
+
+ //设置请求头
+ request.setRequestHeader('User-agent', 'XMLHttpRequest');
+
+ //发送数据请求服务器
+ request.send(null)   如果是get方式请求， 参数为null
+ 如果是post方式请求 数据格式为 key=value&amp;key=value
+
+ //同步请求实例处理响应 
+ if (request.status == 200) {
+     console.log(request.responstText)
+     request.getResponseHeader('Content-Type');
+ } else {
+
+ }
+
+ //异步请求
+ readyState
+ 0 open()还没有调用
+ 1 open()已经调用，但是send()还没有调用
+ 2 send()已经调用，但是服务器还没有响应
+ 3 正在从服务器接受数据，   ie ff 不同
+ 4 服务器响应完成
+
+ request.onreadystatechange = function() {
+     if(request.readyState === 4){
+         if(request.status === 200){
+             console.log(req.responseText);
+         }
+     }   
+ }
+
+ //取消请求
+ request.abort();
+</code></pre></li>
+</ol>
+
+
+<h3>Ajax 与动态脚本化</h3>
+
+<pre><code>ajax: Asynchronous JavaScript and XML
+</code></pre>
+
+<h3>什么是json</h3>
+
+<pre><code>http://www.json.org/json-zh.html
+</code></pre>
+
+<h3>什么是jsonp</h3>
+
+<pre><code>由于XMLHttpRequest 具有同援策略的安全机制，所以要实现跨域请求提出的解决方案
+http://baike.so.com/doc/6838230.html
+http://www.cnblogs.com/chopper/archive/2012/03/24/2403945.html
+</code></pre>
+
+<p>http://www.qixing318.com/article/simply-describe-the-difference-between-json-with-json-as-well-as-the-actual-combat.html</p>
+
+<h3>什么是同源策略 以及跨域请求的方案</h3>
+
+<p>http://www.cnblogs.com/hustskyking/articles/ten-methods-cross-domain.html</p>
+</body>
+</html>

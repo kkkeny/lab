@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no"/>
+<meta name="format-detection" content="telephone=no"/>
+<meta name="format-detection" content="email=no"/>
+<title></title>
+<style type="text/css">
+h3{
+	color: red;
+}
+p{
+	color: blue;
+}
+</style>
+</head>
+<body>
+<h3>类型选择符h3</h3>
+<div class="demo">
+	<h3>类型选择符class</h3>
+</div>
+<p>类型选择符h3</p>
+</body>
+</html>

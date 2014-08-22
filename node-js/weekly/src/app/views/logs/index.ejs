@@ -1,0 +1,122 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title><%- contentFor('title') %></title>
+    <%- stylesheetLinkTag('css/common','css/weekly-list') %>
+    <%- javascriptIncludeTag('app', 'validate') %>
+    <%- csrfMetaTag() %>
+</head>
+<body>
+<%- include ../layouts/_header %>
+<%- contentFor('title', 'Home') %>
+
+<section class="content">
+    <section class="week-list">
+        <div class="head">
+            <span class="myWeekly">我的日志列表</span>
+            <ul>
+                <li style="border: none;-webkit-box-shadow:none;"><input id="calendar" class="text" type="date"  value="<%= formatDate(date)%>" max="<%= formatDate(new Date()*1-1000*60*60*24)%>" /></li>
+                <% if(isToday(date)) { %>
+                <li id="addBtn" class="addWeekly">+ 添加日志</li>
+                <li class="addWeekly outlineBtn">+ 编辑概述</li>
+                <% }%>
+            </ul>
+        </div>
+        <p>概述:</p>
+        <p><%= overview %></p>
+        <table>    
+            <thead>
+            <tr>
+                <th class="th1">指标</th>
+                <th class="th2">平台</th>
+                <th class="th3">状态</th>
+                <th class="th4">备注</th>
+                <th class="th5">解决方案</th>
+                <th class="th-6">操作</th>
+            </tr>
+            </thead>
+             <tbody id="table">
+                <% logs.forEach(function (log) { %>
+
+                <tr data-url="/log/<%=log.id %>">
+                    <td><%= log.indicator %></td>
+                    <td><%= log.platform %></td>
+                    <% if(log.status==1) { %>
+                        <td style="color: #00f000">正常</td>
+                    <% }else{%>
+                        <td style="color:#e00000;">异常</td>
+                    <% }%>
+                    <td class="left"><%= log.remark %></td>
+                    <td class="left"><%= log.method %></td>
+                    <% if(isToday(date)) { %>
+                    <td><a href='/logdel/<%= log.id %>' onclick="return confirm('你确定要删除吗?')">删除</a></td>
+                    <% } else { %>
+                    <td></td>
+                    <% } %>
+                </tr>
+                <% }) %>
+        </tbody>
+        </table>
+        <% if(isToday(date)) { %>
+        <button onclick="return confirm('你确定要发送邮件吗?')"><a href="<%= pathTo.sendmail %>"><img src="/images/email.png" />确认发送邮件</a></button>
+        <% } %>
+        <div class="clear:both;"></div>
+    </section>
+</section>
+<datalist id="indicators">
+    <% indicators.forEach(function (i) { %>
+        <option><%= i %></option>
+    <% }) %>
+</datalist>
+<datalist id="platforms">
+    <% platforms.forEach(function (p) { %>
+    <option><%= p %></option>
+    <% }) %>
+</datalist>
+<section class="add" id="add">
+    <h3>添加日志</h3>
+    <fieldset>
+        <form action="" method="post" id="addForm1" onkeydown= "if(event.keyCode==13)return   false;">
+            <%- csrfTag() %>
+            <div class="add-content">
+                <label for="username">用户</label><input id="username" value="<%= signedIn().name %>" type="text" readonly="readonly" class="username" name="account" /><br/>
+                <label for="date">日期</label><input id="date" value="<%= formatDate(date)%>" type="text" readonly="readonly" class="date" name="Log[atime]" /><br/>
+                <label for="target">指标</label><input id="target" type="text" required="required" class="target-add" name="Log[indicator]" autofocus list="indicators" autocomplete="off" placeholder="双击获取最近内容"/><br/>
+                <label for="platform">平台</label><input id="platform" type="text" class="platform" name="Log[platform]" list="platforms" required="required" autocomplete="off" placeholder="双击获取最近内容"><br/>
+                <label for="state">状态</label><select name="Log[status]" class="state" id="state"><option value="0">异常</option><option value="1" selected>正常</option></select><br/>
+                <label for="remarks">备注</label><textarea name="Log[remark]"  class="remarks" id="remarks"></textarea><br/>
+                <label for="scheme">解决方案</label><textarea name="Log[method]"  class="scheme" id="scheme"></textarea>
+            </div>
+            <div class="btn">
+                <button type="submit" data-remote="true" id="addBtnPop" class="addBtn">添加</button>
+                <button id="closeBtn" type="reset" class="closeBtn">关闭</button>
+            </div>
+        </form>
+        <div class="errorInfo"></div>
+
+    </fieldset>
+</section>
+<section class="add" id="edit">
+    <h3>修改日志</h3>
+    <fieldset class="field">
+    </fieldset>
+</section>
+<section class="addOutline add">
+    <h3>添加概述</h3>
+        <fieldset>
+            <form action="/createdesc" id="addForm" method="post">
+                <%- csrfTag() %>
+                <input type="hidden" name="date" value="<%= formatDate(date)%>"/>
+                <div class="add-content desc outline">
+                    <textarea name="desc" autofocus="autofocus" class="scheme" id="desc"><%= overview %></textarea>
+                </div>
+                <div class="btn"><button type="submit" class="addBtn">完成</button></div>
+            </form>
+        </fieldset>
+</section>
+<section id="shade" class="shade"></section>
+
+</body>
+</html>
+

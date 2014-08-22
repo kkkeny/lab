@@ -1,0 +1,80 @@
+<!doctype html>
+<html>	
+	<head>
+		<meta charset="utf-8">
+		<title>常用设置</title>
+		<link rel="stylesheet" href="css/common.css">
+		<link rel="stylesheet" href="css/setup.css">
+	</head>
+	<body>
+		<header>
+			<img class="logo" src="images/logo.png" alt="logo" title="logo" />
+			<h1>--日志管理系统平台</h1>
+			<div class="right">
+				<a class="username" href="">username</a>|
+				<a class="logout" href=""><img class="logout-img "src="images/logout.png" />退出</a>
+			</div>
+		</header>
+		<aside>
+			<ul id="aside">
+				<li class="personal-center"><a href="javascript:;">个人中心</a><div class="triangle-down"></div></li>
+				<li><a href="javascript:;">个人信息</a></li>
+				<li><a href="javascript:;">修改密码</a></li>
+				<li><a href="javascript:;">常用设置</a></li>
+			</ul>
+		</aside>
+		<section class="content">
+			<div class="target">
+				<span class="category"><i>常用指标</i></span>
+				<ul>
+					<li><span>pv曲线</span><i></i></li>
+					<li><span>整体数据</span><i></i></li>
+					<li><span>请求耗时</span><i></i></li>
+					<li><span>错志</span><i></i></li>
+					<li><span>pv曲线</span><i></i></li>
+					<li><span>错</span><i></i></li>
+					<li><span>pv曲线</span><i></i></li>
+					<li><span>错误日志</span><i></i></li>
+					<li><span>pv曲线</span><i></i></li>
+					<li><span>错</span><i></i></li>
+					<li><span>pv曲线</span><i></i></li>
+					<li><span>错误日志</span><i></i></li>
+					<li><span>pv曲线</span><i></i></li>
+					<li><span>错误日志</span><i></i></li>
+					<li><span>pv曲线</span><i></i></li>
+					<li><span>错</span><i></i></li>
+					<li><span>pv曲线</span><i></i></li>
+					<li><span>错误日志</span><i></i></li>
+					<li><span>pv曲线</span><i></i></li>
+				</ul>
+				<div class ="clearfix"></div>
+			</div>
+			<div class="target targetDown">
+				<span class="category"><i>常用平台</i></span>
+				<ul>
+					<li><span>symbianv5</span><i></i></li>
+					<li><span>web</span><i></i></li>
+					<li><span>wap</span><i></i></li>
+					<li><span>apad</span><i></i></li>
+					<li><span>ios</span><i></i></li>
+					<li><span>android</span><i></i></li>
+					<li><span>symbianv5</span><i></i></li>
+					<li><span>web</span><i></i></li>
+					<li><span>wap</span><i></i></li>
+					<li><span>apad</span><i></i></li>
+					<li><span>ios</span><i></i></li>
+					<li><span>android</span><i></i></li>
+					<li><span>symbianv5</span><i></i></li>
+					<li><span>web</span><i></i></li>
+					<li><span>wap</span><i></i></li>
+					<li><span>apad</span><i></i></li>
+				</ul>
+				<div class ="clearfix"></div>
+			</div>
+		</section>
+		<footer>
+			<small>Copyright(C) 2008-2014 www.tadu.com All Rights Reserved 版权所有 北京易天新动网络科技有限公司</small>
+		</footer>
+		<script type="text/javascript" src="./js/tab.js"></script>
+	</body>
+</html>

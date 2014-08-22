@@ -1,0 +1,46 @@
+*{
+	margin:0;
+	padding:0;
+}
+body{
+	-webkit-animation: move 3s linear 1s infinite alternate;
+}
+#stage{		
+	width:128px;
+	height:128px;
+	-webkit-transform-origin: 50% 50%;
+	-webkit-animation: round .5s steps(12) 1s infinite;
+}
+#loading{
+	width:128px;
+	height:128px;
+	background-image:-webkit-radial-gradient(circle closest-side, green, white),
+	-webkit-radial-gradient(circle closest-side, green, white),
+	-webkit-radial-gradient(circle closest-side, green, white),
+	-webkit-radial-gradient(circle closest-side, green, white);
+	background-repeat:no-repeat;
+	background-position:50% 0%
+	, 0% 50%
+	, 50% 100% 
+	, 100% 50%;
+	background-size: 21px 21px
+	, 15px 15px
+	, 9px 9px
+	, 3px 3px;
+}
+@-webkit-keyframes round{
+	from{
+		-webkit-transform: rotate(0deg);
+	}
+	to{
+		-webkit-transform: rotate(360deg);
+	}
+}
+@-webkit-keyframes move{
+	from{
+		-webkit-transform: translate(0px)
+	}
+	to{
+		-webkit-transform: translate(100%)
+	}
+}

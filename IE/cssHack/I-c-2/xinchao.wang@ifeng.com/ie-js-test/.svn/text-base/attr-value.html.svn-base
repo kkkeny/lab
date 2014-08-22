@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+
+ <title>IE7 {CSS2: auto}</title>
+
+ <!-- Compliance patch for Microsoft browsers -->
+ <!--[if lt IE 9]><script src="../ie7-js/lib/IE9.js"></script><![endif]-->
+
+ <style>
+
+  input[type=text] {
+
+   background-color: yellow;
+  }
+
+ </style>
+</head>
+<body>
+ <script src="ie7-demo.js"></script>
+ <h2>属性选择器 选择所有input 是text的标签 [attr="value"]</h2>
+
+ <p><input type="text" value="这是文本输入"></p>
+ <p><input type="password" value="这是密码输入"></p>
+ <p><label><input type="checkbox">Check this box if you agree that coding
+    <code>input[type=text]</code> is better than inventing a class
+    to do the job.</label></p>
+
+ <p>&lt;&nbsp;<a href="index.html">back</a></p>
+</body>
+</html>

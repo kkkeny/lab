@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+
+        <!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
+        Remove this if you use the .htaccess -->
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+        <meta name="viewport" content="width=device-width; initial-scale=1.0,user-scalable=no" />
+        <title>GIS</title>
+        <meta name="description" content="" />
+        <meta name="author" content="尹和健" />
+        <style type="text/css">
+            html {
+                height: 100%;
+            }
+            body {
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            #map {
+                height: 100%;
+            }
+        </style>
+    </head>
+
+    <body>
+        <nav>
+            More or less:<em id="acc"></em>(meters).
+            <br />
+            Latitude:<em id="lat"></em>
+            <br />
+            Longitude:<em id="lon"></em>
+            <br />
+            direction:<em id="dir"></em>
+            <br />
+        </nav>
+        <div id="map"></div>
+        <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyBZcP2b88QvBvNYsvakX8G4Ap7QuWax7u0&sensor=true"></script>
+        <script type="text/javascript">
+            var a = " ";
+            if (a)
+            {
+                alert(1);
+            }
+            var ele = function(id)
+            {
+                return document.getElementById(id);
+            };
+            var map, _location, _option =
+            {
+                maximumAge : 0,
+                timeout : 5000,
+                enableHighAccuracy : true
+            };
+            navigator.geolocation.getCurrentPosition(function(info)
+            {
+                _location = info.coords;
+                ele("acc").innerText = _location.accuracy;
+                ele("lat").innerText = _location.latitude;
+                ele("lon").innerText = _location.longitude;
+                ele("dir").innerText = _location.heading;
+                map = new google.maps.Map(ele("map"),
+                {
+                    center : new google.maps.LatLng(_location.latitude, _location.longitude),
+                    zoom : 18,
+                    mapTypeId : google.maps.MapTypeId.ROADMAP
+                });
+                //map.setCenter(results[0].geometry.location);
+                var marker = new google.maps.Marker(
+                {
+                    map : map,
+                    position : map.getCenter()
+                });
+            }, function(err)
+            {
+                alert('ERROR(' + err.code + '): ' + err.message);
+            }, _option);
+        </script>
+    </body>
+</html>

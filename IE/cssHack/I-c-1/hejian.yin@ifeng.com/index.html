@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+		<link href="index.css?t=1" rel="stylesheet" type="text/css">
+		<title>index</title>
+	</head>
+	<body>
+		<p>
+			IE6 only:
+		</p>
+		<h1 class="h6">style:_</h1>
+		<h1 class="h61">style:-</h1>
+		<p>
+			IE6&IE7:
+		</p>
+		<h1 class="h67">style:*</h1>
+		<h1 class="h671">style:~</h1>
+		<h1 class="h672">style:!</h1>
+		<h1 class="h673">style:@</h1>
+		<h1 class="h674">style:#</h1>
+		<h1 class="h675">style:$</h1>
+		<h1 class="h676">style:%</h1>
+		<h1 class="h677">style:&</h1>
+		<h1 class="h678">style:(</h1>
+		<h1 class="h679">style:)</h1>
+		<h1 class="h6710">style:+</h1>
+		<h1 class="h6711">style:=</h1>
+		<h1 class="h6712">style:`</h1>
+		<h1 class="h6713">style:,</h1>
+		<h1 class="h6714">style:.</h1>
+		<h1 class="h6715">style:[</h1>
+		<h1 class="h6716">style:]</h1>
+		<h1 class="h6717">style:?</h1>
+		<h1 class="h6718">style::</h1>
+		<h1 class="h6719">style: &lt;</h1>
+		<h1 class="h6720">style:&gt; </h1>
+		<h1 class="h6721">style:/</h1>
+		<h1 class="h6722">style:|</h1>
+		<p>
+			IE6&IE7 !important
+		</p>
+		<h1 class="h67i fail">style:!anything == !important 无效</h1>
+		<p>
+			IE8&IE9&IE10(background: #008000\0/只在ie8下有效)
+		</p>
+		<h1 class="h8910">style:\0/</h1>
+		<p>
+			IE9&IE10
+		</p>
+		<h1 class="h910">style:nth-of-type(28){'rules'\9;}</h1>
+		<p>
+			IE6&IE7&IE8&IE9&IE10
+		</p>
+		<h1 class="h678910">style:\9</h1>
+		<p>
+			everythingButIE6
+		</p>
+		<h1 class="everythingButIE6 fail">style/**/:rules;无效</h1>
+	</body>
+	<script type="text/javascript">
+		var h1 = document.getElementsByTagName("h1");
+		var i, len = h1.length;
+		for ( i = 0; i < len; i++) {
+			var className = h1[i].className;
+			var span = document.createElement("span")
+			var textNode = document.createTextNode(" class:" + className);
+			span.appendChild(textNode);
+			h1[i].appendChild(span);
+		}
+	</script>
+</html>

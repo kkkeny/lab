@@ -1,0 +1,70 @@
+*{
+    padding:0;
+    margin:0;
+}
+body{
+    
+}
+#stage_wxc{
+    background:#fff;
+    width:500px;
+    height:500px;
+    border:1px solid #333;
+    -webkit-perspective:500px;
+    -webkit-perspective-origin:50% 50%;
+    -webkit-transform-style:preserve-3d;
+    -webkit-backface-visibility:hidden;
+}
+#stage_wxc #layout{
+    width:23px;
+    -webkit-animation:bird_move 5s  linear  infinite alternate;
+    position:absolute;
+    left:0;
+    top:150px;
+}
+#stage_wxc #layout.back{
+    -webkit-animation:bird_moveback 5s  linear  infinite alternate;
+}
+#stage_wxc #layout.back #bird{
+    background-position:0 0;    
+    -webkit-animation:bird_flyback .4s steps(3) 0s infinite both;
+}   
+#stage_wxc #bird{
+    background:url(bird.gif) no-repeat 0 0px;    
+    width:23px;
+    height:30px;
+    overflow:hidden;    
+    -webkit-animation:bird_fly .4s steps(3)  infinite both;
+}
+@-webkit-keyframes bird_fly {
+    from{
+        background-position: 0px -30px;
+    }
+    to{
+        background-position: -68px -30px;
+    }
+}
+@-webkit-keyframes bird_flyback {
+    from{
+        background-position: 0 0;
+    }
+    to{
+        background-position: -68px 0;
+    }
+}
+@-webkit-keyframes bird_move{
+    from {
+        left:0;
+	} 
+	to {
+        left:100%;
+	}
+}
+@-webkit-keyframes bird_moveback{
+    from {
+        left:95%;
+	} 
+	to {
+        left:0;
+	}
+}

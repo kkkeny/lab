@@ -1,0 +1,111 @@
+<html>
+<head>
+
+</head>
+<body>
+
+<h2>概述：</h2>
+<p>电饭锅电饭锅电饭锅电饭锅</p>
+<table style="margin-top: 15px; border-collapse: collapse; border-spacing: 0; border-color: #808080;">
+    <tr>
+        <th class="th1" style="padding: 6px 0; background: #eeeeee; text-align: center; width: 140px; border: 1px solid #dddddd;">指标</th>
+        <th class="th2" style="padding: 6px 0; background: #eeeeee; text-align: center; width: 140px; border: 1px solid #dddddd;">平台</th>
+        <th class="th3" style="padding: 6px 0; background: #eeeeee; text-align: center; width: 50px; border: 1px solid #dddddd;">状态</th>
+        <th class="th4" style="padding: 6px 0; background: #eeeeee; text-align: center; width: 315px; border: 1px solid #dddddd;">备注</th>
+        <th class="th5" style="padding: 6px 0; background: #eeeeee; text-align: center; width: 285px; border: 1px solid #dddddd;">解决方案</th>
+    </tr>
+
+
+    <tr>
+
+    <tr>
+        <td class="th1" style="width: 140px; padding: 10px 0; text-align: center; border: 1px solid #dddddd;">测试指标内容</td>
+        <td class="th2" style="width: 140px; padding: 10px 0; text-align: center; border: 1px solid #dddddd;">web1</td>
+        <td class="th3" style="width: 50px; padding: 10px 0; text-align: center; border: 1px solid #dddddd;">
+
+            <span>[正常]</span>
+
+        </td>
+        <td class="th4" style="width: 315px; padding: 10px 0; text-align: center; border: 1px solid #dddddd;"></td>
+        <td class="th5" style="width: 285px; padding: 10px 0; text-align: center; border: 1px solid #dddddd;"></td>
+    </tr>
+
+
+    <tr>
+
+    <tr>
+        <td class="th1" style="width: 140px; padding: 10px 0; text-align: center; border: 1px solid #dddddd;">测试指标内容</td>
+        <td class="th2" style="width: 140px; padding: 10px 0; text-align: center; border: 1px solid #dddddd;">web3</td>
+        <td class="th3" style="width: 50px; padding: 10px 0; text-align: center; border: 1px solid #dddddd;">
+
+            <span>[正常]</span>
+
+        </td>
+        <td class="th4" style="width: 315px; padding: 10px 0; text-align: center; border: 1px solid #dddddd;"></td>
+        <td class="th5" style="width: 285px; padding: 10px 0; text-align: center; border: 1px solid #dddddd;"></td>
+    </tr>
+
+
+    <tr>
+
+    <tr>
+        <td class="th1" style="width: 140px; padding: 10px 0; text-align: center; border: 1px solid #dddddd;">测试指标内容</td>
+        <td class="th2" style="width: 140px; padding: 10px 0; text-align: center; border: 1px solid #dddddd;">web</td>
+        <td class="th3" style="width: 50px; padding: 10px 0; text-align: center; border: 1px solid #dddddd;">
+
+            <span>[正常]</span>
+
+        </td>
+        <td class="th4" style="width: 315px; padding: 10px 0; text-align: center; border: 1px solid #dddddd;"></td>
+        <td class="th5" style="width: 285px; padding: 10px 0; text-align: center; border: 1px solid #dddddd;"></td>
+    </tr>
+
+
+    <tr>
+
+    <tr>
+        <td class="th1" style="width: 140px; padding: 10px 0; text-align: center; border: 1px solid #dddddd;">测试指标内容</td>
+        <td class="th2" style="width: 140px; padding: 10px 0; text-align: center; border: 1px solid #dddddd;">web3</td>
+        <td class="th3" style="width: 50px; padding: 10px 0; text-align: center; border: 1px solid #dddddd;">
+
+            <span>[正常]</span>
+
+        </td>
+        <td class="th4" style="width: 315px; padding: 10px 0; text-align: center; border: 1px solid #dddddd;"></td>
+        <td class="th5" style="width: 285px; padding: 10px 0; text-align: center; border: 1px solid #dddddd;"></td>
+    </tr>
+
+
+    <tr>
+
+    <tr>
+        <td class="th1" style="width: 140px; padding: 10px 0; text-align: center; border: 1px solid #dddddd;">测试指标内容</td>
+        <td class="th2" style="width: 140px; padding: 10px 0; text-align: center; border: 1px solid #dddddd;">wap</td>
+        <td class="th3" style="width: 50px; padding: 10px 0; text-align: center; border: 1px solid #dddddd;">
+
+            <span>[正常]</span>
+
+        </td>
+        <td class="th4" style="width: 315px; padding: 10px 0; text-align: center; border: 1px solid #dddddd;"></td>
+        <td class="th5" style="width: 285px; padding: 10px 0; text-align: center; border: 1px solid #dddddd;"></td>
+    </tr>
+
+
+    <tr style="background-color: red;">
+
+        <td class="th1" style="width: 140px; padding: 10px 0; text-align: center; border: 1px solid #dddddd;">测试指标内容</td>
+        <td class="th2" style="width: 140px; padding: 10px 0; text-align: center; border: 1px solid #dddddd;">wap</td>
+        <td class="th3" style="width: 50px; padding: 10px 0; text-align: center; border: 1px solid #dddddd;">
+
+            <span>[异常]</span>
+
+        </td>
+        <td class="th4" style="width: 315px; padding: 10px 0; text-align: center; border: 1px solid #dddddd;">aaa</td>
+        <td class="th5" style="width: 285px; padding: 10px 0; text-align: center; border: 1px solid #dddddd;">bbb</td>
+    </tr>
+
+
+    </table>
+<h3 style="text-align: right">xinchao.wang(王新超)</h3>
+</body>
+</html>

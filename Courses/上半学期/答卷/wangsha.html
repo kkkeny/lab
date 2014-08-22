@@ -1,0 +1,89 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title></title>
+	</head>
+	<body>
+		<div class="count"></div>
+		<script>
+			function Type(n){
+				var t=typeof n;
+				if(t=="undefined"||t=="null"||t==0)
+				return false;
+				else
+				 return Object.prototype.toString.call(n);
+			}
+			function dateTime(date){
+				if (Type(date)=="[object Date]"){
+					var y=date.getFullYear();
+					var m=date.getMonth()+1;
+					var d=date.getDate();
+					var h=date.getHours();
+					var min=date.getMinutes();
+					var s=date.getSeconds();
+					if(m<10) m="0"+m;
+					if(d<10) d="0"+d;
+					if(h<10) h="0"+h;
+					if(min<10) min="0"+min;
+					if(s<10) s="0"+s;
+					document.write(y+"年"+m+"月"+d+"日"+h+":"+min+":"+s);
+				}
+			}
+			function subTime(){
+				var sum=0;
+				var date=new Date();
+				var time1=date.getTime();
+				for(var i=1;i<99990;i==){
+					sum=sum+i;
+				}
+				document.write(sum);
+				var time2=date.getTime();
+				var t=(time2-time1)/1000;
+				console.log(t);
+			}
+			function printNum(n){
+				var num=parseInt(n);
+				document.write("二进制"+num.toString(2)+"</br>"+"八进制"+num.toString(8)+"</br>"+"十进制"+num+"</br>"+"十六进制"+num.toString(16)+"</br>")
+			}
+			function Count(sec){
+				var _this = this;
+				this.sec=sec;
+				this.showTime=function(){
+					var s=document.getElementById("count");
+					if(_this.sec<=3){
+						var _sec="";
+						for(var i=1;i<=_this.sec;i++)
+						{
+							_sec=_sec+"!";
+						}
+						s.innerHTML="倒计时"+_sec;
+					}
+					else
+					s.innerHTML="倒计时"+_this.sec;
+					_this.sec=_this.sec-1;
+				}				
+				setTimeout("showTime()",1000) 
+			}
+			
+			function phoneNum(pnum){
+				var re =/^1[58][0-9]{9}/;
+			}
+			 function wsAdapter(){ //例如王瑞  就是wr开头然后是Adapter
+				this.fn1 = Type; //isType是你编写第一题的方法名称
+				this.fn2 = dateTime; //你编写第二题的方法名称
+				this.fn3 = subTime; //...
+				this.fn4 = printNum; //noImpl 没有做上了
+				this.fn5 = Count;
+				this.fn6 = noImpl;
+				this.fn7 = phoneNum;
+				this.fn8 = noImpl;				
+				this.fn9 = noImpl;
+				this.fn10 = noImpl;
+			}
+
+		</script>
+	</body>
+</html>
+

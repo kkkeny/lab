@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>用户登录</title>
+    <%- stylesheetLinkTag('css/common', 'css/login') %>
+    <%- csrfMetaTag() %>
+</head>
+<body>
+    <header>
+        <img class="logo" src="images/logo.png" alt="logo" title="logo" />
+        <h1>--日志管理系统<span style="font-size: 0.7em;">[v2014.2.13]</span></h1>
+    </header>
+    <section class="content">
+        <fieldset class="login">
+
+            <% var form = formFor('sessions', {action: pathTo.sessions()}) %>
+            <%- form.begin() %>
+                <div class="user-info">
+                    <div class="user-account">
+                        <input type="text" name="name" class="username" placeholder="Like san.zhang" autofocus autocomplete="off" value="<%= user.name%>"/>
+                    </div>
+                    <%- form.input("password", {type: 'password', class: 'password', placeholder: 'Password',required:'required'}) %>
+                </div>
+                <div class="auto-login"><input type="checkbox" checked="checked" name="autoin"/><span>自动登录</span>&nbsp;&nbsp;|&nbsp;&nbsp;<%- linkTo('注册', pathTo.signup(), {class: 'register'}) %></div>
+                <div id="errorInfo" class="errorInfo">
+                    <% var flash = request.flash('info'); if (flash) { %>
+                    <%- flash %>
+                    <% } %>
+                    <% flash = request.flash('error'); if (flash) { %>
+                    <%- flash %>
+                    <% }; %>
+                 </div>
+                    <%- form.submit('立即登录') %>
+                    <%- form.end() %>
+        </fieldset>
+    </section>
+    <%- include ../layouts/_footer %>
+</body>
+</html>
+

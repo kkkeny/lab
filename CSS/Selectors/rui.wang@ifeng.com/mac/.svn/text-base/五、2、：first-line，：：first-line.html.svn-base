@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+<meta charset="utf-8" />
+<title>css选择符</title>
+<style>
+
+p:first-line{ font-size:40px; color:red}
+ul li::first-line{ color:#6F0}
+</style>
+</head>
+<body>
+<h1>四、伪对象类选择符 Pseudo-Classes Selectors</h1>
+<div>2、E:first-line/E::first-line--设置对象内的第一行的样式。(IE6,7,8不支持)</div>
+
+<p>
+萨双方都是大<br/>法师地方热情方法哦秋风起
+</p>
+<ul>
+<li><p style="width:300px">所发sadsaasdasdas生的事</p>
+</li>
+<li>武器二3</li>
+</ul>
+</body>
+</html>

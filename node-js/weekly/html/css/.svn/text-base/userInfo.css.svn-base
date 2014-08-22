@@ -1,0 +1,60 @@
+.content{
+	padding-left: 145px;
+}
+.content .userInfo{
+	margin: 7% auto;
+	width:400px;
+	height:auto;
+}
+.content label{
+	display: inline-block;
+	width:72px;
+	text-align: right;
+	margin-right: 10px;
+	font-size: 14px;
+}
+.userInfo .username,.userInfo .email{
+	height:45px;
+	border: 0;
+	color: #333333;
+	font-size: 14px;
+}
+.userInfo .nickname,.userInfo .entry,.userInfo .phone,.userInfo .depart{
+	width:220px;
+	height:45px;
+	border:1px solid #3a6a75;
+	border-radius: 5px;
+	margin-bottom: 25px;
+	padding-left: 10px;
+	font-size: 14px;
+}
+.userInfo .depart{
+	display: inline-block;
+	line-height: 45px;
+}
+.userInfo .department,.userInfo .position{
+	width: 95%;
+	padding:12px 0 10px 0; 
+	border: 0;
+	color:#333333;
+}
+.userInfo button{
+	width:225px;
+	height:50px;
+	line-height: 50px;
+	background: #345957;
+	color: #ffffff;
+	font-size: 24px;
+	border: 0;
+	border-bottom: 3px solid #122f30;
+	border-radius: 6px;
+	position: relative;
+	left:88px;
+}
+.errorInfo{
+	color: red;
+	font-size: 14px;
+	width: 300px;
+	margin-bottom: 10px;
+	text-align: center;
+}

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>css动画</title>
+<style type="">
+*{
+    padding:0;
+    margin:0;
+}
+#zll {
+	width:500px;
+	height:500px;
+	position:relative;
+	background: url(bg.jpg) no-repeat;
+}
+#zll #wrap{
+	position: absolute;
+	top: 300px;
+	left: 0px;
+	-webkit-animation: bgmove 10s linear infinite;
+}
+#zll #wrap.back{
+    -webkit-animation: moveback 10s  linear 0s infinite;
+}
+#zll #wrap.back #bird{
+    background-position: 0 0;    
+    -webkit-animation: flyback 0.6s steps(3) 0s infinite;
+}
+#bird{
+	width: 22px;
+	height: 24px;
+	position: relative;
+	top: 0;
+	right: 0;
+	background: url(bird.gif) 0 -32px no-repeat;
+	-webkit-animation: fly 0.6s steps(3) 0s infinite;
+}
+@-webkit-keyframes bgmove{
+	0%{
+		left: 0;
+	}
+	100%{
+		left: 100%;
+	}
+}
+@-webkit-keyframes fly {
+	0% {
+		background-position: 0px -32px;
+	}
+	100% {
+		background-position: -68px -32px;
+	}
+}
+@-webkit-keyframes moveback{
+	0%{
+		left: 90%;
+	}
+	100%{
+		left: 0;
+	}
+}
+@-webkit-keyframes flyback {
+    0% {
+		background-position: 0px 0px;
+	}
+	100% {
+		background-position: -68px 0px;
+	}
+}
+</style>
+</head>
+<body>
+	<div id="zll">
+		<div id="wrap">
+			<div id="bird"></div>
+		</div>
+	</div>
+	<script type="text/javascript">
+        var width = document.getElementById('zll').offsetWidth;
+        var move = document.getElementById('wrap');
+        var bird = document.getElementById('bird');
+        
+        var flag = false;
+        move.addEventListener("webkitAnimationIteration", function(e){                
+            if(!flag){
+                if(this.offsetLeft > width-40){
+                    this.className = 'back';
+                    flag = true;
+                }else{
+                    this.className = '';
+                }
+            }else{
+                if(this.offsetLeft < 30){
+                    this.className = '';
+                    flag = false;
+                }else{
+                    this.className = 'back';
+                }
+            }
+        }, false);
+    </script>
+</body>
+</html>

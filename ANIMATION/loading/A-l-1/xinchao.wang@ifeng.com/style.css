@@ -1,0 +1,28 @@
+*{
+	margin:0;
+	padding:0;
+}
+body{
+	background: #eee;
+}
+#stage{		
+	margin-top:25%;
+	margin-left:50%;
+}
+#loading{
+	width:32px;
+	height:32px;
+	background: url(../image/circle.gif) no-repeat;
+	-webkit-animation: round .5s linear 0s infinite;
+	-webkit-trasform-origin: 50% 50%;
+	-webkit-transform: rotateZ(360deg);
+	background-size:32px 32px;
+}
+@-webkit-keyframes round {
+	0%{
+		-webkit-transform: rotateZ(0deg);
+	}
+	100%{
+		-webkit-transform: roteteZ(360deg);
+	}
+}

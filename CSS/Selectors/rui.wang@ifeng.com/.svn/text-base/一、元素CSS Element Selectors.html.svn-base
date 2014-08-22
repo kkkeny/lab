@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+<meta charset="utf-8" />
+<title>css选择符</title>
+</head>
+<body>
+<div>去重复冗余代码</div>
+<h1>一、元素CSS Element Selectors</h1>
+<div>1、通配选择符--选定所有对象</div>
+<div>2、类型选择符--以文档语言对象类型作为选择符</div>
+<div>3、ID选择符--以唯一标识符id属性等于myid的E对象作为选择符</div>
+<div>4、类选择符--以class属性包含myclass的E对象作为选择符</div>
+</body>
+</html>

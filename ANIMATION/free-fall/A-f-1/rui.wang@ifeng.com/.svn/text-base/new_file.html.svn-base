@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>无标题文档</title>
+		<style type="text/css">
+			div {
+
+				background: #000;
+				width: 140px;
+				height: 40px;
+				-webkit-transform: translate(0px);
+				margin: -34px auto;
+			}
+
+			button:hover  + div {
+
+				-webkit-transform: rotate(85deg) translate(400px);
+				-webkit-transition: .9s cubic-bezier(0,2,.30,0);
+			}
+
+		</style>
+	</head>
+
+	<body>
+
+		<button type="button">
+			触发
+		</button>
+
+		<div>
+
+		</div>
+	</body>
+</html>

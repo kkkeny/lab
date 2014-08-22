@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+	</head>
+
+	<body>
+
+		<script>
+			window.onload = function() {
+				var oBody = document.getElementsByTagName("body")[0];
+				var wrDiv = document.createElement("div");
+				oBody.appendChild(wrDiv);
+
+				wrDiv.setAttribute("id", "example");
+
+				var example = document.getElementById("example");
+				var wrP = document.createElement("p");
+				example.appendChild(wrP);
+				var txt = document.createTextNode("塔读文学");
+				wrP.appendChild(txt);
+
+				example.setAttribute("class", "box");
+			}
+		</script>
+	</body>
+</html>

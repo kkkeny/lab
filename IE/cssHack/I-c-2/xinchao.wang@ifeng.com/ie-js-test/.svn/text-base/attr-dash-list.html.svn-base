@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+ <title>IE7 {CSS2: auto}</title>
+
+ <!-- Compliance patch for Microsoft browsers -->
+ <!--[if lt IE 9]><script src="../ie7-js/lib/IE9.js"></script><![endif]-->
+
+ <style>
+
+  [class|="first"] {
+
+   background-color: yellow;
+
+  }
+
+ </style>
+</head>
+<body>
+ <script src="ie7-demo.js"></script>
+ <h2>属性选择器 含有-的class 前面不允许有空格 或者其他class 并且first必须在最前面- [class|="first"]</h2>
+
+ <ul>
+  <li class="first">class="first"</li>
+  <li class="first-">class="first-"</li>
+  <li class=" first-">class=" first-"</li>
+  <li class="first- b">class="a first- b"</li>
+  <li class="a first- b">class="a first- b"</li>
+  <li class="-first">class="-first"</li>
+
+  <li class="second">class="second"</li>
+  <li class="third">class="third"</li>
+  <li class="first-second">class="first-second"</li>
+  <li class="first-third">class="first-third"</li>
+  <li class="second-third">class="second-third"</li>
+  <li class="first-second-third">class="first-second-third"</li>
+  <li class="second-third-first">class="second-third-first"</li>
+ </ul>
+ <p class="first">class="first"</p>
+
+ <p>&lt;&nbsp;<a href="index.html">back</a></p>
+</body>
+</html>

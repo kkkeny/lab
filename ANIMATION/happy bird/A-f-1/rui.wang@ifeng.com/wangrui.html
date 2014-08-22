@@ -1,0 +1,76 @@
+<html>
+	<head>
+		<style type="text/css">
+			#bg{ width: 500px; height: 500px; margin: 0 auto; overflow: hidden; background: #EAF7FD; position: relative;}
+			#bee{
+			background-image: url(css3.gif);
+			height:32px; width:21px;
+			-webkit-animation: bee 0.6s step-end infinite;
+
+			}
+
+			@-webkit-keyframes bee{
+			0%{
+			background-position:0 32px;
+			}
+			50%{
+			background-position:21px 32px;
+			}
+			100%{
+			background-position:48px 32px;
+			}
+
+			}
+
+			#wangrui_bee {
+			position: absolute;
+			top:150px;left:0px;
+			-webkit-animation-iteration-count: infinite;
+			-webkit-animation-timing-function: linear;
+
+			}
+			#wangrui_bee { -webkit-animation-name: wangrui_bee; -webkit-animation-duration: 30s; -webkit-transform: rotateZ(-10deg); }
+
+			@-webkit-keyframes wangrui_bee {
+			0%        { left: 20px; bottom: 0px; }
+			10%        { left: 50px; bottom: 0px;}
+			20%        { left: 100px; bottom: 10px; }
+			30%        { left: 150px; bottom: 0px; }
+			50%        { left: 500px; bottom: -10px; }
+			70%        { left: 400px; bottom: 0px; }
+			80%        { left: 300px; bottom: 110px; }
+			100%    { left: 20px; bottom: 0px; }
+			}
+		</style>
+	</head>
+	<body>
+		<div id="bg">
+			<div id="wangrui_bee">
+				<div id="bee"></div>
+			</div>
+		</div>
+		<script type="text/javascript">
+			var width = document.getElementById('bg').offsetWidth;
+			var move = document.getElementById('wangrui_bee'), bee = document.getElementById('bee');
+
+			var flag = false;
+			move.addEventListener("webkitAnimationIteration", function(e) {
+				if (!flag) {
+					if (this.offsetLeft > width - 30) {
+						this.className = 'back';
+						flag = true;
+					} else {
+						this.className = '';
+					}
+				} else {
+					if (this.offsetLeft < 30) {
+						this.className = '';
+						flag = false;
+					} else {
+						this.className = 'back';
+					}
+				}
+			}, false);
+		</script>
+	</body>
+</html>

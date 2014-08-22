@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<title>location</title>
+		<meta name="description" content="" />
+		<meta name="author" content="wangsha" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="shortcut icon" href="/favicon.ico" />
+		<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+		<script type="text/javascript" src="http://api.map.baidu.com/api?key=&v1=1.1&services=true"></script>
+	</head>
+	<body>
+		<div>
+			<header><h1>location</h1></header>
+			<div id="coord">你现在的位置是——</div>
+			<p>地图位置</p><span id="ps"></span>
+			<div id="maps" style="width: 500px;height:300px;border: 1px solid #f0f;"></div>
+		</div>
+		<script type="text/javascript">
+			if(navigator.geolocation){
+			    navigator.geolocation.getCurrentPosition(function(p){
+			    	var latitude=p.coords.latitude;
+			    	var longitude=p.coords.longitude;
+			    	document.getElementById("coord").innerHTML="你现在的位置是——纬度："+latitude+",经度："+longitude;
+			    	createMap(latitude,longitude);
+			    });
+			}else{
+			    alert("不支持");
+			}
+			function createMap(a,b){
+				var map=new BMap.Map("maps");
+		    	var point = new BMap.Point(b,a);
+		    	map.centerAndZoom(point,11);
+		    	map.addOverlay(new BMap.Marker(point));
+		    	var myGeo = new BMap.Geocoder();   //Geocoder类进行地址解析
+				// 将地址解析结果显示在地图上,并调整地图视野
+				myGeo.getPoint("北京市西城区德胜门外大街117号德胜商城", function(point){
+				  if (point) {
+				     var pointx = point.lng; //经度
+				     var pointy = point.lat; //纬度
+				     document.getElementById("ps").innerHTML="纬度："+pointy+",经度："+pointx;
+				    map.centerAndZoom(point, 11);
+				    map.addOverlay(new BMap.Marker(point));
+				  }
+				}, "北京市");
+		    	
+		    	window.map=map;                                     //将map变量存储在全局
+		    	map.addControl(new BMap.NavigationControl());       // 添加平移缩放控件
+				map.addControl(new BMap.ScaleControl());            // 添加比例尺控件
+				map.addControl(new BMap.OverviewMapControl());      //添加缩略地图控件
+				map.enableScrollWheelZoom();                        //启用滚轮放大缩小
+				map.addControl(new BMap.MapTypeControl());          //添加地图类型控件
+				map.setCurrentCity("北京");                          // 设置地图显示的城市 此项是必须设置的
+				
+				
+			}
+			
+		</script>
+	</body>
+</html>

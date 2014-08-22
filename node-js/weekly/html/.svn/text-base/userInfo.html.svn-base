@@ -1,0 +1,48 @@
+<!doctype html>
+<html>	
+	<head>
+		<meta charset="utf-8">
+		<title>个人信息</title>
+		<link rel="stylesheet" href="css/common.css">
+		<link rel="stylesheet" href="css/userInfo.css">
+		<script type="text/javascript" src="./js/Calendar3.js"></script>
+		<script type="text/javascript" src="./js/app.js"></script>
+	</head>
+	<body>
+		<header>
+			<img class="logo" src="images/logo.png" alt="logo" title="logo" />
+			<h1>--日志管理系统平台</h1>
+			<div class="right">
+				<a class="username" href="">username</a>|
+				<a class="logout" href=""><img class="logout-img "src="images/logout.png" />退出</a>
+			</div>
+		</header>
+		<aside>
+			<ul id="aside">
+				<li class="personal-center"><a href="javascript:;">个人中心</a><div class="triangle-down"></div></li>
+				<li class=""><a href="javascript:;">个人信息</a></li>
+				<li class=""><a href="javascript:;">修改密码</a></li>
+				<li class=""><a href="javascript:;">常用设置</a></li>
+			</ul>
+		</aside>
+		<section class="content">
+			<fieldset class="userInfo">
+				<form action="">
+					<label for="username"> 登录名：</label><input id="username" type="text" class="username" name="username" value="yours@tadu.com" readonly="readonly" /><br/>
+					<label for="nickname"> 姓名：</label><input id="nickname" type="text" class="nickname" name="nickname" placeholder="可参考身份证"/><br/>
+					<label for="entry"> 入职日期：</label><input id="entry" type="text" readonly="readonly"class="entry" name="entry" onclick="new Calendar().show(this);" /><br/>
+					<label for="department">部门：</label><span class="depart"><select name="department" id="department" class="department"><option value="">研发</option><option value="">其他</option></select></span><br/>
+					<label for="position">组别：</label><span class="depart"><select name="position" id="position" class="position"><option value="">前端</option><option value="">其他</option></select></span><br/>
+					<label for="phone">电话：</label><input type="text" id="phone" name="phone" class="phone" placeholder="移动4G,非一般的感觉"/><br/>
+					<div id="errorInfo" class="errorInfo"></div>
+					<button>保存</button>
+				</form>
+			</fieldset>
+		</section>
+		<footer>
+			<small>Copyright(C) 2008-2014 www.tadu.com All Rights Reserved 版权所有 北京易天新动网络科技有限公司</small>
+		</footer>
+	
+	</body>
+
+</html>

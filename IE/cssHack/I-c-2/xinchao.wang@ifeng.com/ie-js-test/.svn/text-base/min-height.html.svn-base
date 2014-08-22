@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+ <head>
+  <title>IE7 {CSS2: auto}</title>
+
+  <!-- Compliance patch for Microsoft browsers -->
+  <!--[if lt IE 9]><script src="../ie7-js/lib/IE9.js"></script><![endif]-->
+
+  
+
+  <style>
+
+   #container{
+    width: 300px;
+   }
+   #box {
+
+    min-height: 300px;
+    border: 25px black solid;
+    background: red;
+   }
+
+  </style>
+ </head>
+ <body>
+  <script src="ie7-demo.js"></script>
+  <h2>min-height</h2>
+  
+  <div id="container">
+   <div id="box">
+     
+   </div>
+  </div>
+
+  
+ </body>
+</html>

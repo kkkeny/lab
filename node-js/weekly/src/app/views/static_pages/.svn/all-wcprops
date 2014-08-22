@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/tadu/!svn/ver/72403/tech/trunk/html/dev/frontend_lab/node-js/weekly/src/app/views/static_pages
+END
+help.ejs
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/tadu/!svn/ver/72403/tech/trunk/html/dev/frontend_lab/node-js/weekly/src/app/views/static_pages/help.ejs
+END
+home.ejs
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/tadu/!svn/ver/72403/tech/trunk/html/dev/frontend_lab/node-js/weekly/src/app/views/static_pages/home.ejs
+END
+about.ejs
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/tadu/!svn/ver/72403/tech/trunk/html/dev/frontend_lab/node-js/weekly/src/app/views/static_pages/about.ejs
+END

@@ -1,0 +1,58 @@
+.content{
+	margin-top: 15%;
+}
+.content .login{
+	width:400px;
+	margin:0 auto;
+	color: #999999;
+}
+form .user-info{
+	border:1px solid #c3c8c8;
+	border-radius: 6px;
+}
+form label{
+	height:50px;
+	line-height: 50px;
+	
+	font-size: 14px;
+	padding-left: 10px;
+}
+form .user-account{
+	border-bottom: 1px solid #c3c8c8;
+}
+form .username,form .password{
+	height:50px;
+	width: 360px;
+	border:0;
+    margin-left: 20px;
+    font-size: 16px;
+}
+form .auto-login{
+	margin-top: 15px;
+	margin-bottom: 25px;
+	height:15px;
+	line-height: 15px;
+}
+form .auto-login input{
+	margin-right: 15px;
+}
+form button{
+	width:400px;
+	height:50px;
+	line-height: 50px;
+	background: #345957;
+	color: #ffffff;
+	font-size: 24px;
+	border: 0;
+	border-bottom: 3px solid #122f30;
+	border-radius: 6px;
+}
+.errorInfo{
+	color: red;
+	font-size: 14px;
+	margin-bottom: 10px;
+
+}
+.register{
+	color:#999;
+}

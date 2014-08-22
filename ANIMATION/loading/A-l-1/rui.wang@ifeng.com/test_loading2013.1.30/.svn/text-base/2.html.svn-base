@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>转吧转</title>
+<style type="text/css">
+body {
+	margin:0;
+	padding:0;
+	background: #FFC
+}
+.load{width:128px; height:128px;margin:10% auto; background:url(../../image/circle.gif); 
+    -webkit-animation:load steps(100) ;
+	-webkit-animation-iteration-count: infinite;
+	-webkit-animation-duration:.9s;
+}
+
+ @-webkit-keyframes load {
+ 0% {
+ -webkit-transform:rotate(0deg);
+}
+
+80%{
+ -webkit-transform:rotate(300deg);opacity: 0.6;
+}
+100% {
+ -webkit-transform:rotate(360deg);opacity: 0.3;
+}
+
+
+}
+</style>
+</head>
+
+<body>
+<div class="load"></div>
+</body>
+</html>

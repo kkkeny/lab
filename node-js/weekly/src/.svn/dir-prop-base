@@ -1,0 +1,10 @@
+K 10
+svn:ignore
+V 39
+.gitignore
+.idea
+log
+.git
+node_modules
+
+END

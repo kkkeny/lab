@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no"/>
+<meta name="format-detection" content="telephone=no"/>
+<meta name="format-detection" content="email=no"/>
+<title></title>
+<style type="text/css">
+a{
+	display: block;
+	width: 50px;
+	height: 30px;
+	border: 1px solid red;
+}
+.box .alink:link{
+	color: red;
+	}
+.box .alink:visited{
+	color: orange;
+}	
+.box .alink:hover{
+	color: green;
+}
+.box .alink:active{
+	background: black;
+}	
+</style>
+</head>
+<body>
+<div class="box">
+	<a href="" class="alink">ahover</a>
+</div>
+</body>
+</html>

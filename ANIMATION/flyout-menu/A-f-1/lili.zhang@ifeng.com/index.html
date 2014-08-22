@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>css3</title>
+<style type=text/css>
+	*{
+		margin: 0;
+		padding: 0; 
+	}
+	a{
+		text-decoration: none;
+	}
+	ul,li,div{
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+	.clearfix{
+		clear: both;
+	}
+	.warp{
+		width: 1000px;
+		margin: 0 auto;
+	}
+	.menuPanel{
+		width: 500px;
+		height: 400px;
+		position: relative;
+		margin-top: 50px;
+		float: left;
+		background: #fff;
+	}
+	.menuPanel .menu{
+		position: absolute;
+		left: 200px;
+		bottom: 200px;
+		cursor: pointer;
+	}
+	.menuPanel .menu ul.father{
+		position: relative;
+		width: 100px;
+		height: 100px;
+	}
+	.menuPanel .menu ul.father li{
+		position: absolute;
+		width: 100px;
+		height: 100px;
+		clip: rect(50px,100px,100px,0px);
+	}
+	.menuPanel .father li .piece{
+		position: absolute;
+		width: 100px;
+		height: 100px;
+		border-radius: 50px;
+		background: #b6bab0;
+		clip: rect(0px,50px,100px,0px);
+		-webkit-transform: rotate(18deg);
+		box-shadow: 0 0 10px 3px rgba(255,255,255,.85) inset;
+	}
+	.menuPanel .father li:nth-of-type(1){
+		-webkit-transform: rotate(162deg);
+	}
+	.menuPanel .father li:nth-of-type(1) .piece{
+		background: #5fc21b;
+	}
+	.menuPanel .father li:nth-of-type(2){
+		-webkit-transform: rotate(234deg);
+	}
+	.menuPanel .father li:nth-of-type(2) .piece{
+		background: #ffa0ca;
+	}
+	.menuPanel .father li:nth-of-type(3){
+		-webkit-transform: rotate(306deg);
+	}
+	.menuPanel .father li:nth-of-type(3) .piece{
+		background: #f59605;
+	}
+	.menuPanel .father li:nth-of-type(4){
+		-webkit-transform: rotate(378deg);
+	}
+	.menuPanel .father li:nth-of-type(4) .piece{
+		background: #cc3820;
+	}
+	.menuPanel .father li:nth-of-type(5){
+		-webkit-transform: rotate(450deg);
+	}
+	.menuPanel .father li:nth-of-type(5) .piece{
+		background: #5f95d7;
+	}
+	.menuPanel .dot{
+		width: 30px;
+		height: 30px;
+		border-radius: 15px;
+		background: -webkit-linear-gradient(top,#fcfcfd,#e1e6e9);
+		border: 1px solid #eee;
+		box-shadow: 0 0 8px #777;
+		display: inline-block;
+		position: absolute;
+		top: 35px;
+		left: 35px;
+		-webkit-transition: -webkit-transform .4s ease;
+	}
+	.menuPanel .menu:hover .dot{
+		-webkit-transform: rotate(360deg);
+	}
+	.menuPanel ul.son{
+		position: relative;
+		line-height: 0;
+		top: -94px;
+		left: 38px;
+	}
+	.menuPanel .menu:hover ul.son{
+		-webkit-animation: expandul .6s ease-out 1 forwards;
+	}
+	@-webkit-keyframes expandul{
+		0%{
+			top: -94px;
+		}
+		50%{
+			top: -147px;
+		}
+		90%{
+			top: -200px;
+		}
+		95%{
+			top: -190px;
+		}
+		100%{
+			top: -200px;
+		}
+	}
+	.menuPanel ul.son li{
+		position: absolute;
+		height: 150px;
+		display: none;
+		-webkit-transform-origin: 12.5px bottom;
+	}
+	.menuPanel .menu:hover ul.son li{
+		-webkit-animation: expand2 .6s ease-out 1 forwards;
+	}
+	@-webkit-keyframes expand2{
+		0%{
+			opacity: 0;
+			height: 45px;
+		}
+		50%{
+			opacity: 0.5;
+			height: 95px;
+		}
+		90%{
+			opacity: 0.9;
+			height: 145px;
+		}
+		95%{
+			opacity: 0.95;
+			height: 143px;
+		}
+		100%{
+			opacity: 1;
+			height: 145px;
+		}
+	}
+	.menuPanel .menu:hover ul.son li{
+		display: block;
+	}
+	.menuPanel ul.son li a{
+		position: absolute;
+		display: block;
+		border-radius: 50%;
+		height: 40px;
+		line-height:40px;
+		width: 40px;
+		text-align: center;
+		overflow: hidden;
+		background: #444;
+		-webkit-backface-visibility: hidden;
+		color: #fff;
+		font-weight: bold;
+		text-decoration: none;
+		box-shadow: 0 0 8px #777;
+		font-size: 20px;
+	}
+	.menuPanel .menu:hover ul.son li a{
+		-webkit-animation: spin-expand .6s ease-out 1 forwards;
+	}
+	@-webkit-keyframes spin-expand{
+		from{
+			-webkit-transform: rotate(0deg);
+		}
+		to{
+			-webkit-transform: rotate(180deg);
+		}
+	}
+	.menuPanel ul.son li:nth-of-type(1){
+		-webkit-transform: rotate(40deg);
+	}
+	.menuPanel ul.son li:nth-of-type(1) a{
+		background:-webkit-linear-gradient(top,#67c300,#b1e17f);
+		border: 1px solid #65b701;
+		-webkit-animation-delay: 0s;
+	}
+	.menuPanel ul.son li:nth-of-type(2){
+		-webkit-transform: rotate(112deg);
+	}
+	.menuPanel ul.son li:nth-of-type(2) a{
+		background:-webkit-linear-gradient(top,#fba0cd,#fcc0de);
+		border: 1px solid #f47cb8;
+		-webkit-animation-delay: .2s;
+	}
+	.menuPanel ul.son li:nth-of-type(3){
+		-webkit-transform: rotate(184deg);
+	}
+	.menuPanel ul.son li:nth-of-type(3) a{
+		background:-webkit-linear-gradient(top,#f29800,#ffac1f);
+		border: 1px solid #c37b02;
+		-webkit-animation-delay: .4s;
+	}
+	.menuPanel ul.son li:nth-of-type(4){
+		-webkit-transform: rotate(256deg);
+	}
+	.menuPanel ul.son li:nth-of-type(4) a{
+		background:-webkit-linear-gradient(top,#c83a13,#e29888);
+		border: 1px solid #cd2a06;
+		-webkit-animation-delay: .6s;
+	}
+	.menuPanel ul.son li:nth-of-type(5){
+		-webkit-transform: rotate(328deg);
+	}
+	.menuPanel ul.son li:nth-of-type(5) a{
+		background:-webkit-linear-gradient(top,#6293dd,#afc8ee);
+		border: 1px solid #3268ba;
+		-webkit-animation-delay: .8s;
+	}
+</style>
+</head>
+<body>
+<div class="warp">
+	<div class="menuPanel">
+		<div class="menu">
+			<ul class="father">
+				<li>
+					<div class="piece">&nbsp;</div>
+				</li>
+				<li>
+					<div class="piece">&nbsp;</div>
+				</li>
+				<li>
+					<div class="piece">&nbsp;</div>
+				</li>
+				<li>
+					<div class="piece">&nbsp;</div>
+				</li>
+				<li>
+					<div class="piece">&nbsp;</div>
+				</li>
+			</ul>
+			<em class="dot">&nbsp;</em>
+			<ul class="son">
+				<li>
+					<a href="#">绿</a>
+				</li>
+				<li>
+					<a href="#">粉</a>
+				</li>
+				<li>
+					<a href="#">黄</a>
+				</li>
+				<li>
+					<a href="#">红</a>
+				</li>
+				<li>
+					<a href="#">蓝</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<style type="">
+		.myPanel{
+			width: 500px;
+			height: 200px;
+			position: relative;
+			margin-top: 75px;
+			float: left;
+			background: #fff;
+		}
+		.myPanel #menu{
+			position: absolute;
+			left: 200px;
+			top: 100px;
+			cursor: pointer;
+		}
+		.myPanel #menu ul.father{
+			position: relative;
+			width: 80px;
+			height: 80px;
+			z-index: 99;
+		}
+		.myPanel #menu ul.father li{
+			position: absolute;
+			width: 80px;
+			height: 80px;
+			clip: rect(40px,80px,80px,0px);/*必须将position的值设为absolute，此属性方可使用*/
+		}
+		.myPanel .father li .piece{
+			position: absolute;
+			width: 80px;
+			height: 80px;
+			border-radius: 40px;
+			background: #b6bab0;
+			clip: rect(0px,40px,80px,0px);
+			-webkit-transform: rotate(18deg);
+			box-shadow: 0 0 10px 3px rgba(255,255,255,.85) inset;
+		}
+		.myPanel .father li:nth-of-type(1){
+			-webkit-transform: rotate(162deg);
+		}
+		.myPanel .father li:nth-of-type(1) .piece{
+			background: #5fc21b;
+		}
+		.myPanel .father li:nth-of-type(2){
+			-webkit-transform: rotate(234deg);
+		}
+		.myPanel .father li:nth-of-type(2) .piece{
+			background: #ffa0ca;
+		}
+		.myPanel .father li:nth-of-type(3){
+			-webkit-transform: rotate(306deg);
+		}
+		.myPanel .father li:nth-of-type(3) .piece{
+			background: #f59605;
+		}
+		.myPanel .father li:nth-of-type(4){
+			-webkit-transform: rotate(378deg);
+		}
+		.myPanel .father li:nth-of-type(4) .piece{
+			background: #cc3820;
+		}
+		.myPanel .father li:nth-of-type(5){
+			-webkit-transform: rotate(450deg);
+		}
+		.myPanel .father li:nth-of-type(5) .piece{
+			background: #5f95d7;
+		}
+		.myPanel .dot{
+			width: 20px;
+			height: 20px;
+			border-radius: 10px;
+			background: -webkit-linear-gradient(top,#fcfcfd,#e1e6e9);
+			border: 1px solid #eee;
+			box-shadow: 0 0 8px #777;
+			display: inline-block;
+			position: absolute;
+			top: 30px;
+			left: 30px;
+			-webkit-transition: -webkit-transform .4s ease;
+			z-index: 100;
+		}
+		.myPanel #menu.hover .dot{
+			-webkit-transform: rotate(360deg);
+		}
+		.myPanel ul.son{
+			position: relative;
+			line-height: 0;
+			margin: -45px 0 0 25px;
+			z-index: 33;
+		}
+		.myPanel ul.son li{
+			position: absolute;
+			height: 28px;
+			width: 28px;
+			-webkit-transform-origin: 50% 50%;
+		}
+		.myPanel #menu ul.son li:nth-of-type(1){
+			-webkit-transform: rotate(180deg);
+		}
+		.myPanel #menu ul.son li:nth-of-type(2){
+			-webkit-transform: rotate(200deg);
+		}
+		.myPanel #menu ul.son li:nth-of-type(3){
+			-webkit-transform: rotate(220deg);
+		}
+		.myPanel #menu ul.son li:nth-of-type(4){
+			-webkit-transform: rotate(240deg);
+		}
+		.myPanel #menu ul.son li:nth-of-type(5){
+			-webkit-transform: rotate(260deg);
+		}
+		.myPanel ul.son li a{
+			position: absolute;
+			top: 0px;
+			display: block;
+			border-radius: 50%;
+			height: 40px;
+			line-height:40px;
+			width: 40px;
+			text-align: center;
+			overflow: hidden;
+			background: #444;
+			-webkit-backface-visibility: hidden;/*设置进行转换的元素的背面在面对用户时是否可见  有两个值：initial翻转之后上面的内容还是可  hidden 翻转之后上面的内部不可见*/
+			color: #fff;
+			font-weight: bold;
+			text-decoration: none;
+			box-shadow: 0 0 8px #777;
+			font-size: 20px;
+		}
+		.myPanel #menu.hidden ul.son li a{
+			-webkit-animation: my-hidden .5s ease-out 1 both;
+		}
+		@-webkit-keyframes my-hidden{
+			0%{
+				top: 180px;
+				-webkit-transform: rotate(540deg);
+			}
+			5%{
+				top: 170px;
+			}
+			10%{
+				top: 162px;
+			}
+			100%{
+				top: 0px;
+				-webkit-transform: rotate(180deg);
+			}
+		}
+		.myPanel #menu.hover ul.son li a{
+			-webkit-animation: my-expand .5s ease 1 both;
+		}
+		@-webkit-keyframes my-expand{
+			0%{
+				top: 0px;
+				-webkit-transform: rotate(180deg);
+			}
+			90%{
+				top: 180px;
+			}
+			95%{
+				top: 170px;
+			}
+			100%{
+				top: 180px;
+				-webkit-transform: rotate(540deg);
+			}
+		}
+		.myPanel ul.son li:nth-of-type(1) a{
+			background:-webkit-linear-gradient(top,#67c300,#b1e17f);
+			border: 1px solid #65b701;
+			-webkit-animation-delay: .2s;
+		}
+		.myPanel #menu.hover ul.son li:nth-of-type(1) a{
+			-webkit-animation-delay: 0s;
+		}
+		.myPanel ul.son li:nth-of-type(2) a{
+			background:-webkit-linear-gradient(top,#fba0cd,#fcc0de);
+			border: 1px solid #f47cb8;
+			-webkit-animation-delay: .15s;
+		}
+		.myPanel #menu.hover ul.son li:nth-of-type(2) a{
+			-webkit-animation-delay: .05s;
+		}
+		.myPanel ul.son li:nth-of-type(3) a{
+			background:-webkit-linear-gradient(top,#f29800,#ffac1f);
+			border: 1px solid #c37b02;
+			-webkit-animation-delay: .10s;
+		}
+		.myPanel #menu.hover ul.son li:nth-of-type(3) a{
+			-webkit-animation-delay: .10s;
+		}
+		.myPanel ul.son li:nth-of-type(4) a{
+			background:-webkit-linear-gradient(top,#c83a13,#e29888);
+			border: 1px solid #cd2a06;
+			-webkit-animation-delay: .05s;
+		}
+		.myPanel #menu.hover ul.son li:nth-of-type(4) a{
+			-webkit-animation-delay: .15s;
+		}
+		.myPanel ul.son li:nth-of-type(5) a{
+			background:-webkit-linear-gradient(top,#6293dd,#afc8ee);
+			border: 1px solid #3268ba;
+			-webkit-animation-delay: 0s;
+		}
+		.myPanel #menu.hover ul.son li:nth-of-type(5) a{
+			-webkit-animation-delay: .2s;
+		}
+	</style>
+	<div class="myPanel">
+		<div class="menu" id="menu">
+			<ul class="father">
+				<li>
+					<div class="piece">&nbsp;</div>
+				</li>
+				<li>
+					<div class="piece">&nbsp;</div>
+				</li>
+				<li>
+					<div class="piece">&nbsp;</div>
+				</li>
+				<li>
+					<div class="piece">&nbsp;</div>
+				</li>
+				<li>
+					<div class="piece">&nbsp;</div>
+				</li>
+			</ul>
+			<em class="dot">&nbsp;</em>
+			<ul class="son">
+				<li>
+					<a href="#">绿</a>
+				</li>
+				<li>
+					<a href="#">粉</a>
+				</li>
+				<li>
+					<a href="#">黄</a>
+				</li>
+				<li>
+					<a href="#">红</a>
+				</li>
+				<li>
+					<a href="#">蓝</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div class="clearfix"></div>
+</div>
+<script type="text/javascript">
+	var menu = document.getElementById("menu");
+	var animating = false;
+	menu.addEventListener("click",function(){
+	    console.log(animating)
+        if(animating) return;
+		animating = true;    
+	    setTimeout(function(){
+	        animating = false;
+	    },500)
+	    if(this.className == "hover"){
+			this.className = "hidden";
+    		}else{
+	    		this.className = "hover"
+		}
+	},false);
+</script>
+</body>
+</html>

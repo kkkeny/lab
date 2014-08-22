@@ -1,0 +1,70 @@
+<!DOCTYPE html>  
+<html>  
+<head>  
+    <title>b.html</title> 
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    
+</head>  
+<body>
+    <script>
+        window.onload = function(){
+            //b.html用document输出操作系统，浏览器名称，版本
+            var str = "浏览器的操作系统平台<br/>"+navigator.platform+"<br/><br/>浏览器的名称:<br/>"+navigator.appName+"<br/><br/>浏览器的平台和版本信息:<br/>"+getType()+"<br/><br/>"+navigator.userAgent;
+                document.write(str);
+            
+            function getType(){
+                var ua = navigator.userAgent;
+                var str1,str2,str3,str4,str5 ;
+                
+                if(ua.indexOf("MSIE")>0) { 
+                    str1 = ua.match(/MSIE ([\d.]+)/)[1];
+                    //match[0] 匹配正则的全部内容
+                    //match[1] 匹配$1部分也就是第一个括号处的内容。
+                    //以此类推。有多少个括号就有多少个数组因该是这样。。
+                    return "IE:"+str1; 
+                } 
+                if(ua.indexOf("Firefox")>0){
+                    str2 = ua.match(/Firefox\/([\d.]+)/)[1];
+                    return "Firefox:"+str2; 
+                } 
+                if(ua.indexOf("Chrome")>0){
+                    str3 = ua.match(/Chrome\/([\d.]+)/)[1];
+                    return "Chrome:"+str3; 
+                } 
+                if(ua.indexOf("Safari")>0) {
+                    str4 = ua.match(/Version\/([\d.]+)/)[1];
+                    return "Safari:"+str4; 
+                }
+                if(ua.indexOf("Opera")==0) {
+                    str5 = ua.match(/Opera\/([\d.]+)/)[1];
+                    return "Opera:"+str5; 
+                }
+            }
+            
+            document.write("<br/><br/>10秒后，将关闭窗口<br/>");
+            //倒计时10秒关闭窗口，关闭窗口要有确认提醒，点击ok关闭窗口。
+            var num = 10;
+            var t = setInterval(printNum,1000);
+            function printNum(){
+                if(num<1){
+                    clearInterval(t);
+                    closeWin();
+                }else{
+                    document.write(num+" ");
+                    num--;
+                }
+            }
+        };
+        
+        function closeWin(){
+            var meg = confirm("Are you sure you close the window?");
+            if(meg){
+                window.close();
+            }else{
+                document.write("<br/>你取消了关闭操作");
+            }
+        }
+        
+    </script>
+</body>  
+</html> 

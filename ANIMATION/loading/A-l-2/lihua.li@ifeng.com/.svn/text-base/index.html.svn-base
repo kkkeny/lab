@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no"/><meta name="format-detection" content="telephone=no"/>
+<meta name="format-detection" content="email=no"/>
+<title>专题模板----塔读android2.6</title>
+<style type="text/css">
+#box{
+	width: 128px;
+	height: 128px;
+	margin: 100px auto;
+	-webkit-animation: load 0.5s steps(12) infinite;
+}
+@-webkit-keyframes load{
+	from{
+		-webkit-transform: rotate(0deg) ;
+	}
+	to {
+		-webkit-transform: rotate(360deg) ;
+	}
+}
+#con{
+	width: 20px;
+	height: 20px;
+	border-radius: 10px;
+	position:relative;
+	-webkit-animaition: loading 0.01s steps(12) infinite;
+}
+
+</style>
+</head>
+<body>
+<div id="box">
+	<div id="con">
+		<img src="../image/circle2.gif">
+	</div>
+</div>
+</body>
+</html>

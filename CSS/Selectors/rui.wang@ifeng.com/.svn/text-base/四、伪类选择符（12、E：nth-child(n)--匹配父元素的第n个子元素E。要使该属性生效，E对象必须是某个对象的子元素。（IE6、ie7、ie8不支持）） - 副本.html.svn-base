@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+<meta charset="utf-8" />
+<title>css选择符</title>
+<style>
+li:nth-child(3){color:red;}
+</style>
+</head>
+<body>
+<h1>四、伪类选择符 Pseudo-Classes Selectors</h1>
+<div>12、E:nth-child(n)--匹配父元素的第n个子元素E。要使该属性生效，E对象必须是某个对象的子元素。(IE6,7,8不支持)</div>
+<ul>
+  <li>1111</li>
+</ul>
+<ul>
+  <li>222</li>
+  <li><a href="#">222</a></li>
+  <li>222</li>
+</ul>
+<ul>
+  <li>333</li>
+  <li>333</li>
+  <li>333</li>
+</ul>
+</body>
+</html>

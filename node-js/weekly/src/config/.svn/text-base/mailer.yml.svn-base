@@ -1,0 +1,24 @@
+development:
+  mailer: smtp
+  from: 'Tadu Daily Mailer <tech-daily@tadu.com>'
+  host: mail.tadu.com
+  secureConnection: false
+  auth:
+    user: 'tech-daily'
+    pass: Daily4mail
+test:
+  mailer: smtp
+  from: 'Tadu Daily Mailer <tech-daily@tadu.com>'
+  host: mail.tadu.com
+  secureConnection: false
+  auth:
+    user: 'tech-daily'
+    pass: Daily4mail
+production:
+  mailer: smtp
+  from: 'Tadu Daily Mailer <tech-daily@tadu.com>'
+  host: mail.tadu.com
+  secureConnection: false
+  auth:
+    user: 'tech-daily'
+    pass: Daily4mail

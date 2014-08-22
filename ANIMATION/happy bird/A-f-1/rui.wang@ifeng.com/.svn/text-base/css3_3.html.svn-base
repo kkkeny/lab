@@ -1,0 +1,48 @@
+<html>
+	<head>
+		<style type="text/css">
+			#bee{
+			background-image: url(css3.gif);
+			height:27px; width:21px;
+			-webkit-animation: auto-circle 0.5s step-end infinite;
+			}
+
+			@-webkit-keyframes auto-circle{
+			0%{
+			background-position:0 32px;
+			}
+			20%{
+			background-position:21px 32px;
+			}
+			40%{
+			background-position:48px 32px;
+			}
+
+			}
+
+			.forth {
+			position: relative;
+			-webkit-animation-iteration-count: infinite;
+			-webkit-animation-timing-function: linear;
+
+			}
+			.forth { -webkit-animation-name: forth; -webkit-animation-duration: 30s; -webkit-transform: rotateZ(-10deg); }
+
+			@-webkit-keyframes forth {
+			0%        { left: 100px; bottom: 80px; }
+			10%        { left: 160px; bottom: 80px;}
+			20%        { left: 200px; bottom: 80px; }
+			30%        { left: 300px; bottom: 80px; }
+			60%        { left: 400px; bottom: 80px; }
+			70%        { left: 500px; bottom: 80px; }
+			80%        { left: 800px; bottom: 80px; opacity: 0.6; }
+			100%    { left: 900px; bottom: 80px; opacity: 0; }
+			}
+		</style>
+	</head>
+	<body>
+		<div class="forth">
+			<div id="bee"></div>
+		</div>
+	</body>
+</html>

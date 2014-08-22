@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>test</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        html {
+            height: 100%;
+            overflow: hidden;
+        }
+        body {
+            height: 100%;
+            overflow: hidden;
+        }
+        #overlay {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: #e00000;
+            opacity: 0.5;
+        }
+        #overtxt {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            width: 300px;
+            border: 1px solid #e00000;
+        }
+        #main {
+            height: 100%;
+            overflow: auto;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <div id="overlay"></div>
+        <div id="overtxt">
+            <h1>hello overlay</h1>
+        </div>
+    </div>
+    <div id="main">
+        <p>aaa1</p>
+
+        <p>aaa2</p>
+
+        <p>aaa3</p>
+
+        <p>aaa4</p>
+
+        <p>aaa5</p>
+
+        <p>aaa6</p>
+
+        <p>aaa7</p>
+
+        <p>aaa8</p>
+
+        <p>aaa9</p>
+
+        <p>aaa10</p>
+
+        <p>aaa11</p>
+
+        <p>aaa12</p>
+
+        <p>aaa13</p>
+
+        <p>aaa14</p>
+
+        <p>aaa15</p>
+
+        <p>aaa16</p>
+
+        <p>aaa17</p>
+
+        <p>aaa18</p>
+
+        <p>aaa19</p>
+
+        <p>aaa20</p>
+
+        <p>aaa21</p>
+
+        <p>aaa22</p>
+
+        <p>aaa23</p>
+
+        <p>aaa24</p>
+
+        <p>aaa25</p>
+
+        <p>aaa26</p>
+
+        <p>aaa27</p>
+
+        <p>aaa28</p>
+
+        <p>aaa29</p>
+
+        <p>aaa30</p>
+
+        <p>aaa31</p>
+
+        <p>aaa32</p>
+
+        <p>aaa33</p>
+
+        <p>aaa34</p>
+
+        <p>aaa35</p>
+
+        <p>aaa36</p>
+
+        <p>aaa37</p>
+
+        <p>aaa38</p>
+
+        <p>aaa39</p>
+
+        <p>aaa40</p>
+
+        <p>aaa41</p>
+
+        <p>aaa42</p>
+
+        <p>aaa43</p>
+
+        <p>aaa44</p>
+
+        <p>aaa45</p>
+
+        <p>aaa46</p>
+
+        <p>aaa47</p>
+
+        <p>aaa48</p>
+
+        <p>aaa49</p>
+
+        <p>aaa50</p>
+    </div>
+</body>
+</html>

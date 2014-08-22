@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<title>fly</title>
+		<meta name="description" content="" />
+		<meta name="author" content="wangsha" />
+		<meta name="viewport" content="width=device-width; initial-scale=1.0" />
+		<style type="text/css">
+			*{
+				margin:0 auto;
+			}
+            .flybg {
+                margin: 0 auto;
+                background: #eee;
+                position: relative;
+                left:300px;
+                top: 300px;
+            }
+            ul {
+                position: absolute;
+                z-index: -999;
+            }
+            ul li {
+                list-style-type: none;
+                width: 40px;
+                height: 40px;
+                position: absolute;
+                top: 5px;
+				left: 5px;
+            }
+            .li_b{
+            	width: 40px;
+                height: 40px;
+                -webkit-border-radius: 50%;
+                box-sizing: border-box;
+                border: 1px solid #999;
+                box-shadow: 0 0 2px #666;
+                z-index: 10;
+                position: absolute;
+				text-align:center;
+				-webkit-animation: back .5s ease 1 both;
+            }
+            @-webkit-keyframes back{
+	            0%{
+	            	top:-200px;
+	            }
+	            10%{
+	            	top: -220px;
+	            }
+	            100%{
+	            	top:0px;
+	            }
+            }
+            .flybg li:nth-child(1) {
+                -webkit-transform: rotate(0deg);
+            }
+            .flybg li:nth-child(1) .li_b {
+                -webkit-animation-delay: .25s;
+            }
+            .flybg li:nth-child(2) {
+                -webkit-transform: rotate(18deg);
+            }
+            .flybg li:nth-child(2) .li_b {
+                -webkit-animation-delay: .2s;
+            }
+            .flybg li:nth-child(3) {
+                -webkit-transform: rotate(36deg);
+            }
+            .flybg li:nth-child(3) .li_b {
+                -webkit-animation-delay: .15s;
+            }
+            .flybg li:nth-child(4) {
+                -webkit-transform: rotate(54deg);
+            }
+            .flybg li:nth-child(4) .li_b {
+                -webkit-animation-delay: .1s;
+            }
+            .flybg li:nth-child(5) {
+                -webkit-transform: rotate(72deg);
+            }
+            .flybg li:nth-child(5) .li_b {
+                -webkit-animation-delay: .05s;
+            }
+            .flybg li:nth-child(6) {
+                -webkit-transform: rotate(90deg);
+            }
+            .flybg li:nth-child(6) .li_b {
+                -webkit-animation-delay: 0s;
+            }
+             .flybg .plus {
+                -webkit-transform: rotate(-90deg);
+                -webkit-transition: -webkit-transform .5s ease;
+            }
+            .flyone {
+                width: 30px;
+                height: 30px;
+                border: 4px solid #fff;
+                -webkit-border-radius: 50%;
+                background: #aaa;
+            }
+            .star {
+                position: relative;
+                width: 0px;
+                height: 0px;
+                border-right: 12px solid transparent;
+                border-bottom: 8px solid #fff;
+                border-left: 12px solid transparent;
+                -webkit-transform: rotate(35deg);
+                top: 11px;
+            }
+            .star:before {
+                position: absolute;
+                width: 0px;
+                height: 0px;
+                content: "";
+                border-right: 12px solid transparent;
+                border-bottom: 8px solid #fff;
+                border-left: 12px solid transparent;
+                -webkit-transform: rotate(-68deg);
+                left: -12px;
+                top: 0px;
+            }
+            .star:after {
+                position: absolute;
+                width: 0px;
+                height: 0px;
+                content: "";
+                border-right: 4px solid transparent;
+                border-bottom: 12px solid #fff;
+                border-left: 4px solid transparent;
+                -webkit-transform: rotate(-32deg);
+                left: -7px;
+                top: -7px;
+            }
+            .flybg li .star {
+                -webkit-animation: star1 .2s ease-out forwards;
+            }
+             @-webkit-keyframes star1{
+	            0%{
+	            -webkit-transform: rotate(0deg);
+	            }
+	            100%{
+	            -webkit-transform: rotate(360deg);
+	            }
+            }
+            .flybg.over li .star {
+                -webkit-animation: stars .2s ease-in .3s forwards;
+            }
+             @-webkit-keyframes stars{
+	            0%{
+	            -webkit-transform: rotate(0deg);
+	            }
+	            100%{
+	            -webkit-transform: rotate(1080deg);
+	            }
+            }
+            .menu {
+                width: 50px;
+                height: 50px;
+                -webkit-border-radius: 50%;
+                box-sizing: border-box;
+                border: 1px solid #999;
+                box-shadow: 0 0 2px #666;
+                cursor: pointer;
+                z-index: 1001;
+                position: absolute;
+            }
+            .flybg.over ul li .li_b {
+                -webkit-animation: flyout .5s ease 1 both;
+            }
+            @-webkit-keyframes flyout{
+	            0%{
+	            	top: 0px;
+	            }
+	            90%{
+	            	top: -220px;
+	            }
+	            100%{
+	            	top:-200px;
+	            }
+            }
+            .flybg.over li:nth-child(1) .li_b {
+                -webkit-animation-delay: 0s;
+            }
+            .flybg.over li:nth-child(2) .li_b {
+                -webkit-animation-delay: .05s;
+            }
+            .flybg.over li:nth-child(3) .li_b {
+                -webkit-animation-delay: .1s;
+            }
+            .flybg.over li:nth-child(4) .li_b {
+                -webkit-animation-delay: .15s;
+            }
+            .flybg.over li:nth-child(5) .li_b {
+                -webkit-animation-delay: .2s;
+            }
+            .flybg.over li:nth-child(6) .li_b {
+                -webkit-animation-delay: .25s;
+            }
+             .flybg.over .plus {
+                -webkit-transform: rotate(45deg);
+                -webkit-transition: -webkit-transform .5s ease;
+            }
+            .btnin {
+                width: 40px;
+                height: 40px;
+                border: 4px solid #fff;
+                -webkit-border-radius: 50%;
+                background-image: -webkit-linear-gradient(#f88,#f00);
+                -webkit-box-shadow: inset 0px -2px 5px 1px rgba(0,0,0,.3);
+            }
+            .plus {
+                position: relative;
+                left: 0px;
+                top: 18px;
+                width: 24px;
+                height: 4px;
+                background: #fff;
+            }
+            .plus:after {
+                position: absolute;
+                left: 10px;
+                top: -10px;
+                width: 4px;
+                height: 24px;
+                background: #fff;
+                content: "";
+            }
+		</style>
+	</head>
+	<body>
+		<div id="btn" class="flybg" onclick = "toggleClassTest();">
+			<div class="menu">
+				<div class="btnin">
+					<div class="plus"></div>
+				</div>
+			</div>
+			<ul>
+				<li>
+					<div class="li_b">
+						<div class="flyone">
+							<div class="star">
+								1
+							</div>
+						</div>
+					</div>
+				</li>
+				<li>
+					<div class="li_b">
+						<div class="flyone">
+							<div class="star">
+								2
+							</div>
+						</div>
+					</div>
+				</li>
+				<li>
+					<div class="li_b">
+						<div class="flyone">
+							<div class="star">
+								3
+							</div>
+						</div>
+					</div>
+				</li>
+				<li>
+					<div class="li_b">
+						<div class="flyone">
+							<div class="star">
+								4
+							</div>
+						</div>
+					</div>
+				</li>
+				<li>
+					<div class="li_b">
+						<div class="flyone">
+							<div class="star">
+								5
+							</div>
+						</div>
+					</div>
+				</li>
+				<li>
+					<div class="li_b">
+						<div class="flyone">
+							<div class="star">
+								6
+							</div>
+						</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+		<script type="text/javascript">
+			function hasClass(obj, cls) {  
+			    return obj.className.match(new RegExp('(\\s|^)' + cls + '(\\s|$)'));  
+			}  
+			  
+			function addClass(obj, cls) {  
+			    if (!this.hasClass(obj, cls)) obj.className += " " + cls;  
+			}  
+			  
+			function removeClass(obj, cls) {  
+			    if (hasClass(obj, cls)) {  
+			        var reg = new RegExp('(\\s|^)' + cls + '(\\s|$)');  
+			        obj.className = obj.className.replace(reg, ' ');  
+			    }  
+			}  
+			  
+			function toggleClass(obj,cls){  
+			    if(hasClass(obj,cls)){  
+			        removeClass(obj, cls);  
+			    }else{  
+			        addClass(obj, cls);  
+			    }  
+			}  
+			  
+			function toggleClassTest(){  
+			    var obj = document. getElementById('btn');  
+			    toggleClass(obj,"over");  
+			}  
+		</script>
+	</body>
+</html>

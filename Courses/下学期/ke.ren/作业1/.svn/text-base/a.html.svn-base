@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<button id="btn">打开</button>
+	<script>
+
+		var obj = document.getElementById('btn');
+		var width = window.screen.availWidth*0.8;
+		var height = window.screen.availHeight*0.8;
+		var left = (window.screen.availWidth- window.screen.availWidth*0.8)/2;
+		var top1 = (window.screen.availHeight-window.screen.availHeight*0.8)/2;
+		var opener = null;
+		obj.onclick = function(){
+			opener = window.open("./b.html","_blank",'left='+left+',top='+top1+',width='+width+',height='+height+'');
+				var sysName = "";
+				var broName = "";
+				var version = "";
+				setTimeout(function(){
+					var userAgent = navigator.userAgent.toLowerCase();
+					if(userAgent.indexOf("windows")!=-1){
+						sysName+="Windows";
+					}else if(userAgent.indexOf("mac")!=-1){
+						sysName+="Apple";
+					}else{
+						sysName+="Other"
+					}
+
+					if(userAgent.indexOf("msie")!=-1) {   
+				        broName+="IE";   
+				        version+=userAgent.match(/msie\s([\d.]+)/g)[0].match(/[\d.]+/)[0];
+				   	}else if(userAgent.indexOf("firefox")!=-1){   
+				        broName+= "Firefox"; 
+				        version+=userAgent.match(/firefox\/([\d.]+)/g)[0].match(/[\d.]+/)[0]; 
+				   	}else if(userAgent.indexOf("chrome")!=-1){   
+				        broName+= "Chrome";  
+				        version+=userAgent.match(/chrome\/([\d.]+)/g)[0].match(/[\d.]+/)[0];
+				    }else{
+				    	broName+= "Other";
+				    	version+="Other";
+				    }  
+  					
+					opener.document.getElementById('two').innerHTML="system:"+sysName+"---"+"browser:"+broName+"---"+"version:"+version;
+				var obj = opener.document.getElementById('one');
+				var timer = null;
+				timer = setInterval(function(){
+					obj.innerHTML-=1;
+					if(obj.innerHTML == 0){
+						clearInterval(timer);
+						if(opener.confirm("你确定要关闭窗口吗？")){
+							opener.close();
+						}else{
+							return;
+						}
+					}
+				},1000);
+
+			}, 1000);
+		};
+	</script>
+
+	
+</body>
+</html>

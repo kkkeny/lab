@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<title>index</title>
+		<meta name="viewport" content="width=device-width; initial-scale=1.0" />
+		<link rel="shortcut icon" href="/favicon.ico" />
+		<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+		<style type="text/css">
+			*{
+				margin:0;
+				padding:0;
+			}
+			#stage{
+				margin:200px;
+				position: relative;
+				width:200px;
+				height:200px;
+			}
+			menu{
+				width:48px;
+				height:48px;
+				background:#eee;
+				text-align:center;
+				font-size:20px;
+				line-height:42px;
+				border:3px solid #008000;
+				position:absolute;
+				margin:75px;
+				-webkit-box-sizing:border-box;
+				-webkit-border-radius:24px;
+				-webkit-box-shadow: 0 0 3px #333;
+				-webkit-transition:all 0.1s linear;
+				z-index: 10;
+			}
+			menu+ul{
+				width:48px;
+				height:48px;
+				text-align:center;
+				margin:75px;
+				position:absolute;
+			}
+			menu:hover{
+				-webkit-transform: rotate(-45deg)	
+			}
+			menu+ul li{
+				position: absolute;
+				top:5px;
+				left:5px;
+				width:32px;
+				height:32px;
+				list-style: none;
+				background: #eee;
+				border:3px solid red;
+				font-size:20px;
+				line-height:30px;
+				text-align:center;
+				-webkit-box-shadow:0 0 3px red;
+				-webkit-box-sizing:border-box;
+				-webkit-border-radius:16px;
+				-webkit-transform:translate(1px);
+				opacity:0;
+			}
+			menu+ul li a{
+				text-decoration:none;
+				display:block;
+				-webkit-transform-origin:50% 50%;
+				-webkit-transform:rotate(0deg);
+			}
+			menu:hover +ul li{
+				opacity:1;
+			}
+			menu +ul li:nth-child(1){
+				-webkit-transition:all .4s ease .5s;
+			}
+			menu:hover +ul li:nth-child(1){
+				-webkit-transform:rotate(-90deg) translate(150px);
+				-webkit-transition:all .4s cubic-bezier(.46,1.2,.46,1.2) .1s;
+			}
+			menu:hover +ul li:nth-child(1) a{
+				-webkit-animation: round .1s linear 0s 5;
+			}
+			menu +ul li:nth-child(2){
+				-webkit-transition:all .4s ease .4s;
+			}
+			menu:hover +ul li:nth-child(2){
+				-webkit-transform:rotate(-67.5deg)  translate(150px);
+				-webkit-transition:all .4s cubic-bezier(.46,1.2,.46,1.2) .2s;
+			}
+			menu:hover +ul li:nth-child(2) a{
+				-webkit-animation: round .1s linear .1s 5;
+			}
+			menu +ul li:nth-child(3){
+				-webkit-transition:all .4s ease .3s;
+			}
+			menu:hover +ul li:nth-child(3){
+				-webkit-transform:rotate(-45deg) translate(150px);
+				-webkit-transition:all .4s cubic-bezier(.46,1.2,.46,1.2) .3s;
+			}
+			menu:hover +ul li:nth-child(3) a{
+				-webkit-animation: round .1s linear .2s 5;
+			}
+			menu +ul li:nth-child(4){
+				-webkit-transition:all .4s ease .2s;
+			}
+			menu:hover +ul li:nth-child(4){
+				-webkit-transform:rotateZ(-22.5deg) translate(150px);
+				-webkit-transition:all .4s cubic-bezier(.46,1.2,.46,1.2) .4s;
+			}
+			menu:hover +ul li:nth-child(4) a{
+				-webkit-animation: round .1s linear .3s 5;
+			}
+			menu +ul li:nth-child(5){
+				-webkit-transition:all .4s ease .1s;
+			}
+			menu:hover +ul li:nth-child(5){
+				-webkit-transform:rotateZ(0deg) translate(150px);
+				-webkit-transition:all .4s cubic-bezier(.46,1.2,.46,1.2) .5s;
+			}
+			menu:hover +ul li:nth-child(5) a{
+				-webkit-animation: round .1s linear .4s 5;
+			}
+			@-webkit-keyframes round{
+				from{
+					-webkit-transform:rotate(0deg);
+				}
+				to{
+					-webkit-transform:rotate(360deg);
+				}
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="stage">
+			<menu>+</menu>
+			<ul>
+				<li><a href="#">1</a></li>
+				<li><a href="#">2</a></li>
+				<li><a href="#">3</a></li>
+				<li><a href="#">4</a></li>
+				<li><a href="#">5</a></li>
+			</ul>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+<meta charset="utf-8" />
+<title>css选择符</title>
+<style>
+input:focus{color:#6F0; background:#9CF;border:1px solid red;}
+</style>
+</head>
+<body>
+<h1>四、伪类选择符 Pseudo-Classes Selectors</h1>
+<div>5、E:focus--设置对象在成为输入焦点（该对象的onfocus事件发生）时的样式(IE6,7不支持)webkit内核浏览器会默认给:focus状态的元素加上outline的样式。</div>
+<ul>
+  <li>1111</li>
+  <li><input type="text" value="111"></li>
+  <li>111</li>
+</ul>
+<ul>
+  <li>222</li>
+  <li><input type="text" value="222"></li>
+  <li>222</li>
+</ul>
+<ul>
+  <li>333</li>
+  <li>333</li>
+  <li>333</li>
+</ul>
+</body>
+</html>

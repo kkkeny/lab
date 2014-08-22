@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+        <title>index</title>
+        <meta name="description" content="" />
+        <meta name="author" content="和健" />
+        <meta name="viewport" content="width=device-width; initial-scale=1.0" />
+        <style type="text/css">
+            body {
+                text-align: center;
+            }
+            ul {
+                position: relative;
+            }
+            ul li {
+                list-style: none;
+                width: 21px;
+                height: 21px;
+                display: inline-block;
+                position: absolute;
+                left: 53.5px;
+                background: url(../image/circle2.gif) center center no-repeat;
+                -webkit-transform-origin: center 64px;
+            }
+            li:nth-child(2) {
+                -webkit-transform: rotate(30deg);
+                background-size: 9%;
+            }
+            li:nth-child(3) {
+                -webkit-transform: rotate(60deg);
+                background-size: 18%;
+            }
+            li:nth-child(4) {
+                -webkit-transform: rotate(90deg);
+                background-size: 27%;
+            }
+            li:nth-child(5) {
+                -webkit-transform: rotate(120deg);
+                background-size: 36%;
+            }
+            li:nth-child(6) {
+                -webkit-transform: rotate(150deg);
+                background-size: 45%;
+            }
+            li:nth-child(7) {
+                -webkit-transform: rotate(180deg);
+                background-size: 54%;
+            }
+            li:nth-child(8) {
+                -webkit-transform: rotate(210deg);
+                background-size: 63%;
+            }
+            li:nth-child(9) {
+                -webkit-transform: rotate(240deg);
+                background-size: 72%;
+            }
+            li:nth-child(10) {
+                -webkit-transform: rotate(270deg);
+                background-size: 81%;
+            }
+            li:nth-child(11) {
+                -webkit-transform: rotate(300deg);
+                background-size: 90%;
+            }
+            li:nth-child(12) {
+                -webkit-transform: rotate(330deg);
+                background-size: 99%;
+            }
+            .loading {
+                margin: 0;
+                padding: 0;
+                width: 128px;
+                height: 128px;
+                display: inline-block;
+                -webkit-animation-name: turning;
+                -webkit-animation-duration: 0.5s;
+                -webkit-animation-direction: normal;
+                -webkit-animation-iteration-count: infinite;
+                -webkit-animation-timing-function: steps(12);
+            }
+            @-webkit-keyframes turning{
+            from {
+                -webkit-transform: rotate(0deg);
+            }
+            to {
+                -webkit-transform: rotate(360deg);
+            }
+            }
+        </style>
+    </head>
+    <body>
+        <ul class="loading">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+        <div>
+            <a href="#" class="link">xx</a>
+        </div>
+        <div>
+            <a href="#" class="link">xx</a>
+        </div>
+        <div>
+            <a href="#" class="link">xx</a>
+        </div>
+        <div>
+            <a href="#" class="link abcxxx">xx</a>
+        </div>
+        <div>
+            <a href="#" class="link">xx</a>
+        </div>
+    </body>
+</html>

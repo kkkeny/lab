@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>无标题文档</title>
+		<script type="text/javascript">
+			// function createMessage() {
+			// var oDiv = document.createElement("div");
+			// var oP1 = document.createElement("p");
+			// var oP2 = document.createElement("p");
+			// var oP3 = document.createElement("p");
+			// var opText1 = oDiv.appendChild(oP1);
+			// var opText2 = oDiv.appendChild(oP2);
+			// var opText3 = oDiv.appendChild(oP3);
+
+			// var oText = document.createTextNode("<div id=\"example\" class=\"box\">");
+			// var oText1 = document.createTextNode("塔读文学");
+			// var oText2 = document.createTextNode("</div>");
+			// opText1.appendChild(oText);
+			// opText2.appendChild(oText1);
+			// opText3.appendChild(oText2);
+			// document.body.appendChild(oDiv);
+			// }
+			function createMessage() {
+				var oDiv = document.createElement("div");
+
+				oDiv.setAttribute('id', 'example');
+				oDiv.className = 'box';
+
+				var oP = document.createElement("p");
+				var opText = oDiv.appendChild(oP);
+
+				var oText = document.createTextNode("塔读文学");
+				opText.appendChild(oText);
+
+				document.body.appendChild(oDiv);
+			}
+		</script>
+	</head>
+	<body onload="createMessage()">
+		
+	</body>
+</html>

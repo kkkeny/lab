@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+<meta charset="utf-8" />
+<title>css选择符</title>
+<style>
+
+
+ul li::selection{ color:#6F0; background:#000}
+</style>
+</head>
+<body>
+<h1>四、伪对象类选择符 Pseudo-Classes Selectors</h1>
+<div>5、E::selection--设置对象被选择时的样式(IE6,7,8，火狐4-18不支持)</div>
+<ul>
+    <li>
+    <p>所发sadsaasdasdas生的事</p>
+    </li>
+   	<li>武器二3</li>
+</ul>
+</body>
+</html>

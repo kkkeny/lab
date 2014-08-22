@@ -1,0 +1,151 @@
+<!DOCTYPE html PUBLIC "-//W3C//Dli XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/Dli/xhtml1-transitional.dli">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+		<title>index</title>
+		<style>
+		*{
+			padding: 0;
+			margin: 0;
+		}
+		body{
+			text-align:center;
+		}
+		ul{
+			margin:20px auto;
+			width: 500px;
+			text-align: left;
+			border:3px solid #999; 
+			padding:10px;
+			background: #eee;
+		}
+			ul li{
+				background: red;
+				display:block;
+				padding-left:10px;
+				position: relative;
+				height:25px;
+				line-height:25px;
+				border-bottom:1px dotted #333;
+			}
+			li em{
+				position:absolute;
+				right:10px;
+				top:0;
+			}
+			.cls1{
+				_background:green;
+			}
+			.cls2{
+				-background: green;
+			}
+			.cls3{
+				|background: green;
+			}
+			.cls4{
+				$background: green;
+			}
+			.cls5{
+				&background: green;
+			}
+			.cls6{
+				*background: green;
+			}
+			.cls7{
+				=background: green;
+			}
+			.cls8{
+				+background:green;
+			}
+			.cls9{
+				@background:green;
+			}
+			.cls10{
+				,background:green;
+			}
+			.cls11{
+				.background: green;
+			}
+			.cls12{
+				/background:green;
+			}
+			.cls13{
+				`background:green;
+			}
+			.cls14{
+				#background: green;
+			}
+			.cls15{
+				~background:green;
+			}
+			.cls16{
+				?background: green;
+			}
+			.cls17{
+				:background:green;
+			}
+			.cls18{
+				<background:green;
+			}
+			.cls19{
+				>background:green;
+			}
+			.cls20{
+				/background:green;
+			}
+			.cls21{
+				background: green !ie; /*after ! can be anything string*/
+			}
+			.cls22{
+				color:#006100;
+				background: green\0/; /*must end of all rules*/
+			}
+			.cls23{
+				background: green\9;
+			}
+			.cls24{
+				background/*\**/:green\9;
+			}
+			.cls25{
+				background/**/:green;
+			}
+			.cls30:nth-last-of-type(1n){
+				background: green\9;
+			}
+		</style>
+	</head>
+
+	<body>
+		
+				<ul >
+					<li class="cls1">_color <em>IE6</em></li>
+					<li class="cls2">-color <em>IE6</em></li>
+					<li class="cls3">|color <em>IE6/7</em></li>
+					<li class="cls4">$color <em>IE6/7</em></li>
+					<li class="cls5">&color <em>IE6/7</em></li>
+					<li class="cls6">*color <em>IE6/7</em></li>
+					<li class="cls7">=color <em>IE6/7</em></li>
+					<li class="cls8">+color <em>IE6/7</em></li>
+					<li class="cls9">@color <em>IE6/7</em></li>
+					<li class="cls10">,color <em>IE6/7</em></li>
+					<li class="cls11">.color <em>IE6/7</em></li>
+					<li class="cls12">/color <em>IE6/7</em></li>
+					<li class="cls13">`color <em>IE6/7</em></li>
+					<li class="cls14">#color <em>IE6/7</em></li>
+					<li class="cls15">~color <em>IE6/7</em></li>
+					<li class="cls16">?color <em>IE6/7</em></li>
+					<li class="cls17">:color <em>IE6/7</em></li>
+					<li class="cls18">&lt;color <em>IE6/7</em></li>
+					<li class="cls19">&gt;color <em>IE6/7</em></li>
+					<li class="cls20">/color <em>IE6/7</em></li>
+					<li class="cls21">value !anthing <em>IE6/7</em></li>
+					<li class="cls22">value\0/ <em>IE8/9</em></li>
+					<li class="cls30">.selector:nth-of-type(1n){color:blue\9;} <em>IE 9/10</em></li>
+					<li class="cls23">value\9 <em>IE 6/7/8/9/10</em></li>
+					<li class="cls24">color/*\**/:value\9 <em>IE 6/7/8/9/10</em></li>
+					<li class="cls25">color/**/ <em>NOT IE6</em></li>
+				</ul>
+</html>

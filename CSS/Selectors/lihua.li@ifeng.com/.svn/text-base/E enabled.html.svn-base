@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no"/>
+<meta name="format-detection" content="telephone=no"/>
+<meta name="format-detection" content="email=no"/>
+<title></title>
+<style type="text/css">
+body,div,p{
+	margin: 0px;
+	padding: 0px;
+}
+.f_input[type="text"]:enabled{
+	border: 1px solid black;
+	background:red;
+}
+</style>
+</head>
+<body>
+<form>
+	<input type="text" value="可输入状态" class="f_input" />
+	
+</form>
+</body>
+</html>

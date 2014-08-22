@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+        <meta name="viewport" content="initial-scale=1, user-scalable=no">
+        <title>g-sensor</title>
+
+        <style type="text/css">
+            * {
+                margin: 0;
+                padding: 0;
+            }
+            html {
+                width: 100%;
+                height: 100%;
+            }
+            body {
+                background: url(./bg.png) repeat 0 0;
+                width: 100%;
+                height: 100%;
+            }
+            audio {
+                width: 0;
+                height: 0;
+            }
+            #handler {
+                width: 100%;
+                height: 100%;
+                position: relative;
+            }
+            .top {
+                height: 50%;
+                width: 100%;
+                position: absolute;
+                left: 0;
+                top: 0;
+                background: url(./shake.png) no-repeat center -webkit-calc(100% + 100px);
+                -webkit-background-size: 200px 200px;
+            }
+            .bottom {
+                height: 50%;
+                width: 100%;
+                left: 0;
+                top: 50%;
+                position: absolute;
+                background: url(./shake.png) no-repeat center -100px;
+                -webkit-background-size: 200px 200px;
+            }
+            #handler.active .top {
+                -webkit-animation: up 2s linear;
+                border-bottom: 2px solid #eee;
+            }
+            #handler.active .bottom {
+                -webkit-animation: down 2s linear;
+                border-top: 2px solid #eee;
+            }
+            @-webkit-keyframes up{
+            0%{
+            opacity:1;
+            }
+            100%{
+            top:-50%;
+            opacity:0;
+            }
+            }
+            @-webkit-keyframes down{
+            0%{
+            opacity:1;
+            }
+            100%{
+            top:100%;
+            opacity:0;
+            }
+            }
+        </style>
+    </head>
+    <body >
+        <audio id="shake_sound" preload="auto" >
+            <source src="shake_sound_male.mp3" type="audio/mpeg" />
+        </audio>
+
+        <div id="handler">
+            <div class="top"></div>
+            <div class="bottom"></div>
+        </div>
+        <script>
+            var flag = true;
+            document.body.addEventListener('touchstart', function()
+            {
+            	if (!flag)
+                    return;
+                document.getElementById('handler').className = "active";
+                setTimeout(function()
+                {
+                    document.getElementById('handler').className = "";
+                }, 2000)
+                
+                document.getElementById('shake_sound').play();
+                flag = false;
+            })
+            if (window.DeviceOrientationEvent)
+            {
+                /*
+                window.addEventListener('deviceorientation',function(event){
+                //document.querySelector('h1').innerText='Orientation - Alpha: '+event.alpha+', Beta: '+event.beta+', Gamma: '+event.gamma;
+                })
+                */
+                //create custom event
+                var shakeEvent = document.createEvent('Event');
+                shakeEvent.initEvent('shake', true, true);
+                //default velocity threshold for shake to register
+                var threshold = 15;
+                var during = 1000;
+                //use date to prevent multiple shakes firing
+                var lastTime = new Date();
+                //accelerometer values
+                var lastX = null;
+                var lastY = null;
+                var lastZ = null;
+                window.addEventListener('devicemotion', function(e)
+                {
+                    //console.log('X:'+event.accelerationIncludingGravity.x+";Y:"+event.acceleration.y+";z:"+event.acceleration.z);
+                    var current = e.accelerationIncludingGravity, currentTime, timeDifference, deltaX = 0, deltaY = 0, deltaZ = 0;
+                    if ((lastX === null) && (lastY === null) && (lastZ === null))
+                    {
+                        lastX = current.x;
+                        lastY = current.y;
+                        lastZ = current.z;
+                        return;
+                    }
+                    deltaX = Math.abs(lastX - current.x);
+                    deltaY = Math.abs(lastY - current.y);
+                    deltaZ = Math.abs(lastZ - current.z);
+                    if (((deltaX > threshold) && (deltaY > threshold)) || ((deltaX > threshold) && (deltaZ > threshold)) || ((deltaY > threshold) && (deltaZ > threshold)))
+                    {
+                        //calculate time in milliseconds since last shake registered
+                        currentTime = new Date();
+                        timeDifference = currentTime.getTime() - lastTime.getTime();
+                        if (timeDifference > during)
+                        {
+                            window.dispatchEvent(shakeEvent);
+                            lastTime = new Date();
+                        }
+                    }
+                    lastX = current.x;
+                    lastY = current.y;
+                    lastZ = current.z;
+                })
+                //触发事件成功
+                window.addEventListener('shake', function(event)
+                {
+                    document.getElementById('shake_sound').play();
+                    document.getElementById('handler').className = "active";
+                    setTimeout(function()
+                    {
+                        document.getElementById('handler').className = "";
+                    }, 2000)
+                })
+            }
+            else
+            {
+                alert('device orientation not supported!')
+            }
+        </script>
+    </body>
+</html>

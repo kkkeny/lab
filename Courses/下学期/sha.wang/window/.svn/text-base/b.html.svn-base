@@ -1,0 +1,99 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>b</title>
+</head>
+<body>
+    <div id="clock" style="height:20px;width:200px;"></div>
+    <div id="txt"></div>
+	<script>
+	    //document.write(window.screenLeft+"==="+window.screenTop+"==="+window.innerWidth+"==="+window.innerHeight);
+	    
+	    var win = window.navigator.platform;
+	    var nav = navigator.appName;
+	    var ver = navigator.appVersion;
+	    var txt = navigator.userAgent;
+	    document.write("系统："+win+"<br/>"+txt);
+	    function getInfor(){
+	        var infor=navigator.userAgent.toLowerCase();
+            var ie_i = infor.indexOf("msie");
+            var f_i = infor.indexOf("firefox");
+            var c_i = infor.indexOf("chrome");
+            var s_i = infor.indexOf("safari");
+            var o_i = infor.indexOf("opr");
+            if(ie_i>0){
+                var v = parseFloat(infor.substr(ie_i + "msie".length));
+                document.getElementById("txt").innerHTML="你的浏览器是ie,版本是"+v;
+            }else if(o_i>0){
+                var v = parseFloat(infor.substr(o_i + "opr".length+1));
+                document.getElementById("txt").innerHTML="你的浏览器是opera,版本是"+v;
+            }else if(f_i>0){
+                var v = parseFloat(infor.substr(f_i + "firefox".length+1));
+                document.getElementById("txt").innerHTML="你的浏览器是firefox,版本是"+v;
+            }else if(c_i>0){
+                var v = parseFloat(infor.substr(c_i + "chrome".length+1));
+                document.getElementById("txt").innerHTML="你的浏览器是chrome,版本是"+v;
+            }else if(s_i>0&&c_i<0){
+                var v = parseFloat(infor.substr(s_i + "safari".length+1));
+                document.getElementById("txt").innerHTML="safari,版本是"+v;
+            }
+	    }
+	    getInfor();
+	    /*
+        function getBrowserInfo(){
+            var agent = navigator.userAgent.toLowerCase() ;
+            var regStr_ie = /msie [\d.]+;/gi ;
+            var regStr_ff = /firefox\/[\d.]+/gi;
+            var regStr_chrome = /chrome\/[\d.]+/gi ;
+            var regStr_saf = /safari\/[\d.]+/gi ;
+            var regStr_opr= /opr\/[\d.]+/gi ;
+            //IE
+            if(agent.indexOf("msie") > 0){
+                document.getElementById("txt").innerHTML="你的浏览器是msie，版本号是"+(agent.match(regStr_ie)+"").replace(/[^0-9.]/ig,"");
+                //return agent.match(regStr_ie) ;
+            }
+            //firefox
+            if(agent.indexOf("firefox") > 0){
+                document.getElementById("txt").innerHTML="你的浏览器是firefox，版本号是"+(agent.match(regStr_ff)+"").replace(/[^0-9.]/ig,"");
+            }
+            //Chrome
+            if(agent.indexOf("chrome") > 0){
+                document.getElementById("txt").innerHTML="你的浏览器是chrome，版本号是"+(agent.match(regStr_chrome)+"").replace(/[^0-9.]/ig,"");
+            }
+            //Safari
+            if(agent.indexOf("safari") > 0 && agent.indexOf("chrome") < 0){
+                document.getElementById("txt").innerHTML="你的浏览器是safari，版本号是"+(agent.match(regStr_saf)+"").replace(/[^0-9.]/ig,"");
+            }
+            //opera
+            if(agent.indexOf("opr") > 0){
+                document.getElementById("txt").innerHTML="opera，版本号是"+(agent.match(regStr_opr)+"").replace(/[^0-9.]/ig,"");
+            }
+        }
+        getBrowserInfo();*/
+       
+	    function timer(){
+	        var t = 10;
+	        document.getElementById("clock").innerHTML="关闭窗口倒计时"+t;
+    	    var set = setInterval(function(){
+                if(t>1){
+                    t--;
+                    document.getElementById("clock").innerHTML="关闭窗口倒计时"+t;
+                }
+                else if(t==1){
+                    var con = window.confirm("确认要关闭吗");
+                    if(con==true)
+                    close();
+                    else{
+                        document.getElementById("clock").innerHTML="取消关闭";
+                        window.clearInterval(set);
+                    } 
+                }
+            },1000);
+        }
+        timer();
+	</script>
+</body>
+</html>
+
+

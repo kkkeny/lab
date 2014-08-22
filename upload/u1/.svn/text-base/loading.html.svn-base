@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<title>loadding</title>
+		<meta name="description" content="" />
+		<meta name="author" content="wangsha" />
+		<meta name="viewport" content="width=device-width; initial-scale=1.0" />
+		<link rel="stylesheet" href="css/loading.css"/>		
+	</head>
+	<body>
+		<article id="ws_load" style="visibility: visible;">
+			<span id="ws_point">加载中</span>
+		</article>		
+	</body>
+</html>

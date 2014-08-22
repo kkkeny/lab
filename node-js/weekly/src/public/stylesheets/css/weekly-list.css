@@ -1,0 +1,255 @@
+.department {
+    width: 145px;
+    height: 28px;
+    background: #324f4f;
+    text-align: center;
+    line-height: 28px;
+    color: #ffffff;
+    position: relative;
+}
+.department .triangle-down {
+    position: absolute;
+    bottom: -4px;
+    right: 15px;
+    width: 0;
+    height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 4px solid #324f4f;
+}
+.week-list {
+    width: 950px;
+    margin: 15px auto;
+}
+.content .head {
+    border-bottom: 1px solid #dddddd;
+    height: 36px;
+    line-height: 32px;
+}
+.week-list p {
+    line-height: 22px;
+}
+.content .head + p {
+    padding-top: 10px;
+}
+.content .head .myWeekly {
+    position: relative;
+    top: 10px;
+    float: left;
+    width: 200px;
+    height: 26px;
+    border-bottom: 1px solid #259d9d;
+    font-size: 14px;
+    line-height: 25px;
+}
+.content .head ul {
+    float: right;
+    /*width: 240px;*/
+}
+.content .head li {
+    height: 32px;
+    float: right;
+    color: #797979;
+}
+.content .head li input {
+    border: none;
+    width: 100%;
+    height: 26px;
+    text-align: center;
+    font-weight: bold;
+}
+.content .head li {
+    display: inline-block;
+    line-height: 30px;
+    text-align: center;
+    font-weight: bold;
+    color: #000000;
+    height: 30px;
+    border: 1px solid #c4c4c4;
+    margin-left: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    -webkit-box-shadow: 1px 1px 0px #ccc;
+}
+.content .head li.addWeekly{
+    padding: 0 20px;
+}
+.content .head li:hover{
+    -webkit-box-shadow: 0px 0px 0px #ccc;
+}
+.content table {
+    margin-top: 15px;
+}
+.content table th {
+    padding: 6px 0;
+    background: #eeeeee;
+    text-align: center;
+    font-weight: bold;
+}
+.content table td {
+    padding: 10px 5px;
+    line-height: 18px;
+    text-align: center;
+    word-wrap: break-word;
+}
+.content table td:last-of-type a:nth-of-type(2) {
+    color: red;
+}
+.content table .th1 ,.content table .th2 {
+    width: 130px;
+    max-width: 130px;
+}
+.content table .th3 {
+    width: 40px;
+    max-width: 40px;
+}
+.content table .th4 {
+    width: 305px;
+    max-width: 305px;
+}
+.content table .th5 {
+    width: 275px;
+    max-width: 275px;
+}
+.content table .th-6 {
+    width: 90px;
+    max-width: 90px;
+}
+.content table .left {
+    text-align: left;
+    padding: 6px 6px;
+}
+.content table th, .content table tr {
+    border: 1px solid #dddddd;
+}
+.content table tr{
+    -webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;
+    vertical-align: top;
+}
+.content table tr:hover, .content table tr.edit{
+    background: #ffffdd;
+    cursor: pointer;
+}
+.content button {
+    width: 242px;
+    height: 46px;
+    line-height: 46px;
+    background: #345957;
+    display: block;
+    margin: 10px 0 100px;
+    float:right;
+    font-size: 24px;
+    color: #ffffff;
+    border: 0;
+    border-bottom: 3px solid #122f30;
+    border-radius: 5px;
+}
+.content button a{
+	color:#fff;
+}
+.content button img {
+    margin-right: 10px;
+    position: relative;
+    top:2px;
+}
+section.add {
+    width: 450px;
+    height: 465px;
+    margin: 0 auto;
+    border: 1px solid #a9a9a9;
+    position: absolute;
+    top: 100px;
+    left: 50%;
+    margin-left: -225px;
+    background: #ffffff;
+    z-index: 100;
+    display: none;
+}
+.add h3 {
+    height: 26px;
+    background: #ececec;
+    text-align:center;
+    line-height: 26px;
+}
+.add label {
+    width: 60px;
+    display: inline-block;
+    text-align: right;
+    color: #333333;
+    font-weight: bold;
+    margin: 12px 20px;
+}
+.add .username, .add .date {
+    border: 0;
+}
+.add .target-add, .add .platform {
+    width: 225px;
+    height: 30px;
+    line-height: 30px;
+    border: 1px solid #d9d9d9;
+}
+.add .state {
+    width: 80px;
+    height: 30px;
+    border: 1px solid #d9d9d9;
+}
+.add .remarks, .add .scheme {
+    width: 314px;
+    height: 74px;
+    border: 1px solid #d9d9d9;
+    resize: none;
+}
+.add .scheme {
+    margin-top: 5px;
+}
+.btn {
+    width: 175px;
+    margin: 10px auto;
+}
+.addBtn, .closeBtn {
+    width: 80px;
+    height: 30px;
+    background: #f4f4f4;
+    border: 1px solid #dcdcdc;
+    margin: 0 auto;
+    display: inline-block;
+}
+.addBtn {
+    margin-right: 12px;
+}
+.shade {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0.2;
+    background: #000;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    display: none;
+}
+.errorInfo{
+    font-size: 14px;
+    text-align: center;
+    color: red;
+}
+input.time{
+    cursor:pointer;
+}
+.add-content *{
+    vertical-align: middle;
+}
+div.btn:last-of-type{
+    width:100%;
+    text-align:center;
+}
+button.addBtn:last-of-type{
+    margin: 0;
+}
+.add-content.desc{
+    text-align:center;
+    margin-top:20px;
+}
+textarea[name=desc]{
+    width:90% !important;
+}

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no"/>
+<meta name="format-detection" content="telephone=no"/>
+<meta name="format-detection" content="email=no"/>
+<title></title>
+<style type="text/css">
+body,div,p{
+	margin: 0px;
+	padding: 0px;
+}
+.f_checkbox:checked+span,.f_radio:checked+span{
+	background: red;
+}
+.f_checkbox:checked+span:after{
+	content: "被选中";
+}
+</style>
+</head>
+<body>
+<form>
+	<label><input type="radio" class="f_radio" name="radio" /><span>radio</span></label>
+	<label><input type="radio" class="f_radio" name="radio" /><span>radio</span></label><br />
+	<label><input type="checkbox" class="f_checkbox" name="nam" /><span>checkbox</span></label>
+	<label><input type="checkbox" class="f_checkbox" name="nam" /><span>checkbox</span></label>
+</form>
+</body>
+</html>

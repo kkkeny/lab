@@ -1,0 +1,27 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 thansitional//EN" "http://www.w3.org/th/xhtml1/DTD/xhtml1-thansitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>aHtml</title>
+</head>
+    <body> 
+        <script type="text/javascript">
+          
+           window.onload = open_html;
+            
+            var screenWidth=window.screen.availWidth;
+            var screenHeight=window.screen.availHeight;
+            var newWindowWidth=screenWidth*0.8;
+            var newWindowHeight=screenHeight*0.8;
+            var newWindowLeft=screenWidth*0.1;
+            var newWindowTop=screenHeight*0.1;
+            
+            function open_html() {
+                window.open("b.html","newwindow","width="+newWindowWidth+",height="+newWindowHeight+",left="+newWindowLeft+",top="+newWindowTop+",toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=yes, copyhistory=yes");
+            }
+            
+       /*a.html打开一个b.html，b.html的宽高是整个屏幕的80%，将他移到中央的位置，b.html用document输出操作系统，浏览器名称，版本，
+                    倒计时10秒关闭窗口，关闭窗口要有确认提醒，点击ok关闭窗口。*/
+        </script>
+    </body>
+</html>

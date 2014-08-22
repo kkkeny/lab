@@ -1,0 +1,8 @@
+<aside>
+    <ul id="aside">
+        <li class="personal-center"><a href="javascript:;">个人中心</a><div class="triangle-down"></div></li>
+        <li class=""><a href="<%= pathTo.edit_user(signedIn())%>">个人信息</a></li>
+        <li class=""><a href="<%= pathTo.repwd_user(signedIn())%>">修改密码</a></li>
+        <li class=""><a href="<%= pathTo.tags_user(signedIn())%>">常用设置</a></li>
+    </ul>
+</aside>

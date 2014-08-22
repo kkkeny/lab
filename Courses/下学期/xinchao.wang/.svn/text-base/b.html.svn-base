@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title>Untitled Document</title>
+    </head>
+    	
+    <body>
+    	<script type="text/javascript" >
+    		function println(key,val){
+    			document.write(key+":\n"+val+'</br>');
+    		}
+
+    		window.onload =function(){
+    			//print system
+    			println('system', window.navigator.platform);
+    			//print browswer
+				println('browswer', window.navigator.userAgent);
+    			//print browser version
+    			println('browswer version', /(?:IE |fox\/|ome\/)(\d+.\d)/.exec(window.navigator.userAgent)[1]);	
+    		}
+
+    		
+
+    		//print time down
+    		var delay = 10;
+    		setInterval(function(){
+    			if(delay > 0){
+    				println('剩余时间', delay);
+    			} else if( delay == 0){
+    				if(window.confirm('确定要关闭窗口吗？')){
+    					window.close();
+    				}
+    			}		
+    			delay --;
+    		},1000);
+    	</script>
+    </body>
+</html>

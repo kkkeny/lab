@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no"/>
+<meta name="format-detection" content="telephone=no"/>
+<meta name="format-detection" content="email=no"/>
+<title></title>
+<style type="text/css">
+ul{
+	list-style: none;
+}
+.box>p{
+	color: red;
+}
+.box>.box_son>.box_grandchild{
+	color: red;
+	display: block;
+}
+</style>
+</head>
+<body>
+<div class="box">
+	<p>
+		例一： .box>p
+		<div class="boxP_son">
+			<p>.box>p .boxP_son p</p>
+		</div>
+	</p>	
+	<div class="box_son">
+		例二.box>box_son
+		<div class="box_grandchild"><p>.box>box_son box_grandchild p</p></div>
+	</div>
+
+</div>
+</body>
+</html>

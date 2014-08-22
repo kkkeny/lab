@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>css3</title>
+<style type=text/css>
+	*{
+		margin:0;
+		padding:0; 
+	}
+	.mycircle{
+		width:128px;
+		margin:20px auto 0 auto;
+	}
+	.mycircle img{
+		-webkit-animation:mycircle 0.5s steps(12) infinite;
+		width:128px;
+		height:128px;
+	}
+	@-webkit-keyframes mycircle{
+		from{
+			-webkit-transform:rotate(0deg);
+		}
+		to{
+			-webkit-transform:rotate(360deg);
+		}
+	}
+	/*自绘loading*/
+	.circlePanel{
+		width:100px;
+		height:100px;
+		border-radius: 50px;
+		margin:130px auto 0 auto;
+		-webkit-animation:mycirclePanel 0.5s steps(12) infinite;
+	}
+	@-webkit-keyframes mycirclePanel{
+		from{
+			-webkit-transform:rotate(-180deg);
+		}
+		to{
+			-webkit-transform:rotate(180deg);
+		}
+	}
+	.drawCircle{
+		width:20px;
+		height:20px;
+		background:#04aeda;
+		border-radius: 10px;
+		-webkit-animation:mydrawCircle 0.5s steps(12) infinite;
+		position:relative;
+	}
+	.drawCircle:before{
+		content: "";
+		position: absolute;
+		left: 0;
+		top: 100px;
+		width: 10px;
+		height: 10px;
+		background: #04aeda;
+		border-radius:5px;
+		-webkit-animation:mydrawCircle2 0.5s steps(12) infinite;
+	}
+	@-webkit-keyframes mydrawCircle{
+		from{
+			width:20px;
+			height:20px;
+			border-radius: 10px;
+		}
+		to{
+			width:0px;
+			height:0px;
+			border-radius: 0px;
+		}
+	}
+	@-webkit-keyframes mydrawCircle2{
+		from{
+			-webkit-transform:rotate(0deg);
+		}
+		to{
+			-webkit-transform:rotate(360deg);
+		}
+	}
+</style>
+</head>
+<body>
+<div class="mycircle"><img src="../image/circle.gif"/></div>
+<div class="circlePanel">
+	<div class="drawCircle"></div>
+</div>
+</body>
+</html>

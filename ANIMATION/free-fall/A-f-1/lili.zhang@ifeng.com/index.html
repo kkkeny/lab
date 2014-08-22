@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>自由落体－css3</title>
+<style type=text/css>
+	*{
+		margin: 0;
+		padding: 0; 
+	}
+	a{
+		text-decoration: none;
+	}
+	ul,li,div{
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+	.clearfix{
+		clear: both;
+	}
+	.warp{
+		margin-top: 50px;
+	}
+	
+	/*自由落体*/
+	.ballSquare{
+		position: relative;
+		top: -300px;
+		left: 200px;
+		width: 100px;
+		height: 800px;
+		background: transparent;
+	}
+	.ball{
+		width: 100px;
+		height: 100px;
+		border-radius: 50px;
+		background: -webkit-linear-gradient(top,#b1e17f,#67c300);
+		border: 1px solid #65b701;
+		box-shadow: inset 0 -5px 15px rgba(255,255,255,0.28),inset -2px -1px 40px rgba(0,0,0,0.28), 0 0 5px #aaa;
+		position: absolute;
+		top: 0px;
+		z-index: 3;
+	}
+	.ball:after{
+		position: absolute;
+		top: 10px;
+		left: 20px;
+		width: 60px;
+		height: 30px;
+		content: "";
+		background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(232,232,232,1)), color-stop(1%,rgba(232,232,232,1)), color-stop(100%,rgba(255,255,255,0)));
+		border-radius: 40px / 20px;
+	}
+	.warp a:hover ~ .ballSquare .ball{
+		-webkit-animation: jump 5s 1 forwards;
+	}
+	@-webkit-keyframes jump{
+		0% {
+			top: 0;
+			-webkit-animation-timing-function: ease-in;
+		}
+		10% {
+			top: 700px;
+			-webkit-animation-timing-function: ease-out;
+		}
+		18% {
+			top: 450px;		
+			-webkit-animation-timing-function: ease-in;
+		}
+		26% {
+			top: 700px;		
+			-webkit-animation-timing-function: ease-out;
+		}
+		34% {
+			top: 500px;
+			-webkit-animation-timing-function: ease-in;
+		}
+		42% {
+			top: 700px;
+			-webkit-animation-timing-function: ease-out;
+		}
+		50% {
+			top: 550px;
+			-webkit-animation-timing-function: ease-in;
+		}
+		58% {
+			top: 700px;		
+			-webkit-animation-timing-function: ease-out;
+		}
+		66% {
+			top: 600px;		
+			-webkit-animation-timing-function: ease-in;
+		}
+		74% {
+			top: 700px;		
+			-webkit-animation-timing-function: ease-out;
+		}
+		82% {
+			top: 650px;		
+			-webkit-animation-timing-function: ease-in;
+		}
+		90% {
+			top: 700px;		
+			-webkit-animation-timing-function: ease-out;
+		}
+		95% {
+			top: 675px;		
+			-webkit-animation-timing-function: ease-in;
+		}
+		100% {
+			top: 700px;		
+			-webkit-animation-timing-function: ease-out;
+		}
+	}
+	.ballShadow{
+		position: absolute;
+		bottom: -15px;
+		left: 30px;
+		width: 40px;
+		height: 30px;
+		background: rgba(20, 20, 20, .2);
+		box-shadow: 0px 0 25px 35px rgba(20,20,20,.2);
+		border-radius: 20px/15px;
+		-webkit-transform: scaleY(.3);
+		z-index: 2;
+		opacity:0;
+	}
+	.warp a:hover ~ .ballSquare .ballShadow{
+		-webkit-animation: shadow 5s 1 forwards;
+	}
+	@-webkit-keyframes shadow{
+		0%{
+			left: 40px;
+			width: 20px;
+			background: rgba(20, 20, 20, .1);
+			box-shadow: 0px 0 25px 35px rgba(20,20,20,.1);
+			border-radius: 10px / 15px;
+			opacity:0;
+		}
+		10%{
+			left: 30px;
+			width: 40px;
+			background: rgba(20, 20, 20, .15);
+			box-shadow: 0px 0 25px 35px rgba(20,20,20,.15);
+			border-radius: 20px/15px;
+			opacity:1;
+		}
+		18% {
+			left: 40px;
+			width: 20px;
+			background: rgba(20, 20, 20, .1);
+			box-shadow: 0px 0 25px 35px rgba(20,20,20,.1);
+			border-radius: 10px / 15px;
+			opacity:1;
+		}
+		26% {
+			left: 30px;
+			width: 40px;
+			background: rgba(20, 20, 20, .15);
+			box-shadow: 0px 0 25px 35px rgba(20,20,20,.15);
+			border-radius: 20px/15px;
+			opacity:1;
+		}
+		34% {
+			left: 40px;
+			width: 20px;
+			background: rgba(20, 20, 20, .1);
+			box-shadow: 0px 0 25px 35px rgba(20,20,20,.1);
+			border-radius: 10px / 15px;
+			opacity:1;
+		}
+		42% {
+			left: 30px;
+			width: 40px;
+			background: rgba(20, 20, 20, .15);
+			box-shadow: 0px 0 25px 35px rgba(20,20,20,.15);
+			border-radius: 20px/15px;
+			opacity:1;
+		}
+		50% {
+			left: 40px;
+			width: 20px;
+			background: rgba(20, 20, 20, .1);
+			box-shadow: 0px 0 25px 35px rgba(20,20,20,.1);
+			border-radius: 10px / 15px;
+			opacity:1;
+		}
+		58% {
+			left: 30px;
+			width: 40px;
+			background: rgba(20, 20, 20, .15);
+			box-shadow: 0px 0 25px 35px rgba(20,20,20,.15);
+			border-radius: 20px/15px;
+			opacity:1;
+		}
+		66% {
+			left: 40px;
+			width: 20px;
+			background: rgba(20, 20, 20, .1);
+			box-shadow: 0px 0 25px 35px rgba(20,20,20,.1);
+			border-radius: 10px / 15px;
+			opacity:1;
+		}
+		74% {
+			left: 30px;
+			width: 40px;
+			background: rgba(20, 20, 20, .15);
+			box-shadow: 0px 0 25px 35px rgba(20,20,20,.15);
+			border-radius: 20px/15px;
+			opacity:1;
+		}
+		82% {
+			left: 40px;
+			width: 20px;
+			background: rgba(20, 20, 20, .1);
+			box-shadow: 0px 0 25px 35px rgba(20,20,20,.1);
+			border-radius: 10px / 15px;
+			opacity:1;
+		}
+		90% {
+			left: 30px;
+			width: 35px;
+			background: rgba(20, 20, 20, .15);
+			box-shadow: 0px 0 25px 35px rgba(20,20,20,.15);
+			border-radius: 20px/15px;
+			opacity:1;
+		}
+		95% {
+			left: 40px;
+			width: 20px;
+			background: rgba(20, 20, 20, .1);
+			box-shadow: 0px 0 25px 35px rgba(20,20,20,.1);
+			border-radius: 10px / 15px;
+			opacity:1;
+		}
+		100% {
+			left: 30px;
+			width: 40px;
+			background: rgba(20, 20, 20, .15);
+			box-shadow: 0px 0 25px 35px rgba(20,20,20,.15);
+			border-radius: 20px/15px;
+			opacity:1;
+		}
+	}
+	/*窗口*/
+	.panel{
+		position: absolute;
+		top: 0;
+		right: 0;
+		width: 50%;
+		height: 500px;
+		border: 1px solid #cd2a06;
+	}
+	.panel .nav {
+		padding: 0px 10px;
+		height: 40px;
+		line-height: 40px;
+		text-align: center;
+		background: -webkit-linear-gradient(top,#c83a13,#e29888);
+	}
+	.panel .nav a {
+		color: #fff;
+	}
+	#window{
+		width: 350px;
+		border-radius: 5px;
+		position: absolute;
+		top: -100px;
+		left: 20%;
+	}
+	.down{
+		-webkit-animation: down .8s 1 forwards;
+	}
+	@-webkit-keyframes down{
+		0%{
+			top:-100px;
+			-webkit-animation-timing-function: ease-in;
+		}
+		70%{
+			top:250px;
+			-webkit-animation-timing-function: ease-out;
+		}
+		90%{
+			top:200px;
+			-webkit-animation-timing-function: ease-in;
+		}
+		100%{
+			top:250px;
+			-webkit-animation-timing-function: ease-out;
+		}
+	}
+	#window .menu{
+		width: 350px;
+		height: 30px;
+		line-height: 30px;
+		padding: 0 10px;
+		background: -webkit-linear-gradient(top,#c83a13,#e29888);
+		border: 1px solid #cd2a06;
+		border-radius: 5px 5px 0px 0px;
+		-webkit-box-sizing: border-box;
+		color: #fff;
+	}
+	#window .menu em{
+		float: right;
+		cursor: pointer;
+		font-style: normal;
+		font-size: 12px;
+	}
+	#window .info{
+		border: solid 1px #eee;
+		border-top: none;
+		padding: 10px;
+		background: #fff;
+	}
+</style>
+</head>
+<body>
+<div class="warp">
+	<a href="#">开始自由坠落</a>
+	<div class="ballSquare">
+		<div class="ball"></div>
+		<div class="ballShadow"></div>
+	</div>
+</div>
+<div class="panel">
+	<div class="nav"><a href="javascript:;" id="back">返回</a></div>
+	<div id="window">
+		<div class="menu">窗体名称<em id="close">关闭<em></div>
+		<div class="info">
+			这里是内容!
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+	var back = document.getElementById("back");
+	var win = document.getElementById("window");
+	var close = document.getElementById("close");
+	back.addEventListener("click",function(){
+		if(win.style.display == "none"){
+			win.style.display = "block"
+		}
+		win.className = "down";
+	},false);
+	close.addEventListener("click",function(){
+		win.style.display = "none";
+	},false);
+	
+</script>
+</body>
+</html>

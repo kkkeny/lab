@@ -1,0 +1,43 @@
+#ws_load {
+    width: 132px;
+    height: 132px;
+    /*background: url(../image/monkey.gif) 0 0 no-repeat;*/
+    -webkit-animation: running 1s steps(12,end) infinite;
+    position: absolute;
+    /*-webkit-transform: scale(0.7);*/
+    left: 50%;
+    top: 50%;
+    margin-left: -64px;
+    margin-top: -64px;
+    text-align: center;
+    z-index: 999;
+    visibility: hidden;
+    -webkit-animation-play-state: paused;
+    opacity: 0;
+}
+/*@formatter:off*/
+@-webkit-keyframes running{
+from {
+    background-position: 0px 0px;
+}
+to {
+    background-position: -1584px 0px;
+}
+}
+@-webkit-keyframes shining {
+from {
+    opacity: 1;
+}
+to {
+    opacity: 0;
+}
+}
+/*@formatter:on*/
+#ws_point {
+    font-size: 20px;
+    font-weight: bolder;
+    color: #fff;
+    position: relative;
+    top: 132px;
+    -webkit-animation: shining .5s ease 0 infinite alternate;
+}

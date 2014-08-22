@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+<meta charset="utf-8" />
+<title>css选择符</title>
+<style>
+
+a,p{ background:#C0F}
+a:hover{color:red;}
+p:hover{color:#6F0;}
+</style>
+</head>
+<body>
+<h1>四、伪类选择符 Pseudo-Classes Selectors</h1>
+<div>3、E:hover--设置元素在其鼠标悬停时的样式（IE6只支持a元素的:hover，从IE7开始支持其它元素的:hover）</div>
+<ul>
+  <li>1111</li>
+  <li><a href="#">111</a></li>
+  <li>111</li>
+</ul>
+<ul>
+  <li>222</li>
+  <li><p>2221</p></li>
+  <li>222</li>
+</ul>
+<ul>
+  <li>333</li>
+  <li>333</li>
+  <li>333</li>
+</ul>
+<br/>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<title>index</title>
+		<meta name="description" content="" />
+		<meta name="author" content="和健" />
+		<meta name="viewport" content="width=device-width; initial-scale=1.0" />
+		<style type="text/css">
+			body {
+				text-align: center;
+			}
+			.flower {
+				width: 128px;
+				height: 128px;
+				display: inline-block;
+				box-sizing: border-box;
+				/*默认状态*/
+				background: url(../image/circle.gif) -3px center no-repeat;
+				-webkit-background-clip: content;
+				-webkit-background-origin: padding;
+				padding: 0px 54px 107px 53px;
+				/*-webkit-background-size:21px 21px;*/
+				-webkit-transform-origin: center center;
+				/*-webkit-transform: rotate(45deg);*/
+				/*帧动画*/
+				-webkit-animation-name: kf1;
+				-webkit-animation-duration: 0.5s;
+				-webkit-animation-direction: alternate;
+				-webkit-animation-timing-function: steps(1,start);
+			}
+			.flower,.kf2{
+				width: 128px;
+				height: 128px;
+				display: inline-block;
+				box-sizing: border-box;
+				-webkit-animation-iteration-count: infinite;
+			}
+			@-webkit-keyframes kf1{
+			0%{background-position: -3px center;}
+			9%{background-position: -31px -7px;}
+			18%{background-position: -53px -28px;}
+			27%{background-position: -61px -56px;}
+			36%{background-position: -53px -84px;}
+			45%{background-position: -32.5px -104px;}
+			54%{background-position: -3.5px -112px;}
+			63%{background-position: 26px -105px;}
+			72%{background-position: 47.5px -85px;}
+			81%{background-position: 55.5px -57px;}
+			90%{background-position: 47.5px -29px;}
+			100%{background-position: -3px center;}
+			}
+			.kf2 {
+				/*-webkit-background-size:21px 21px;*/
+				-webkit-transform-origin: center center;
+				/*-webkit-transform: rotate(45deg);*/
+				/*帧动画*/
+				-webkit-animation-name: kf2x;
+				-webkit-animation-duration: 0.3s;
+				-webkit-animation-direction: normal;
+				-webkit-animation-timing-function: linear;
+			}
+			@-webkit-keyframes kf2{
+			from {
+				-webkit-transform: rotate(0deg);
+			}
+			to {
+				-webkit-transform: rotate(360deg);
+			}
+			}
+		</style>
+	</head>
+	<body>
+		<article class="kf2">
+			<article class="flower"></article>
+		</article>
+	</body>
+</html>

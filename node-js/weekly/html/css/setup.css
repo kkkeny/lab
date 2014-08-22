@@ -1,0 +1,57 @@
+.content{
+	padding-left: 145px;
+	margin-bottom: 150px;
+}
+.target{
+	position: relative;
+	width:780px;
+	font-size: 14px;
+	border: 1px solid #dddddd;
+	margin: 10% auto -10%;
+}
+.target .category{
+	position: absolute;
+	text-align: center;
+	height:100%;
+	width: 90px;
+	background: #edf0f0;
+	color:#333333;
+	font-weight: bold;
+}
+.category i{
+	position: relative;
+	font-style: normal;
+	top:48%;
+}
+.target ul{
+	float: right;
+	width: 680px;
+	margin-top: 15px;
+}
+.target li{
+	float: left;
+	background:#f9edbe; 
+	margin:0 15px 15px 0;
+	padding: 0 15px;
+	height:36px;
+	border-radius: 3px;
+	text-align: center;
+	line-height: 36px;
+	color: #324f4f;
+	position: relative;
+}
+.target li i{
+	width: 10px;
+	height:10px;
+	background:url(../images/close.png) no-repeat;
+	position: absolute;
+	right:3px;
+	top:3px;
+	cursor: pointer;
+}
+.targetDown{
+	border-top:0; 
+}
+.clearfix{
+	clear: both;
+}

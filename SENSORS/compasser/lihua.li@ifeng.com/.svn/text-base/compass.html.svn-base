@@ -1,0 +1,169 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+
+		<title>指南针</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<link href="css.css" rel="stylesheet" type="text/css" />
+
+		<script type="text/javascript" charset="utf-8" src="js.js"></script>
+		<script type="text/javascript" charset="utf-8">
+			var b=10,c=100,d=20,t=0,ang=0;
+			drgNum=0;
+			var cv, ctx,prevAng = 0,currAng = 0;
+
+			var img = new Image();
+			img.src = "images/znz_04.png";
+
+			// watchID是当前 “watchHeading” 的引用
+			var watchID = null;
+
+			document.addEventListener("backbutton", onBackKeyDown, false);
+			// 等待加载PhoneGap
+			document.addEventListener("deviceready", onDeviceReady, false);
+			//
+			function onDeviceReady() {
+				//startWatch();
+				// Register the event listener
+				document.addEventListener("backbutton", onBackKeyDown, false);
+			}
+
+			// 开始监视罗盘
+			function startWatch() {
+
+				// 每隔3秒钟更新一次罗盘数据
+				var options = {
+					frequency: 10
+				};
+
+				watchID = navigator.compass.watchHeading(onSuccess, onError, options);
+			}
+
+			// 停止监视罗盘
+			function stopWatch() {
+				if (watchID) {
+					navigator.compass.clearWatch(watchID);
+					watchID = null;
+				}
+				var element = document.getElementById('heading');
+				element.innerHTML = '停止' + drgNum+'°';
+			}
+
+			// onSuccess: 返回罗盘的当前朝向
+			function onSuccess(heading) {
+				var fangweiStr = "";
+				var element = document.getElementById('heading');
+				element.innerHTML = getPositonStr(360-heading)+'' + Math.round(heading)+'°';
+				setRotationFun((360-heading)*Math.PI/180);
+				drgNum = heading;
+			}
+
+			// onError: 获取罗盘朝向失败
+			function onError() {
+				alert('onError!获取罗盘朝向失败');
+				stopWatch();
+			}
+
+			function getPositonStr(d) {
+				var str = "北";
+				if(d>=340 && d<20 ) {
+					str="北";
+				}
+				if(d<=340 && d>290) {
+					str="东北";
+				}
+				if(d<=290 && d>250) {
+					str="东";
+				}
+				if(d<=250 && d>200) {
+					str="东南";
+				}
+				if(d<=250 && d>200) {
+					str="东南";
+				}
+				if(d<=200 && d>160) {
+					str="南";
+				}
+				if(d<=160 && d>110) {
+					str="西南";
+				}
+				if(d<=110 && d>70) {
+					str="西";
+				}
+				if(d<=70 && d>20) {
+					str="西北";
+				}
+				return str;
+			}
+
+			function setRotationFun(ang) {
+				//setRotationFun(ang*Math.PI/180);
+				cv = document.getElementById("compassImgDiv");
+				ctx = cv.getContext("2d");
+				cv.width = 355;
+				cv.height = 355;
+				ctx.save();
+				ctx.translate(cv.width/2, cv.height/2);
+				ctx.scale(1, 1);
+				ctx.rotate(ang);
+				ctx.drawImage(img, -355/2, -355/2);
+				ctx.restore();
+			}
+
+			//格式化数字，保留num位小数
+			function formatNum(str,num) {
+				var s = parseFloat(str);
+				if(!num)
+					num=4;
+				if(isNaN(s)) {
+					return;
+				}
+				s = s.toFixed(num);
+				if(s=="" || s<0)
+					s=0;
+				return s;
+			}
+
+			// Handle the back button
+			//
+			function onBackKeyDown() {
+				// 显示确认对话框
+				navigator.notification.confirm(
+				'是否要退出罗盘程序',  // 显示信息
+				onConfirm,              // 按下按钮后触发的回调函数，返回按下按钮的索引
+				'退出程序',            // 标题
+				'确认,取消'          // 按钮标签
+				);
+
+			}
+
+			// 处理确认对话框返回的结果
+			function onConfirm(button) {
+				if(button == 1) {
+					navigator.app.exitApp();
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<div class="all">
+			<div id="heading" class="top">
+				点击开始
+			</div>
+			<div class="middle">
+				<canvas id="compassImgDiv" class="dial">
+				</canvas>
+			</div>
+			<div class="bottom">
+				<div class="start">
+					<img src="images/tm.gif" width="198px" height="79" border="0"  onclick="startWatch();">
+				</div>
+				<div class="kong">
+				</div>
+				<div class="stop">
+					<img src="images/tm.gif" width="198px" height="79" border="0" onclick="stopWatch();">
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

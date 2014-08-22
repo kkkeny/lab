@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>js考试</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//1.编写一个函数判断传入的一个参数是什么类型的数据  如果为undefined | null | 0 返回false
+			function getType(val) {
+				if (val === null || typeof val === 'undefined' || val===0) {
+					return false;
+				} else if ( typeof val === 'number' && isFinite(val)) {
+					return 'number';
+				} else if ( typeof val === 'boolean' && isFinite(val)) {
+					return 'boolean';
+				} else if ( typeof val === 'string') {
+					return 'string';
+				} else if (val.constructor === Array) {
+					return 'array'
+				} else if ( typeof val === 'object') {
+					return 'object';
+				}
+
+				return false
+			}
+
+			//  getType(null);   false
+
+			//2.运用上面的类型检测 编写一个函数接受一个日期类型的参数，打印 2000年01月01日 12：12：12 的日期格式
+			function isDate(val) {
+				if (getType(val) && val instanceof Date) {
+					var dt = (val.getYear()) + "年" + (val.getMonth() + 1) + "月" + (val.getDate()) + "日" + " " + val.getHours() + ":" + val.getMinutes() + ":" + val.getSeconds();
+					document.write(dt);
+
+					return true;
+				} else {
+					return fallse;
+				}
+
+			}
+
+			//3.打印 1-99999 相加运算的值  共计运行了多长时间
+			function add() {
+
+				var begin = (new Date()).getTime();
+				var sum = 0;
+				for (var i = 1; i <= 99999; i++) {
+					sum = sum + i;
+				}
+				var end = (new Date()).getTime();
+				document.write("1 ~ 99999 相加的和等于" + sum + "<br/>");
+				document.write((end - begin) + "毫秒");
+			}
+
+			//4.编写一个函数传入一个数字（可能是十进制11、八进制011、十六进制0x11等格式），打印该数字的二进制、八进制、十进制、十六进制数是多少。
+			function parseTo(val) {
+				document.write(val.toString(2) + "<br>");
+				document.write(val.toString(8) + "<br>");
+				document.write(val.toString(10) + "<br>");
+				document.write(val.toString(16) + "<br>");
+			}
+
+			//5.编一个倒计时的函数 接受一个参数秒数(>=3) 每隔一秒打印一次剩余秒数  最后三次秒数分别用!!!  -  !!  - ! - 0
+			var times = 0;
+			function showtime(val) {
+				timerID = setTimeout("showtime(10)", 1000);
+				//arguments.callee;
+				if (val !== undefined) {
+					if (timerRunning) {
+						if (val - times <= 3) {
+							document.write("!!!  -  !!  - ! - " + (val - times) + "<br/>");
+						} else {
+							document.write((val - times) + "<br/>");
+						}
+						times++;
+						if (times === val) {
+							stopclock();
+						}
+					}
+				}
+				timerRunning = true;
+			}
+
+			var timerID = null;
+			var timerRunning = false;
+			function stopclock() {
+				if (timerRunning)
+					clearTimeout(timerID);
+				timerRunning = false;
+			}
+
+			function startclock() {
+				stopclock();
+				showtime();
+			}
+
+			//6.编写一个函数实现数组内容乱序，并以“item-item-item”字符串形式返回
+			function toArray(arr) {
+				var result = "";
+				var i;
+				for ( i = 0; i < arr.length; i++) {
+					if (i === 0)
+						result = arr[i];
+					else
+						result = result + "-" + arr[i];
+				}
+				return result;
+			}
+
+			//7.编写一个函数检测输入的手机号是否合法（必须全数字，前后可以包含空格；检测18|15开头的11位手机号），正确返回true 错误返回false
+			function isMobile(val) {
+				var reg0 = /^18\d{5,9}$/;
+				var reg1 = /^15\d{5,9}$/;
+				var my = false;
+				var mobile;
+
+				var i;
+				for ( i = 0; i < val.length; i++) {
+					if (val.charAt(i) != " " && val.charAt(i) != " ")
+						break;
+				}
+				mobile = val.substring(i, val.length);
+
+				for ( i = mobile.length - 1; i >= 0; i--) {
+					if (mobile.charAt(i) != " " && mobile.charAt(i) != " ")
+						break;
+				}
+				mobile = mobile.substring(0, i + 1);
+
+				if (reg0.test(mobile))
+					my = true;
+				if (reg1.test(mobile))
+					my = true;
+				return my;
+			}
+
+			//8.编写一个函数接受一个字符串的片段，将片段内的换行与换行之间的段落用<p>段落</p>表示（必须用到正则）
+			function split(val) {
+				var r = /\n.*\n/;
+				var str = val;
+				while (str.indexOf("\n") > -1) {
+					str = str.replace(r, "</p><p>");
+				}
+				str = "<p>" + str + "</p>"
+				return str;
+			}
+
+			var str = "this is a aragraph\nthis is a aragraph\nthis is a aragraph\nthis is a aragraph\nthis is a aragraph\nthis is a aragraph\n";
+
+			//9.利用函数作用域做一个封闭的环境，禁止通过全局变量污染到内部逻辑，并能够提供一个调用内部函数的入口
+			var val = 100;
+			function local(value) {
+				var val = value
+				return val;
+			}
+
+			//10.用面向对象的方式 构建一个父类-子类 的继承关系； 体现出私有属性、特有属性、公有属性。
+			function A(name) {
+				this.name = name;
+				this.sayHello = function() {
+					alert(this.name + " say Hello!");
+				};
+			}
+
+			function B(name, id) {
+				this.temp = A;
+				this.temp(name);
+				//相当于new A();
+				delete this.temp;
+				//防止在以后通过temp引用覆盖超类A的属性和方法
+				this.id = id;
+				this.checkId = function(ID) {
+					alert(this.id == ID)
+				};
+			}
+
+
+			new A("abc").sayHello();
+			new B("cba").sayHello();
+
+		</script>
+
+	</body>
+
+</html>

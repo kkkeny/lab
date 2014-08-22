@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<title>小鸟来回飞</title>
+		<meta name="description" content="" />
+		<meta name="author" content="李丽华" />
+		<meta name="viewport" content="width=device-width; initial-scale=1.0" />
+	</head>
+	<style type=text/css>
+	body,div{
+		margin:0px;
+		padding:0px;
+	}
+	#main{
+		width:500px;
+		height:500px;
+		border:1px solid blue;
+		background:green;
+		position:relative;		
+	}
+	#box{
+		width: 22px;
+		height: 26px;
+		margin-top:37px;
+		position:absolute;
+		top:37px;
+		left:0px;
+		-webkit-animation:animation 2s linear infinite;
+	}
+	#main #box.back{
+		-webkit-animation:animationback 2s linear infinite;
+	}
+	
+	@-webkit-keyframes animation{
+		0%{
+			left:0px;
+		}
+		100%{
+			left:96%;
+		}
+	}
+	@-webkit-keyframes animationback{
+		0%{
+			left:96%;
+		}
+		100%{
+			left:0;
+		}
+	}
+	#fly{
+		width:22px;
+		height:26px;		
+		background:url(images/bird.gif) -49px 25px;
+		-webkit-animation:fly 0.1s step-end infinite;
+	}
+	#main #box.back #fly{
+		-webkit-animation:flyback 0.1s step-end infinite;
+	}
+	@-webkit-keyframes fly{
+		0%{
+			background-position: 0 -28px;
+		}
+		40%{
+			background-position: -21px -28px;
+		}
+		80%{
+			background-position: -46px -28px;
+		}
+	}
+	@-webkit-keyframes flyback{
+		0%{
+			background-position: 0px 0px;
+		}
+		40%{
+			background-position: -22px 0px;
+		}
+		80%{
+			background-position: -46px 0px;
+		}	
+	}
+	</style>
+	<body>
+	<div id="main">
+		<div id="box">
+			<div id="fly"></div>
+		</div>
+	</div>
+	<script type="text/javascript">
+            var width = document.getElementById('main').offsetWidth;
+            var move = document.getElementById('box'),
+                bird = document.getElementById('fly');
+             
+            var flag = false;
+            move.addEventListener("webkitAnimationIteration", function(e){                
+                if(!flag){
+                    if(this.offsetLeft > width-50){
+                        this.className = 'back';
+                        flag = true;
+                    }else{
+                        this.className = '';
+                    }
+                }else{
+                    if(this.offsetLeft < 30){
+                        this.className = '';
+                        flag = false;
+                    }else{
+                        this.className = 'back';
+                    }
+                }
+            }, false);
+        </script>
+	</body>
+</html>

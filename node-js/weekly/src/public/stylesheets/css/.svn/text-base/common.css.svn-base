@@ -1,0 +1,197 @@
+/*css reset*/
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, input, textarea, p, blockquote, th, td, button {
+	padding: 0;
+	margin: 0;
+}
+button {
+	cursor: pointer !important;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+fieldset, img {
+	border: 0;
+}
+address, caption, cite, code, dfn, em, strong, th, var {
+	font-weight: normal;
+	font-style: normal;
+}
+ol, ul {
+	list-style: none;
+}
+li {
+	list-style: none;
+}
+caption, th {
+	text-align: left;
+}
+h1, h2, h3, h4, h5, h6 {
+	font-weight: normal;
+	font-size: 100%;
+}
+q:before, q:after {
+	content: '';
+}
+abbr, acronym {
+	border: 0;
+}
+a {
+	text-decoration: none;
+}
+input, button, a, textarea, select {
+	outline: 0;
+}
+input:-webkit-autofill {
+	-webkit-box-shadow: 0 0 0px 1000px white inset;
+}
+input[type="date"]::-webkit-inner-spin-button,input[type="date"]::-webkit-clear-button{
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+html {
+    height: 100%;
+    overflow: hidden;
+}
+body {
+	font-size: 12px;
+	font-family: SimSum;
+	height: 100%;
+    overflow: hidden;
+}
+/*头部*/
+header {
+	position: absolute;
+	top: 0;
+	width: 100%;
+	height: 82px;
+	background: #eff2f1;
+	border-bottom: 1px solid #8a9893;
+	z-index: 100;
+}
+header .logo {
+	float: left;
+	margin: 18px 0 0 22px;
+}
+header h1 {
+	height: 80px;
+	line-height: 80px;
+	float: left;
+	margin-left: 18px;
+	font-weight: bold;
+	font-size: 24px;
+	font-family: SimHei;
+	color: #3a676c;
+}
+header .right {
+	float: right;
+	margin: 30px 26px 0 0;
+	height: 22px;
+	line-height: 22px;
+}
+header .right a {
+	color: #365957;
+}
+header .right .username {
+	margin-right: 30px;
+}
+header .right .logout {
+	margin-left: 30px;
+}
+header .right .logout-img {
+	margin-right: 5px;
+}
+.content {
+    margin-top: 80px;
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+    position: relative;
+}
+aside {
+	width: 145px;
+	background: #f2f2f2;
+	text-align: center;
+	font-size: 14px;
+	position: fixed;
+	height: 100%;
+	padding-bottom: 82px;
+	padding-top: 83px;
+    z-index: 10;
+}
+aside li {
+	height: 25px;
+	line-height: 25px;
+	background: #626262;
+	margin-bottom: 1px;
+}
+aside li a {
+	color: #ffffff;
+}
+.visited {
+	height: 28px;
+	line-height: 28px;
+	background: #45a7a1;
+}
+aside .personal-center {
+	height: 36px;
+	background: #324f4f;
+	color: #fff;
+	line-height: 36px;
+	margin-bottom: 20px;
+	position: relative;
+}
+aside .personal-center a{
+    cursor: default;
+}
+aside .personal-center .triangle-down {
+	position: absolute;
+	bottom: -4px;
+	right: 15px;
+	width: 0;
+	height: 0;
+	border-left: 4px solid transparent;
+	border-right: 4px solid transparent;
+	border-top: 4px solid #324f4f;
+}
+footer {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	height: 80px;
+	background: #f2f2f2;
+	text-align: center;
+	line-height: 80px;
+	border-top: 2px solid #324f4f;
+}
+/*
+ input::-webkit-input-placeholder{
+ color:red;
+ }
+ */
+input:-moz-placeholder {
+	color: red;
+}
+
+/**/
+.tip {
+	width: 260px;
+	position: absolute;
+	left: 50%;
+	margin-left: -130px;
+	text-align: center;
+	height: 25px;
+	line-height: 25px;
+	bottom: 0px;
+	font-size: 12px;
+	font-family: 'Microsoft Yahei';
+	color: #fff;
+}
+.error {
+	background: #E74C3C;
+}
+.info {
+	background: #3498DB;
+}

@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>document</title>
+    </head>
+    <body>
+<body>
+    <!--
+            作业
+                        请编写一段JavaScript脚本生成下面这段DOM结构。要求：使用标准的DOM方法或属性(ie7+,不能用innerHTML、innerText)。
+        <div id="example" class="box">
+            <p>塔读文学</p>
+        </div>
+    -->
+	<script>
+	    var odiv = document.createElement("div");
+        var op = document.createElement("p");
+        var otext = document.createTextNode("塔读文学");
+        op.appendChild(otext);
+	    odiv.setAttribute("id","example");
+	    odiv.setAttribute("class","box");
+	    odiv.appendChild(op);
+	    document.body.appendChild(odiv);
+	</script>
+	
+</body>
+</html>
+
+

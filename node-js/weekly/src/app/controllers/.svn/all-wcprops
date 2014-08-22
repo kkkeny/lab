@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/tadu/!svn/ver/77998/tech/trunk/html/dev/frontend_lab/node-js/weekly/src/app/controllers
+END
+users_controller.js
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/tadu/!svn/ver/75615/tech/trunk/html/dev/frontend_lab/node-js/weekly/src/app/controllers/users_controller.js
+END
+microposts_controller.js
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/tadu/!svn/ver/72403/tech/trunk/html/dev/frontend_lab/node-js/weekly/src/app/controllers/microposts_controller.js
+END
+application_controller.js
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/tadu/!svn/ver/73456/tech/trunk/html/dev/frontend_lab/node-js/weekly/src/app/controllers/application_controller.js
+END
+logs_controller.js
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/tadu/!svn/ver/74605/tech/trunk/html/dev/frontend_lab/node-js/weekly/src/app/controllers/logs_controller.js
+END
+sessions_controller.js
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/tadu/!svn/ver/75615/tech/trunk/html/dev/frontend_lab/node-js/weekly/src/app/controllers/sessions_controller.js
+END
+mailer_controller.js
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/tadu/!svn/ver/77998/tech/trunk/html/dev/frontend_lab/node-js/weekly/src/app/controllers/mailer_controller.js
+END

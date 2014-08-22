@@ -1,0 +1,141 @@
+<!doctype html>
+<html>	
+	<head>
+		<meta charset="utf-8">
+		<title>日志列表</title>
+		<link rel="stylesheet" href="css/common.css">
+		<link rel="stylesheet" href="css/weekly-list.css">
+		<script type="text/javascript" src="js/Calendar3.js"></script>
+		<script type="text/javascript" src="./js/app.js"></script>
+	</head>
+	<body>
+		<header>
+			<img class="logo" src="images/logo.png" alt="logo" title="logo" />
+			<h1>--日志管理系统平台</h1>
+			<div class="right">
+				<a class="username" href="">username</a>|
+				<a class="logout" href=""><img class="logout-img "src="images/logout.png" />退出</a>
+			</div>
+		</header>
+		<section class="content">
+			<div class="department">研发部 前端组<div class="triangle-down"></div></div>
+			<section class="week-list">
+				<div class="head">
+					<span class="myWeekly">我的日志列表</span>
+					<ul>
+						<li id="addBtn" class="addWeekly">+ 添加日志</li>
+						<li class="addWeekly outlineBtn">+ 添加概述</li>
+						<li><input class="time" type="text" id="control_date" onclick="new Calendar().show(this);" readonly="readonly" /></li>
+					</ul>
+				</div>
+				<p>概述:</p>
+				<p>概述内容</p>
+				<table>
+					<tbody id="table">
+						<tr>
+							<th class="th1">指标</th>
+							<th class="th2">平台</th>
+							<th class="th3">状态</th>
+							<th class="th4">备注</th>
+							<th class="th5">解决方案</th>
+							<th class="th-6">操作</th>
+						</tr>
+						<tr id="trContent">
+							<td>pv曲线</td>
+							<td>web</td>
+							<td>正常</td>
+							<td class="left">阿萨德但是速度速阿萨德但是速度速度阿萨德但是速度速度阿萨德但是速度速度度</td>
+							<td class="left">阿萨德但是速度速阿萨德但是速度速度阿萨德但是速度速度阿萨德但是速度速度度</td>
+							<td><a href="javascript:;" data-url="/log/<%= log.id %>" class="modify">修改</a>/<a href="#" onclick="return confirm('你确定要删除吗?')">删除</a></td>
+						</tr>
+					</tbody>
+					
+					<!-- <tr>
+						<td>pv曲线</td>
+						<td>web</td>
+						<td>正常</td>
+						<td class="left">阿萨德但是速度速度</td>
+						<td class="left">阿萨德但是速度速度</td>
+						<td><a href="#">修改</a>/<a href="#">删除</a></td>
+					</tr>
+					<tr>
+						<td>pv曲线</td>
+						<td>web</td>
+						<td>正常</td>
+						<td class="left">阿萨德但是速度速度</td>
+						<td class="left">阿萨德但是速度速度</td>
+						<td><a href="#">修改</a>/<a href="#">删除</a></td>
+					</tr>
+					<tr>
+						<td>pv曲线</td>
+						<td>web</td>
+						<td>正常</td>
+						<td class="left">阿萨德但是速度速度</td>
+						<td class="left">阿萨德但是速度速度</td>
+						<td><a href="#">修改</a>/<a href="#">删除</a></td>
+					</tr> -->
+				</table>
+				<button><img src="images/email.png" />确认发送邮件</button>
+			</section>
+		</section>
+		<section class="add" id="add">
+			<h3>添加日志</h3>
+			<fieldset >
+					<form action="" id="addForm">
+						<div class="add-content">
+							<label for="username">用户</label><input id="username" value="username" type="text" readonly="readonly" class="username" name="account" /><br/>
+							<label for="date">日期</label><input id="date" value="" type="text" readonly="readonly" class="date" name="date" /><br/>
+							<label for="target">指标</label><input id="target" type="text"  class="target-add" name="target" /><br/>
+							<label for="platform">平台</label><input id="platform" type="text"  class="platform" name="platform"><br/>
+							<label for="state">状态</label><select name="state" class="state" id="state"><option value="">正常</option><option value="">不正常</option></select><br/>
+							<label for="remarks">备注</label><textarea name="remarks" class="remarks" id="remarks"></textarea><br/>
+							<label for="scheme">解决方案</label><textarea name="scheme" class="scheme" id="sscheme"></textarea>
+						</div>
+
+						<div class="btn"><button onclick="return false;" id="addBtnPop" class="addBtn">添加</button><button  id="closeBtn" class="closeBtn">关闭</button></div>
+					</form>
+					<div class="errorInfo">sdfsdf</div>
+					
+				</fieldset>
+		</section>
+		<section class="addOutline add">
+			<h3>添加概述</h3>
+				<fieldset class="field" >
+					<form action="" id="addForm">
+						<div class="add-content desc outline">
+							<textarea name="desc" class="scheme" id="desc"></textarea>
+						</div>
+						<div class="btn"><button onclick="return false;" id="addBtnPop" class="addBtn finish">完成</button></div>
+					</form>
+				</fieldset>
+		</section>
+		<section id="shade" class="shade"></section>
+		<footer>
+			<small>Copyright(C) 2008-2014 www.tadu.com All Rights Reserved 版权所有 北京易天新动网络科技有限公司</small>
+		</footer>
+		<script>
+			// window.onload = function(){
+			// 	var closeBtn = document.getElementById('closeBtn');
+			// 	var addContent = document.getElementById('add');
+			// 	var shade = document.getElementById('shade');
+			// 	var addBtn = document.getElementById('addBtn');
+			// 	var calendar = document.getElementById('control_date');
+			// 	var addDate = document.getElementById('date');
+			// 	var nowDate = new Date().getFullYear()+"-"+(new Date().getMonth()+1)+"-"+new Date().getDate();
+			// 	calendar.value = nowDate;
+			// 	addDate.value = nowDate;
+			// 	addBtn.onclick = function(){
+			// 		shade.style.display = "block";
+			// 		addContent.style.display = "block";
+			// 	};
+			// 	closeBtn.onclick = function(){
+			// 		addContent.style.display = "none";
+			// 		shade.style.display = "none";
+			// 	};
+			// };
+		</script>
+
+		
+	</body>
+
+</html>

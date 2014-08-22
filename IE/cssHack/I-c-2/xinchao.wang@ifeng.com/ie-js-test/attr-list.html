@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+ <title>IE7 {CSS2: auto}</title>
+
+ <!-- Compliance patch for Microsoft browsers -->
+ <!--[if lt IE 9]><script src="../ie7-js/lib/IE9.js"></script><![endif]-->
+
+ <style>
+
+  [class~=first] {
+
+   background-color: yellow;
+
+  }
+
+ </style>
+</head>
+<body>
+ <script src="ie7-demo.js"></script>
+ <h2>属性选择 还有first就可以，不管有没有空格 [class~="first"]</h2>
+
+ <ul>
+  <li class="first">class="first"</li>
+  <li class="  first  ">class="  first  "</li>
+  <li class="second">class="second"</li>
+  <li class="third">class="third"</li>
+  <li class="first second">class="first second"</li>
+  <li class="first third">class="first third"</li>
+  <li class="second third">class="second third"</li>
+  <li class="first second third">class="first second third"</li>
+ </ul>
+ <p class="first">class="first"</p>
+
+ <p>&lt;&nbsp;<a href="index.html">back</a></p>
+</body>
+</html>

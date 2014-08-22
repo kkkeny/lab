@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no"/>
+<meta name="format-detection" content="telephone=no"/>
+<meta name="format-detection" content="email=no"/>
+<title></title>
+<style type="text/css">
+.main, .box{
+	position: relative;
+}
+.main:after { 
+	left: 0px;
+	position: absolute; 
+	background: #fff; 
+	content:"支持E:after";
+	width: 100%;
+	}
+.box::after { 
+	left: 0px;
+	position: absolute; 
+	background: #fff; 
+	content:"支持E::after";
+	width: 100%;
+	}
+</style>
+</head>
+<body>
+<div class="main">
+Sorry, 你的浏览器不支持E:after和E::after
+</div>
+<div class="box">
+Sorry, 你的浏览器不支持E:after和E::after
+</div>
+</body>
+</html>

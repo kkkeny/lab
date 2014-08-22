@@ -1,0 +1,95 @@
+.window {
+    width: 90%;
+    height: 250px;
+    padding-top: 50px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-left: -45%;
+    margin-top: -150px;
+    background-color: rgba(255,255,255,1);
+    -webkit-box-shadow: inset 1px 1px 3px #ccc;
+    -webkit-transform: translateY(-1000px);
+    -webkit-animation-duration: .5s;
+    -webkit-animation-direction: normal;
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-fill-mode: both;
+    z-index: 999;
+    box-sizing: border-box;
+    border: 1px solid #a8a8aa;
+    border-radius: 5px;
+    font-weight: bold;
+    text-align: center;
+}
+.window.show {
+    -webkit-animation-name: bounceInDown;
+    -webkit-animation-timing-function: linear;
+}
+.window.hidden {
+    -webkit-animation-name: bounceOutUp;
+    -webkit-animation-timing-function: ease;
+    -webkit-animation-delay: .2s;
+}
+.window#w_4 > article > input[type=range] {
+    width: 75%;
+    height: 10px;
+    margin:20px 0;
+    border: 1px solid #333;
+    -webkit-border-radius: 5px;
+    -webkit-appearance: none !important;
+}
+.window#w_4 > article > input[type=range]::-webkit-slider-thumb {
+    width: 35px;
+    height: 35px;
+    background: -webkit-gradient(linear,left top,left bottom,from(#fff),to(#ccc));
+    border: 1px solid #000;
+    -webkit-box-shadow: 0 0 6px #000;
+    -webkit-border-radius: 25px;
+    -webkit-appearance: none !important;
+}
+.window#w_4 > article > label {
+    position: relative;
+    top: -2px;
+}
+.window > button.w_ok {
+    width: 60px;
+    height: 25px;
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    border-radius: 0;
+}
+#w_2 {
+
+}
+/*@formatter:off*/
+@-webkit-keyframes bounceInDown{
+	0%{opacity:0;
+		-webkit-transform:translateY(-1000px)
+	}
+	60%{
+		opacity:1;
+		-webkit-transform:translateY(30px)
+	}
+	70%{
+		-webkit-transform:translateY(-15px)
+	}
+	80%{
+		-webkit-transform:translateY(10px)
+	}
+	90%{
+		-webkit-transform:translateY(-5px)
+	}
+	100%{-webkit-transform:translateY(0)}
+}
+@-webkit-keyframes bounceOutUp{
+	0%{-webkit-transform:translateY(0)}
+	20%{
+		opacity:1;
+		-webkit-transform:translateY(20px)
+	}
+	100%{
+		opacity:0;
+		-webkit-transform:translateY(-1000px)
+	}
+}

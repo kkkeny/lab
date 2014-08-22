@@ -1,0 +1,144 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+	</head>
+	<body>
+			
+		<script type="text/javascript">
+		// 1.编写一个函数判断传入的一个参数是什么类型的数据  如果为undefined | null | 0 返回false 
+			function isData(obj){
+				if(obj==undefined || obj==null || obj==0){
+					return false;
+				}else{
+					switch(typeof obj){
+						case "number":{
+							if(isNaN(obj)){
+							 	return "你输入的不是数字";
+							}else{
+								return "你输入的是数字";
+							}
+							break;
+						}
+						case "string":{
+							return "你输入的是字符串";
+							break;
+						}
+						case "boolean":{
+							return "你输入的是布尔值";
+							break;
+
+						}
+						case "object":{
+							if(obj instanceof Array){
+								return "你输入的是数组对象";
+							}else if(obj instanceof Function){
+								return "你输入的是函数";
+							}else if(obj instanceof Date){
+								return "你输入的是日期格式";
+							}else{
+								return "你输入的是一般对象";
+							}
+							break;
+						}
+
+					}
+				}
+			}
+		// 2.运用上面的类型检测 编写一个函数接受一个日期类型的参数，打印 2000年01月01日 12：12：12 的日期格式
+            function date(obj){
+           	 	if(isData(obj)=="你输入的是日期格式"){
+           	 		console.log(obj.toLocaleString());
+           	 	}
+            }
+        // 3.打印 1-99999 相加运算的值  共计运行了多长时间  	
+        	var a=0;
+        	var date1=new Date().getTime();
+        	for(var i=1; i<=999999;i++){
+        		a+=i;
+        	}
+        	var date2=new Date().getTime();
+        	console.log((date2-date1)/1000+"秒");
+
+        	// 4.编写一个函数传入一个数字（可能是十进制11、八进制011、十六进制0x11等格式），打印该数字的二进制、八进制、十进制、十六进制数是多少。 
+
+        	function data1(num){
+        		if(typeof num!="number") return;
+        		var num1=parseInt(num);
+        		console.log("二进制："+num1.toString(2)+"八进制："+num1.toString(8)+"十进制："+num.toString(10)+"十六进制："+num.toString(16));
+        	}
+
+        	// 5.编一个倒计时的函数 接受一个参数秒数(>=3) 每隔一秒打印一次剩余秒数  最后三次秒数分别用!!!  -  !!  - ! - 0
+
+        	function time1(num){
+        		if(num<3) return;
+        		setInterval(function(){
+        			if(num>3)
+        			 console.log(num);
+        			 num--;
+        			if(num==3){
+        				console.log("!!!");
+        			}else if(num==2){
+        				console.log("!!");
+        			}else if(num==1){
+        				console.log("!");
+        			}else if(num==0){
+        				console.log("0");
+        			}
+
+        		 if(num<0){
+        			return;
+        		 }	
+
+        		},1000);
+        	}
+   
+   // 6.编写一个函数实现数组内容乱序，并以“item-item-item”字符串形式返回
+
+   		function arr(arr){
+   			console.log(arr.join("-"));
+   		}
+
+   	// 7.编写一个函数检测输入的手机号是否合法（必须全数字，前后可以包含空格；检测18|15开头的11位手机号），正确返回true 错误返回false
+   	function test(num){	
+   		return /^(18|15)\d{9}$/g.test(num);
+   	}
+   	// 8.编写一个函数接受一个字符串的片段，将片段内的换行与换行之间的段落用<p>段落</p>表示（必须用到正则）
+   	      function reg(str){
+   	      	 str.replace(/\s+/g,"<p>");
+   	      	 str.replace(/\s+$/g,"</p>");
+   	      	 return str;
+   	      }
+
+   	  // 9.利用函数作用域做一个封闭的环境，禁止通过全局变量污染到内部逻辑，并能够提供一个调用内部函数的入口
+   	  		function test(){
+   	  			var a=1;
+   	  			function test1(){
+   	  				console.log(a);
+   	  			}
+   	  			return test1;
+   	  		}
+   	  		var test2=test();
+   	  		test2();
+
+   	  		// 10.用面向对象的方式 构建一个父类-子类 的继承关系； 体现出私有属性、特有属性、公有属性。 
+   	  		function Sub(name,age){
+   	  			var a=1;
+   	  			this.name=name;
+   	  			this.age=age;
+   	  		}
+   	  		sub.prototype.fun=function(){
+   	  			console.log(this.name);
+   	  		}
+   	  		function Child(name,age){
+   	  			child.call(this,name,age);
+   	  		}
+
+   	  		Child.prototype=new Sub();
+   	  		var obj=new Child("taud",2);
+   	  		Child.prototype.constructor=Child;
+
+		</script>
+
+	</body>
+</html>

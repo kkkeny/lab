@@ -1,0 +1,219 @@
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+    <style type="text/css">
+    /*reset*/
+    html{
+      color:#333;
+      background:#fff;
+      font-family: 'Microsoft Yahei';
+    }
+    body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, textarea, p, blockquote, th, td {
+      margin:0;
+      padding:0;
+    }
+    table {
+      border-collapse:collapse;
+      border-spacing:0;
+    }
+    fieldset, img {
+      border:0;
+    }
+    address, caption, cite, code, dfn, em, strong, th, var {
+      font-style:normal;
+      font-weight:normal;
+    }
+    li {
+      list-style:none;
+    }
+    caption, th {
+      text-align:left;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      font-size:100%;
+      font-weight:normal;
+    }
+   
+    /*layout*/
+    #container{
+        width: 600px;
+        margin:30px auto;
+        padding-bottom: 100px;
+    }
+    h2{        
+        border: 1px solid #ccc;   
+        border-bottom: none;   
+        text-align: center;
+        font-size: 18px;
+        line-height: 50px;      
+    }
+    .blocks{
+        border: 1px solid #ccc;
+        border-left: none;
+        border-top: none;
+    }
+    .block{
+        position: relative;
+        min-height: 100px;                
+    }    
+    .block h3{
+        width: 16px;
+        position: absolute;
+        left: -50px;
+        padding:0 17px;
+        height: 100%;
+        line-height: 30px;        
+        font-size: 15px;                
+        border-right: none;
+        color: #fff;
+        text-align: center;
+        word-break: break-all;    
+    }
+    .block p.none{
+        height: 100px;
+        background: #eee;
+        text-align: center;
+        line-height: 100px;
+        color: #ccc;
+        font-size: 13px;        
+    }
+    .c1{
+        background: #16a085;        
+    }
+    .c2{
+        background: #27ae60;
+    }
+    .c3{
+        background: #2980b9;
+    }
+    .c4{
+        background: #8e44ad;
+    }
+    .c5{
+        background: #2c3e50;
+    }
+    .c6{
+        background: #f39c12;
+    }
+    .c7{
+        background: #d35400;
+    }
+    .c8{
+        background: #c0392b;
+    }
+    .c9{
+        background: #bdc3c7;
+    }
+    .c0{
+        background: #F17288;
+    }
+    .ok{
+        color: #2ecc71;       
+    }
+    .err{        
+        color: #e74c3c;
+    }    
+    ul > li{
+        line-height: 30px;
+        padding:0 20px;
+        border-bottom: 1px solid #eee;
+    }
+    li span{
+        font-size: 13px;
+        color: #999;
+    }
+    li p.remark{
+        line-height: 25px;
+        font-size: 13px;
+        color: #999;
+    }
+    li p.method{
+        line-height: 25px;
+        font-size: 13px;
+        color: #999;   
+    }    
+    p.info{
+        font-size: 15px;
+        background: #EEE;
+        border-bottom: 1px solid #FFF;
+        height: 30px;
+        line-height: 30px;
+        padding: 0 20px;
+    }
+    p.info span{
+        font-size: 12px;
+        color: #999;
+    }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h2>日志内容</h2>
+        
+        <div class="blocks">
+        <div class="block">
+            <h3 class="c0">前端组</h3>
+            <p class="info">王新超  <span>概述信息</span></p>
+            <p class="none">日志内容为空</p>
+            <ul>
+                <li></li>
+            </ul>            
+        </div>
+        <div class="block">
+            <h3 class="c2">CMS</h3>
+            <ul>
+                <li>
+                    <span>姓名</span>
+                    <span>指标</span>
+                    <span>平台</span>
+                    <span><em class="err">不正常</em></span>
+                    <p class="remark">备注:</p>
+                    <p class="method">解决方案:</p>
+                </li>
+                <li>
+                    <span>姓名</span>
+                    <span>指标</span>
+                    <span>平台</span>
+                    <span><em class="ok">正常</em> </span>
+                    <p class="remark">备注:</p>
+                    <p class="method">解决方案:</p>
+                </li>
+            </ul>
+        </div>
+        <div class="block">
+            <h3 class="c3">BI</h3>
+            <p class="none">日志内容为空</p>
+        </div>
+        <div class="block">
+            <h3 class="c6">BI</h3>
+            <p class="none">日志内容为空</p>
+        </div>
+        <div class="block">
+            <h3 class="c5">BI</h3>
+            <p class="none">日志内容为空</p>
+        </div>  
+        <div class="block">
+            <h3 class="c7">CMS</h3>
+            <ul>
+                <li>
+                    <span>姓名</span>
+                    <span>指标</span>
+                    <span>平台</span>
+                    <span><em class="err">不正常</em></span>
+                    <p class="remark">备注:</p>
+                    <p class="method">解决方案:</p>
+                </li>
+                <li>
+                    <span>姓名</span>
+                    <span>指标</span>
+                    <span>平台</span>
+                    <span><em class="ok">正常</em> </span>
+                    <p class="remark">备注:</p>
+                    <p class="method">解决方案:</p>
+                </li>
+            </ul>
+        </div>
+        </div>      
+    </div>
+</body>
+</html>

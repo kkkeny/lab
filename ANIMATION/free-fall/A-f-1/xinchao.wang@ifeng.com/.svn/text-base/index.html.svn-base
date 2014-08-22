@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+
+		<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
+		Remove this if you use the .htaccess -->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+		<title>index</title>
+		<meta name="description" content="" />
+		<meta name="author" content="MacPro" />
+
+		<meta name="viewport" content="width=device-width; initial-scale=1.0" />
+
+		<!-- Replace favicon.ico & apple-touch-icon.png in the root of your domain and delete these references -->
+		<link rel="shortcut icon" href="/favicon.ico" />
+		<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+		<style>
+			*{
+				margin:0;
+				padding: 0;
+			}
+			#animation{
+				position:absolute;
+				top:50%;
+				left:50%;
+				margin-left:-250px;
+				margin-top:-150px;
+				width:500px;
+				height:300px;
+				background:#EEEEEE;
+				-webkit-box-shadow: 1px 1px 3px #ccc;
+				-webkit-transform:translateY(-2000px);
+			}
+			nav {
+				float:left;
+				width: 100px;
+				border:1px solid #ccc;
+				height:30px;
+				line-height:30px;
+				text-align:center;
+			}
+			nav.show:hover ~ #animation{
+				-webkit-animation:bounceInDown 1s linear both;
+			}
+			nav.hidden:hover ~ #animation{
+				-webkit-animation:bounceOutUp 1s .2s ease both;
+			}
+			@-webkit-keyframes bounceInDown{
+				0%{opacity:0;
+					-webkit-transform:translateY(-2000px)
+				}
+				60%{
+					opacity:1;
+					-webkit-transform:translateY(30px)
+				}
+				70%{
+					-webkit-transform:translateY(-15px)
+				}
+				80%{
+					-webkit-transform:translateY(10px)
+				}
+				90%{
+					-webkit-transform:translateY(-5px)
+				}
+				100%{-webkit-transform:translateY(0)}
+			}
+			@-webkit-keyframes bounceOutUp{
+				0%{-webkit-transform:translateY(0)}
+				20%{
+					opacity:1;
+					-webkit-transform:translateY(20px)
+				}
+				100%{
+					opacity:0;
+					-webkit-transform:translateY(-2000px)
+				}
+			}
+		</style>
+	</head>
+
+	<body>
+		<div>
+			<nav class="show">
+				<p>
+					<a href="/">show</a>
+				</p>
+			</nav>
+			<nav class="hidden">
+				<p>
+					<a href="/contact">hidden</a>
+				</p>
+			</nav>
+
+			<div id="animation"></div>
+
+			<footer>
+				<p>
+					&copy; Copyright  by MacPro
+				</p>
+			</footer>
+		</div>
+	</body>
+</html>

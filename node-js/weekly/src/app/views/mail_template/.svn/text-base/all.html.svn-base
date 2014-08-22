@@ -1,0 +1,192 @@
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+    <style type="text/css">
+        /*reset*/
+        html{
+            color:#333;
+            background:#fff;
+            font-family: 'Microsoft Yahei';
+        }
+        body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, textarea, p, blockquote, th, td {
+            margin:0;
+            padding:0;
+        }
+        table {
+            border-collapse:collapse;
+            border-spacing:0;
+        }
+        fieldset, img {
+            border:0;
+        }
+        address, caption, cite, code, dfn, em, strong, th, var {
+            font-style:normal;
+            font-weight:normal;
+        }
+        li {
+            list-style:none;
+        }
+        caption, th {
+            text-align:left;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-size:100%;
+            font-weight:normal;
+        }
+
+        /*layout*/
+        #container{
+            width: 600px;
+            margin:30px auto;
+            padding-bottom: 100px;
+        }
+        h2{
+            border: 1px solid #ccc;
+            border-bottom: none;
+            text-align: center;
+            font-size: 18px;
+            line-height: 50px;
+        }
+        .blocks{
+            border: 1px solid #ccc;
+            border-left: none;
+            border-top: none;
+        }
+        .block{
+            position: relative;
+            min-height: 100px;
+        }
+        .block h3{
+            width: 16px;
+            position: absolute;
+            left: -50px;
+            padding:0 17px;
+            height: 100%;
+            line-height: 30px;
+            font-size: 15px;
+            border-right: none;
+            color: #fff;
+            text-align: center;
+            word-break: break-all;
+        }
+        .block p.none{
+            height: 100px;
+            background: #eee;
+            text-align: center;
+            line-height: 100px;
+            color: #ccc;
+            font-size: 13px;
+        }
+        .c1{
+            background: #f39c12;
+        }
+        .c2{
+            background: #16a085;
+        }
+        .c3{
+            background: #27ae60;
+        }
+        .c4{
+            background: #2980b9;
+        }
+        .c5{
+            background: #8e44ad;
+        }
+        .c6{
+            background: #2c3e50;
+        }
+        .c7{
+            background: #F17288;
+        }
+        .c8{
+            background: #d35400;
+        }
+        .c9{
+            background: #c0392b;
+        }
+        .c10{
+            background: #bdc3c7;
+        }
+        .ok{
+            color: #2ecc71;
+        }
+        .err{
+            color: #e74c3c;
+        }
+        ul > li{
+            line-height: 30px;
+            padding:0 20px;
+            border-bottom: 1px solid #eee;
+        }
+        li span{
+            font-size: 13px;
+            color: #999;
+        }
+        li p.remark{
+            line-height: 25px;
+            font-size: 13px;
+            color: #999;
+        }
+        li p.method{
+            line-height: 25px;
+            font-size: 13px;
+            color: #999;
+        }
+        p.info{
+            font-size: 15px;
+            background: #EEE;
+            border-top: 1px solid #FFF;
+            border-bottom: 1px solid #eee;
+            line-height: 30px;
+            padding: 0 20px;
+        }
+        p.info span{
+            font-size: 12px;
+            color: #999;
+        }
+    </style>
+</head>
+<body>
+<div id="container">
+    <h2>日志内容</h2>
+    <div class="blocks">
+    {% for group in groups %}
+        <div class="block">
+            <h3 class="c{{loop.index}}">{{ group.name }}</h3>
+            {% if group.users.length<1 %}
+                <p class="none">没有用户</p>
+            {% else %}
+                {% for user in group.users %}
+                <p class="info"> {{ user.username }} <span>{{ user.desc }}</span></p>
+                {% if !user.log %}
+                <p class="none">日志内容为空</p>
+                {% else %}
+                <ul>
+                    {% for l in user.log %}
+                    <li>
+                        {% if l.status === "1" %}
+                        <span><em class="ok">[正常]</em> </span>
+                        {% else %}
+                        <span><em class="err">[异常]</em> </span>
+                        {% endif %}
+                        <span>指标: {{ l.indicator }} </span>
+                        <span>平台: {{ l.platform }} </span>
+                        {% if l.remark.length>1 %}
+                            <p class="remark">[备注] {{ l.remark }} </p>
+                        {% endif %}
+                        {% if l.method.length>1 %}
+                            <p class="method">[解决方案] {{ l.method }} </p>
+                        {% endif %}
+                    </li>
+                    {% endfor %}
+                </ul>
+                {% endif %}
+                {% endfor %}
+            {% endif %}
+
+        </div>
+        {% endfor %}
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>loading</title>
+		<style>
+			.load {
+				display: inline-block;
+			}
+			.loading img {
+				width: 128px;
+				height: 128px;
+				-webkit-animation: load .5s steps(10) infinite;
+				-webkit-transform-origin: center center;
+			}
+			@-webkit-keyframes load{
+			0%{
+			-webkit-transform: rotate(0deg);
+			}
+			100%{
+			-webkit-transform: rotate(360deg);
+			}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="loading"><img src="../image/circle.gif" />
+		</div>
+	</body>
+</html>

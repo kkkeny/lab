@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+<meta charset="utf-8" />
+<title>css选择符</title>
+<style>
+p{border:1px solid #ddd; height:10px; width:300px; display:block}
+.c:target p{border-color:#f60;height:10px;  width:300px}
+</style>
+</head>
+<body>
+<h1>四、伪类选择符 Pseudo-Classes Selectors</h1>
+<div>23、target--匹配相关URL指向的E元素(IE6,7,8不支持)</div>
+<a href="#1">111</a>
+<a href="#2">222</a>
+<a href="#3">333</a>
+<div id="1" class="c">
+	<p>1</p>
+</div>
+<div id="2" class="c">
+  <p>2</p>
+</div>
+<div id="3" class="c">
+  <p>3</p>
+</div>
+</body>
+</html>

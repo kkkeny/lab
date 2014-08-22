@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>用户注册</title>
+    <%- stylesheetLinkTag('css/common', 'css/register') %>
+    <%- csrfMetaTag() %>
+</head>
+<body>
+    <header>
+        <a href="/"><img class="logo" src="images/logo.png" alt="logo" title="logo" /></a>
+        <h1>--日志管理系统<span style="font-size: 0.7em;">[v2014.2.13]</span></h1>
+    </header>
+    <section class="content">
+        <fieldset class="register">
+            <% var form = formFor(user, {action: pathTo.users(), method: 'POST'}) %>
+            <%- form.begin() %>
+            <%- errorMessagesFor(user, {message: '数据校验错误,请参照一下内容'}) %>
+                <%- form.label("用户名", false) %><strong>*</strong>
+                <%- form.input("name",{id:'account', class:'username', placeholder: 'shan.zhang',autofocus:'autofocus'}) %><em></em><br/>
+                <%- form.label("密码", false) %><strong>*</strong>
+                <%- form.input("password", {type: 'password', id: 'password', class: 'password'}) %><em></em><br/>
+                <%- form.label("确认密码", false) %><strong>*</strong>
+                <%- form.input("repassword", {type: 'password', id: 'repassword', class: 'password'}) %><span></span><br/>
+                <%- form.label("邀请码", false) %><strong>*</strong>
+                <%- form.input("code", {type: 'text', id: 'code'}) %><span></span>
+                <div id="errorInfo" class="errorInfo">
+                    <% var flash = request.flash('info').pop(); if (flash) { %>
+                    <%- flash %>
+                    <% } %>
+                    <% flash = request.flash('error').pop(); if (flash) { %>
+                    <%- flash %>
+                    <% }; %>
+                </div>
+                <%- form.submit('马上注册') %>
+            <%- form.end() %>
+        </fieldset>
+    </section>
+    <%- include ../layouts/_footer %>
+</body>
+
+</html>
+
+

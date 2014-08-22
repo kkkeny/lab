@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no"/>
+<meta name="format-detection" content="telephone=no"/>
+<meta name="format-detection" content="email=no"/>
+<title></title>
+<style type="text/css">
+body{
+	background:#f6f0dd;
+}
+*{
+	margin: 0px;
+	padding: 0px;
+}
+table{
+	border: 1px solid #e2e1dd;
+	width: 98%;
+	margin: 10px auto;
+}
+th:first-child , td:first-child{
+	width: 15%;
+}
+th:nth-child(2) , td:nth-child(2){
+	width: 40%;
+}
+th:nth-child(3) , td:nth-child(3){
+	width: 15%;
+}
+th:nth-child(4) , td:nth-child(4){
+	width: 20%;
+}
+th:last-child , td:last-child{
+	width: 8%;
+}
+.ft26,.ft20{
+	font-weight: bold;
+}
+.ft26{
+	font-size: 26px;
+}
+.ft20{
+	font-size: 20px;
+}
+</style>
+</head>
+<body>
+<table  border="1" cellspacing="0"  width="98%">
+<tr>
+	<td colspan="5" class="ft26">一、选择符</td>
+</tr>	
+<tr>
+	<td colspan="5" class="ft20">1、元素选择符</td>
+</tr>
+<tr>
+	<th>选择符</th>
+	<th>含义</th>
+	<th>示例</th>
+	<th>示例效果图</th>
+	<th>浏览器支持</th>
+</tr>
+<tr>
+	<td>通配选择符*</td>
+	<td>
+		①通配选择符是用来选择所有元素;<br />
+		②也可以选择某个元素下的所有元素。
+	</td>
+	<td>
+		①*{margin: 0px;padding: 0px;color: red;}<br />
+		②.demo_class *{color: orange;}<br />
+		  #demo_id *{color: green;}
+	</td>
+	<td><a href="tongpei.html"><img src="images/tongpei.png" /></a></td>
+	<td>所有</td>
+</tr>
+<tr>
+	<td>类型选择符(E)</td>
+	<td>
+		也可以叫标签选择符，就是文档的元素，<br />
+		如:html,body,p,div，ul，li，span等
+	</td>
+	<td>
+		h3{color: red;} <br />
+		p{color: blue;}
+	</td>
+	<td><a href="leixing.html"><img src="images/leixing.png" /></a></td>
+	<td>所有</td>
+</tr>
+<tr>
+	<td>
+		ID选择符<br />
+		（E#id和#id）
+	</td>
+	<td>
+		①一个元素只能有一个ID名，具有唯一性<br />
+		②p#sp:必须符合两个条件，属于p标签，ID又是#sp才能实现效果<br />
+		③后两者的优先级比首者高
+	</td>
+	<td>
+		<br />
+		#demo{color: green;}<br />
+		#demo h3{color: red;}<br />
+		p#sp{color: blue;}
+	</td>
+	<td><a href="ID.HTML"><img src="images/ID.png" /></a></td>
+	<td>所有</td>
+</tr>
+<tr>
+	<td>类型选择符（E.class）</td>
+	<td>		
+		①一个元素可以有多个class,并非唯一性<br />
+		②p.sp:必须符合两个条件，属于p标签，class又是.sp才能实现效果<br />
+		③后两者的优先级比首者高
+	</td>
+	<td>
+		.demo{color: green;}<br />
+		.demo h3{color: red;}<br />
+		p.sp{color: blue;}
+	</td>
+	<td><a href="lei.html"><img src="images/lei.png" /></a></td>
+	<td>所有</td>
+</tr>
+<tr>
+	<td colspan="5" class="ft20">2、关系选择符</td>
+</tr>
+<tr>
+	<th>选择符</th>
+	<th>含义</th>
+	<th>示例</th>
+	<th>示例效果图</th>
+	<th>浏览器支持</th>
+</tr>
+<tr>
+	<td>包含选择符（E F）</td>
+	<td>
+		①也叫后代选择符（对所有的后代元素都有影响）<br />
+		②和子选择符的区别：不一定是直接父子关系，可以是祖孙关系，只要有家族成员即可，按老到小的排列顺序，中间用空格分开
+	</td>
+	<td>
+		#main p{color: red;}
+	</td>
+	<td><a href="baohan.html"><img src="images/baohan.png" /></a></td>
+	<td>所有</td>
+</tr>
+<tr>
+	<td>子选择符(E>F)</td>
+	<td>
+		①只对直接后代产生影响，而对”孙子后代“以及多层后代不产生作用<br />
+		  如：box>p，p下面还有一个div层包含p标签，但是该内容样式没有改变
+		②>是两父子之间的连接，如例子，不能写成祖孙关系.box>box_grandchild{color: red;}
+	</td>
+	<td>
+		.box>p{color: red;}<br />
+		.box>.box_son>.box_grandchild{color: red;display: block;}
+	</td>
+	<td><a href="zi.html"><img src="images/zi.png" /></a></td>
+	<td>IE6不支持</td>
+</tr>
+<tr>
+	<td>相邻选择符（E+F）</td>
+	<td>
+		①有相同的父元素<br />
+		②两元素是紧挨着关系<br />
+		③切记：选中的只有一个元素
+	</td>
+	<td>
+		.box+h4{color: red;}
+	</td>
+	<td><a href="xianglin.html"><img src="images/xianglin.png" /></a></td>
+	<td>IE6不支持</td>
+</tr>
+<tr>
+	<td>兄弟选择符（E~F）</td>
+	<td>
+		匹配所有紧随E元素之后的同级元素F<br />
+		(是所有的同级元素F，并非只有一个元素，这是与相邻选择符的区别)
+	</td>
+	<td>
+		.box~h4{color: red;}
+	</td>
+	<td><a href="R brother.html"><img src="images/R-brother.png" /></a></td>
+	<td>IE6不支持</td>
+</tr>
+<tr>
+	<td colspan="5" class="ft20">3、属性选择符</td>
+</tr>
+<tr>
+	<th>选择符</th>
+	<th>含义</th>
+	<th>示例</th>
+	<th>示例效果图</th>
+	<th>浏览器支持</th>
+</tr>
+<tr>
+	<td>E(att)</td>
+	<td>
+		①只使用属性名，但没有确定任何属性值；<br />
+		②括号里头只能写属性名，不能写元素，如a，p之类的标签<br />
+		③可以是class也可以是id
+	</td>	
+	<td>
+		div[class]{color:red;}
+	</td>
+	<td><a href="E[attr].html"><img src="images/E[attr].png" /></a></td>
+	<td>IE6不支持</td>
+</tr>
+<tr>
+	<td>E[attr="value"]</td>
+	<td>
+		①指定属性名，并指定了该属性的属性值（该属性名只有一个属性值）；<br />
+		②可以是class也可以是id
+	</td>
+	<td>
+		div[class="box_son"]{color:red;}
+	</td>
+	<td><a href="E[attr=value].html"><img src="images/E[attr=value].png" /></a></td>
+	<td>IE6不支持</td>
+</tr>
+<tr>
+	<td>E[attr~="value"]</td>
+	<td>
+		①指定属性名，并且具有属性值<br />
+		②该属性值在一个词列表中（该属性名有一个或多个属性值），并且属性名之间以空格隔开<br />
+		③词列表中包含了一个value词，
+		④E[attr~="value"]等号前面的“~”不能不写；<br />
+	</td>
+	<td>
+		div[class~="box"]{color:red;}
+	</td>
+	<td><a href="E[attr~=value].html"><img src="images/E[attr~=value].png" /></a></td>
+	<td>IE6不支持</td>
+</tr>
+<tr>
+	<td>E[attr^="value"]</td>
+	<td>
+		指定了属性名，并且有属性值（可以有一个或多个属性值），属性值是value或者是以value开头的；
+	</td>
+	<td>
+		div[class^="b"]{color:red;}
+	</td>
+	<td><a href=""><img src="images/E[attr^=value].png" /></a></td>
+	<td>IE6不支持</td>
+</tr>
+<tr>
+	<td>E[attr$="value"]</td>
+	<td>
+		指定了属性名，并且有属性值，而且属性值是value或者以value结束的；
+	</td>
+	<td>
+		div[class$="e"]{color:red;}
+	</td>
+	<td><a href="E[attr$=value].html"><img src="images/E[attr$=value].png" /></a></td>
+	<td>IE6不支持</td>
+</tr>
+<tr>
+	<td>E(att*="val")</td>
+	<td>
+		指定了属性名，并且有属性值，而且属值中包含了value；
+	</td>
+	<td>
+		div[class*="e"]{color:red;}
+	</td>
+	<td><a href="E[attr星号=value].html"><img src="images/E[attr星号=value].png" /></a></td>
+	<td>IE6不支持</td>
+</tr>
+<tr>
+	<td>E[attr|="value"]</td>
+	<td>
+		①指定了属性名，并且属性值是value或者以“value-”开头的值（比如说nav-son）<br />
+		②注：不可以是value的部分属性值，如va等<br />
+		③该属性值前面不可以有别的属性值，否则，不起作用
+	</td>
+	<td>
+   		div[class|="nav"]{color:#f00;}
+    </td>
+	<td><a href="E[attr竖杠=value].html"><img src="images/attr竖杠=value.png" /></a></td>
+	<td>IE6不支持</td>
+</tr>
+<tr>
+	<td colspan="5" class="ft20">4、伪类选择符</td>
+</tr>
+<tr>
+	<th>选择符</th>
+	<th>含义</th>
+	<th>示例</th>
+	<th>示例效果图</th>
+	<th>浏览器支持</th>
+</tr>
+<tr>
+	<td>E:link</td>
+	<td>
+		超链接a在未被访问（点击）前的样式
+	</td>
+	<td>
+		a:link {color: blue;}<br />
+		.box .alink:link{color: red;}
+	</td>
+	<td><a href="E link.html"><img src="images/link.png" /></a></td>
+	<td>所有</td>
+</tr>
+<tr>
+	<td>E:visited</td>
+	<td>
+		超链接a在其链接地址被访问（点击）过后的样式。
+	</td>
+	<td>
+		a:visited{color: green;}<br />	
+		.box .alink:visited{color: orange;}	
+	</td>
+	<td><a href="E visited.html"><img src="images/visited.png" /></a></td>
+	<td>所有</td>
+</tr>
+<tr>
+	<td>E:hover</td>
+	<td>
+		鼠标悬浮在链接上时的样式。
+	</td>
+	<td>
+		.box .alink:hover{color: green;}
+	</td>
+	<td><a href="E hover.html"><img src="images/hover.png" /></a></td>
+	<td>IE6只支持a的hover样式</td>
+</tr>
+<tr>
+	<td>E:active</td>
+	<td>
+		在鼠标点击激活链接那一下的样式。（正发生在点的那一下，松开鼠标左键此动作也就完成了）
+	</td>
+	<td>
+		.box .alink:active{background: black;}
+	</td>
+	<td><a href="E active.html"><img src="images/active.png" /></a></td>
+	<td>IE6/7不支持</td>
+</tr>
+<tr>
+	<td colspan="4">
+		提示：在 CSS 定义中，a:hover 必须被置于 a:link 和 a:visited 之后，才是有效的。<br />
+		提示：在 CSS 定义中，a:active 必须被置于 a:hover 之后，才是有效的。<br />
+		提示：伪类名称对大小写不敏感。
+	</td>
+</tr>
+<tr>
+	<td>E:focus</td>
+	<td>
+		用于元素成为焦点，这个经常用在表单元素上。<br />	
+		（当鼠标选中输入栏，为输入状态时的样式）	
+	</td>
+	<td>
+		.f_input:focus{border: 1px solid red;background: #888;}
+	</td>
+	<td><a href="E focus.html"><img src="images/focus.png" /></a></td>
+	<td>IE6/7不支持</td>
+</tr>
+<tr>
+	<td>E:lang()</td>
+	<td>
+		①匹配使用特殊语言的E元素。<br />
+		②html要标记使用语言，如：html lang="en",如果没有这段文字，例1不起效果<br />
+		③例3,必须写上具体的属性值，引用增加的内容，必须是q标签（别的标签目前本人还未发现）
+	</td>
+	<td>
+		例1:  a:lang(en){color:red;}<br />	
+		例2:  a:lang(yes){color:red;}<br />	
+		例3:  q:lang(use){quotes:"前端""中国";	color: black;}<br />	
+	</td>
+	<td><a href="E lang().html"><img src="images/lang.png" /></a></td>
+	<td>IE6/7不支持</td>
+</tr>
+<tr>
+	<td>E:not()</td>
+	<td>
+		匹配不含有s选择符的元素E（属性值s以外的属性值的样式）。
+	</td>
+	<td>
+		div:not(.div){color: red;}
+	</td>
+	<td><a href="E not().html"><img src="images/not().png" /></a></td>
+	<td>IE6/7/8</td>
+</tr>
+<tr>
+	<td>E:root</td>
+	<td>
+		匹配E元素在文档的根元素。在HTML中，根元素永远是HTML,也就是说现在的两条规则其实是一样的（大体上说来:root要比html更专业点）。<br />
+		:root { background:#ff0; }  html { background:#ff0; } 
+	</td>
+	<td>
+		html:root{color: red;}
+	</td>
+	<td><a href="E root.html"><img src="images/root.png" /></a></td>
+	<td>所有</td>
+</tr>
+<tr>
+	<td>E:first-child</td>
+	<td>
+		①选择父元素的第一个子元素E。<br />
+		②要使该属性生效，E对象必须是某个对象的子元素。
+	</td>
+	<td>
+    	.box p:first-child{color: red;}
+	</td>
+	<td><a href="E first-child.html"><img src="images/first-child.png" /></a></td>
+	<td>IE6不支持</td>
+</tr>
+<tr>
+	<td>E:last-child</td>
+	<td>
+		①选择父元素的最后一个子元素E。<br />
+		②要使该属性生效，E对象必须是某个对象的子元素。
+	</td>
+	<td>
+    	.box p:last-child{color: red;}
+	</td>
+	<td><a href="E last-child.html"><img src="images/last-child.png" /></a></td>
+	<td>IE6/7/8不支持</td>
+</tr>
+<tr>
+	<td>E:only-child</td>
+	<td>
+		①选择父元素仅仅有的一个子元素E。<br />
+		②要使该属性生效，E对象必须是某个对象的子元素，而且仅有一个子元素。
+	</td>
+	<td>
+    	.box p:only-child{color: red;}
+	</td>
+	<td><a href="E only-child.html"><img src="images/only-child.png" /></a></td>
+	<td>IE6/7/8不支持</td>
+</tr>
+<tr>
+	<td>E:nth-child(n)</td>
+	<td>
+		①选择父元素的第n个子元素E。 <br />
+		②要使该属性生效，E对象必须是某个对象的子元素。
+	</td>
+	<td>
+   		.box p:nth-child(2){color: red;}
+	</td>
+	<td><a href="E nth-child(n).html"><img src="images/nth-child(n).png" /></a></td>
+	<td>IE6/7/8不支持</td>
+</tr>
+<tr>
+	<td>E:nth-last-child(n)</td>
+	<td>
+		①选择父元素的倒数第n个子元素E。 <br /> 
+		②要使该属性生效，E对象必须是某个对象的子元素。
+	</td>
+	<td>
+    	.box p:nth-last-child(2){color: red;}
+	</td>
+	<td><a href="E nth-last-child(n).html"><img src="images/nth-last-child(n).png" /></a></td>
+	<td>IE6/7/8不支持</td>
+</tr><br/>
+<tr>
+	<td>E:first-of-type</td>
+	<td>
+		选择同类型中的第一个同级兄弟元素E。
+	</td>
+	<td>
+    	.box p:first-of-type{color: red;}
+	</td>
+	<td><a href="E fist-of-type.html"><img src="images/first-of-type.png" /></a></td>
+	<td>IE6/7/8不支持</td>
+</tr>
+<tr>
+	<td>E:last-of-type</td>
+	<td>
+		选择同类型中的最后一个同级兄弟元素E。
+	</td>
+	<td>
+    	.box p:last-of-type{color: red;}
+	</td>
+	<td><a href="E last-of-type.html"><img src="images/last-of-type.png" /></a></td>
+	<td>IE6/7/8不支持</td>
+</tr>
+<tr>
+	<td>E:only-of-type</td>
+	<td>
+		①选择同类型中的唯一的一个同级兄弟元素E。<br />
+		②父级元素下某元素只有一个的样式
+	</td>
+	<td>
+		.box div:only-of-type{color: red;}
+	</td>
+	<td><a href="E only-of-type.html"><img src="images/only-of-type.png" /></a></td>
+	<td>IE6/7/8不支持</td>
+</tr>
+<tr>
+	<td>E:nth-of-type(n)</td>
+	<td>
+		选择同类型中的第n个同级兄弟元素E。(同级兄弟元素中有插入别的元素，不被计入计算中)
+	</td>
+	<td>
+		.box p:nth-of-type(2){color: red;}
+	</td>
+	<td><a href="E nth-of-type(n).html"><img src="images/nth-of-type(n).png" /></a></td>
+	<td>IE6/7/8不支持</td>
+</tr>
+<tr>
+	<td>E:nth-last-of-type(n)</td>
+	<td>
+		选择同类型中的倒数第n个同级兄弟元素E。
+	</td>
+	<td>
+		.box p:nth-last-of-type(2){color: red;}
+	</td>
+	<td><a href="E nth-last-of-type(n).html"><img src="images/nth-last-of-type(n).png" /></a></td>
+	<td>IE6/7/8不支持</td>
+</tr>
+<tr>
+	<td>E:empty</td>
+	<td>
+		匹配没有任何子元素（包括text节点）的元素E。
+	</td>
+	<td>
+    	.box p:empty{width: 70px;height: 30px;background: red;}
+	</td>
+	<td><a href="E empty.html"><img src="images/empty.png" /></a></td>
+	<td>IE6/7/8不支持</td>
+</tr>
+<tr>
+	<td>E:checked</td>
+	<td>
+		匹配用户界面上处于选中状态的元素E。(用于input type为radio与checkbox时) 
+	</td>
+	<td>
+		.f_checkbox:checked+span,.f_radio:checked+span{background: red;}<br />
+		.f_checkbox:checked+span:after{content: "被选中";}
+	</td>
+	<td><a href="E checked.html"><img src="images/checked.png" /></a></td>
+	<td>IE6/7/8不支持</td>
+</tr>
+<tr>
+	<td>E:enabled</td>
+	<td>
+		①匹配表单中可用的状态。<br />
+		②未被禁用的可输入状态的样式
+	</td>
+	<td>
+		.f_input[type="text"]:enabled{border: 1px solid black;background:red;}
+	</td>
+	<td><a href="E enabled.html"><img src="images/enabled.png" /></a></td>
+	<td>IE6/7/8不支持</td>
+</tr>
+<tr>
+	<td>E:disabled</td>
+	<td>
+		匹配用户界面上处于禁用状态的元素E。
+	</td>
+	<td>
+		.f_input[type="text"]:disabled{background: lightgray;}
+	</td>
+	<td><a href="E disabled.html"><img src="images/disabled.png" /></a></td>
+	<td>IE6/7/8不支持</td>
+</tr>
+<tr>
+	<td>E:target</td>
+	<td>
+		匹配相关URL指向的E元素(匹配文档中特定”id”点击后的效果)
+	</td>
+	<td>
+		.contain #list1:target ,.contain #list2:target{background: red;}
+	</td>
+	<td><a href="E target.html"><img src="images/target.png" /></a></td>
+	<td>IE6/7/8不支持</td>
+</tr>
+<tr>
+	<td colspan="5" class="ft20">5、伪对象选择符</td>
+</tr>
+<tr>
+	<th>选择符</th>
+	<th>含义</th>
+	<th>示例</th>
+	<th>示例效果图</th>
+	<th>浏览器支持</th>
+</tr>
+<tr>
+	<td>E:first-letter/E::first-letter</td>
+	<td>
+		①设置对象内的第一个字符的样式。<br />
+       	②此伪对象仅作用于块对象。内联对象要使用该伪对象，必须先将其设置为块级对象。<br />
+       	③该伪类常被用来配合font-size属性和float属性制作首字下沉效果。<br />
+       	④IE6在使用该选择符时有个显式的BUG：选择符与包含规则的花括号之间不能紧挨着，需留有空格或换行。同时还存在该BUG的选择符包括：E:first-line<br />
+		⑤CSS3将伪对象选择符(Pseudo-Element Selectors)前面的单个冒号(:)修改为双冒号(::)用以区别伪类选择符(Pseudo-Classes Selectors)，但以前的写法仍然有效。<br />
+		⑥即E:first-letter可转化为E::first-letter<br />
+	</td>
+	<td>
+		.main:first-letter {font-size: 26px;float: left;}<br />
+		.box::first-letter{font-size: 26px;float: left;}
+	</td>
+	<td><a href="E first-letter.html"><img src="images/first-letter.png" /></a></td>
+	<td>IE6部分支持</td>
+</tr>
+<tr>
+	<td>E:first-line/E::first-line</td>
+	<td>
+		①设置对象内的第一行的样式。<br />
+		②此伪对象仅作用于块对象。内联对象要使用该伪对象，必须先将其设置为块级对象。<br />
+		③IE6在使用该选择符时有个显式的BUG：选择符与包含规则的花括号之间不能紧挨着，需留有空格或换行。同时还存在该BUG的选择符包括：E:first-letter<br />
+		④CSS3将伪对象选择符(Pseudo-Element Selectors)前面的单个冒号(:)修改为双冒号(::)用以区别伪类选择符(Pseudo-Classes Selectors)，但以前的写法仍然有效。<br />
+		⑤即E:first-line可转化为E::first-line
+	</td>
+	<td>
+    .main:first-line {font-size: 26px;float: left;}<br />
+	.box::first-line {font-size: 26px;float: left;}
+	</td>
+	<td><a href="E first-line.html"><img src="images/first-line.png" /></a></td>
+	<td>IE6部分支持</td>
+</tr>
+<tr>
+	<td>E:before/E::before</td>
+    <td>
+    	①设置在对象前（依据对象树的逻辑结构）发生的内容。用来和content属性一起使用<br />
+       	②CSS3将伪对象选择符(Pseudo-Element Selectors)前面的单个冒号(:)修改为双冒号(::)用以区别伪类选择符(Pseudo-Classes Selectors)，但以前的写法仍然有效。<br />
+		③即E:before可转化为E::before
+    </td>
+    <td>
+    	①.main:before { width: 100%; position: absolute; background: #fff; content:"支持E:before";}<br />
+		①.box::before { width: 100%; position: absolute; background: #fff; content:"支持E::before";}
+    </td>
+    <td><a href="E before.html"><img src="images/before.png" /></a></td>
+    <td>IE6/7/8不支持E:before<br />
+    	IE6/7/8不支持E::bofore
+	</td>
+</tr>
+<tr>
+	<td>E:after/E::after</td>
+    <td>
+    	①设置在对象后（依据对象树的逻辑结构）发生的内容。用来和content属性一起使用<br />
+		②CSS3将伪对象选择符(Pseudo-Element Selectors)前面的单个冒号(:)修改为双冒号(::)用以区别伪类选择符(Pseudo-Classes Selectors)，但以前的写法仍然有效。<br />
+		③即E:after可转化为E::after
+    </td>
+    <td>
+    	①.main:after { left: 0px;position: absolute;background: #fff;content: "支持E:after";width: 100%;}<br />
+		②.box::after { left: 0px;position: absolute;background: #fff;content:"支持E::after";width: 100%;}
+    </td>
+    <td><a href="E after.html"><img src="images/after.png" /></a></td>
+    <td>IE6/7/8不支持E:after<br />
+    	IE6/7/8不支持E::after
+	</td>
+</tr>
+<tr>
+	<td>E::selection</td>
+    <td>
+		设置对象被选择时的样式。
+    </td>    
+    <td>
+    	①.main:after { left: 0px;position: absolute;	background: #fff; content:"支持E:after";	width: 100%;}<br />
+		②.box::after { left: 0px;position: absolute;background: #fff;content:"支持E::after";width: 100%;}
+    </td>
+    <td><a href="E selection.html"><img src="images/selection.png" /></a></td>
+    <td>
+    	IE6/7/8不支持<br />
+    	火狐属于实验性
+    </td>
+</tr>
+</table>
+</body>
+</html>

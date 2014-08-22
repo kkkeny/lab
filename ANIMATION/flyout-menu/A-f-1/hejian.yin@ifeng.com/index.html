@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<title>飞出菜单</title>
+		<meta name="description" content="" />
+		<meta name="author" content="尹和健" />
+		<meta name="viewport" content="width=device-width; initial-scale=1.0" />
+		<link rel="stylesheet" href="flyout.css"/>
+	</head>
+	<body>
+		<section class="menu">
+			<ul>
+				<li>
+					<p>
+						<a href="http://www.baidu.com">x</a>
+					</p>
+				</li>
+				<li>
+					<p>
+						<a href="http://www.baidu.com">x</a>
+					</p>
+				</li>
+				<li>
+					<p>
+						<a href="http://www.baidu.com">x</a>
+					</p>
+				</li>
+				<li>
+					<p>
+						<a href="http://www.baidu.com">x</a>
+					</p>
+				</li>
+				<li>
+					<p>
+						<a href="http://www.baidu.com">x</a>
+					</p>
+				</li>
+				<li>
+					<p>
+						<a href="http://www.baidu.com">x</a>
+					</p>
+				</li>
+			</ul>
+			<p class="cross">
+				+
+			</p>
+		</section>
+		<script type="text/javascript">
+			(function() {
+				var _toArray = function(nodeList) {
+					return Array.prototype.slice.call(nodeList);
+				};
+				var click = 0;
+				var button = document.querySelector("p.cross");
+				var stars = _toArray(document.querySelectorAll("p:not([class])"));
+				var ul = document.querySelector("section.menu > ul");
+				var animating = false;
+				button.addEventListener("click", function(event) {
+					if (animating === true)
+						return;
+					if (click % 2 === 0) {
+						event.target.className = "cross turn";
+						ul.className = "";
+					} else {
+						event.target.className = "cross";
+						ul.className = "out";
+					}
+					stars.forEach(function(item) {
+						if (click % 2 === 0)
+							item.style.webkitAnimationName = "flyout";
+						else
+							item.style.webkitAnimationName = "flyin";
+					});
+					click++;
+					//event.stopPropagation();
+					animating = true;
+				}, true);
+				button.addEventListener("webkitTransitionEnd", function(event) {
+					animating = false;
+				});
+			})();
+		</script>
+	</body>
+</html>

@@ -1,0 +1,44 @@
+#表单和表单元素
+
+1. 数据提交  与后端交流的重要的通道之一     ajax   webscoket    
+2. 元素事件处理  比其他的布局元素拥有更多的事件类型
+3. 数据校验  与正则结合
+
+在js没有出现之前，都是通过button提交数据的， 目前都支持form对象的submit() 和 reset() 函数
+
+提交表单  `可以不是 type="submit"`
+
+###表单对象的获取
+
+	doucment.forms[] 
+	document.getElementById('formid')
+	document.querySelector('selector')
+	document.forms[0].elements[2]   获取第一个表单的第二个表单元素
+	
+
+###form对象事件
+
+* onsubmit 如果返回false表示比提交数据
+* onreset
+
+###表单元素
+
+	button <button type="button|submit|reset"> button name </button>
+	checkbox 
+	file  onchange
+	hidden 
+	<label><input type="text" name="" value=""/></label>
+	html5 新增加的类型 
+
+[html5-input-type](http://www.w3school.com.cn/html5/html_5_form_input_types.asp "w3cScholl")
+
+###表单元素的事件
+	
+	click
+	change
+	focus
+	blur
+	keydown
+	keyup
+	
+	

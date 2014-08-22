@@ -1,0 +1,286 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta id="ctl00_meta_ContentType" http-equiv="Content-Type" content="text/html;charset=utf-8">
+		<title>ie.js测试</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta id="ctl00_metaKeywords" name="keywords" content="小说,小说网,都市小说,言情小说,玄幻小说,武侠小说,历史小说,网络小说,原创网络文学,小说客户端下载" />
+		<meta id="ctl00_metaDescription" name="description" content="小说阅读,精彩小说尽在塔读小说。塔读小说都市言情小说,玄幻小说,武侠小说,网游小说,历史军事小说,首发小说最新章节免费阅读,精彩尽在塔读小说！提供各种手机客户端下载。热门小说:六欲仙缘,护花高手,王爷,妾身很低调,通天小妖,异能追美录,玩火之情海商途。坚决抵制成人小说,情色小说,黄色小说等成人文学和色情小说。" />
+		<meta name="robots" content="all">
+		<meta name="googlebot" content="all">
+		<meta name="baiduspider" content="all">
+		<meta name="copyright" content="本页版权 www.tadu.com 塔读文学网。All Rights Reserved">
+		<link rel="shortcut icon" href="../../../images/v1/common/tadu.ico"/>
+		<link href="common.css" rel="stylesheet" type="text/css"/>
+		<!--[if lt IE 9]>
+		<script type="text/javascript" src="IE9.js">
+		IE7_PNG_SUFFIX = ".png";
+		</script>
+		<![endif]-->
+	</head>
+	<body>
+		<div class="parent">
+			<p>1、parent &gt; child，parent直接子元素p,红色证明起作用了！(ie6-9支持)</p>
+			<div>
+				<p>parent &gt; child，非直接子元素p,无用</p>
+			</div>
+		</div>
+		<div class="test2">
+			<h2>&nbsp;</h2>
+			<p>2、adjacent + sibling ，与h2相邻的p，红色证明起作用了！(ie6-9支持)</p>
+			<p>adjacent + sibling 非与h2相邻的p，无用</p>
+		</div>
+		<div class="test3">
+			<h2>&nbsp;</h2>
+			<p>3、adjacent ~ sibling  与h2同级的p，红色证明起作用了！(ie6-9支持)</p>
+			<p>adjacent ~ sibling 与h2同级的p，有用</p>
+			<div><p>干扰性文字，非与h2同级的p</p></div>
+			<p>adjacent ~ sibling 与h2同级的p，有用</p>
+		</div>
+		<br/>
+		<div class="test4 test_4">
+			<p>4、.multiple.classes 红色证明起作用了！(ie6-9支持)</p>
+		</div>
+		<br/>
+		<div class="test5">
+			<p>5、:hover 红色证明起作用了！(ie6-9支持)</p>
+		</div>
+		<br/>
+		<div class="test6">
+			<p>6、:first-child 第1个p标签，红色证明起作用了！(ie6-9支持)</p>
+			<p>第2个p标签</p>
+			<p>第3个p标签</p>
+			<p>第4个p标签</p>
+		</div>
+		<br/>
+		<div class="test7">
+			<p>7、[attr] 无属性</p>
+			<p class="">[class] 有class属性,红色证明起作用了！(ie6-9支持)</p>
+			<p>[attr] 无属性</p>
+		</div>
+		<br/>
+		<div class="test8">
+			<p>8、[attr="value"] </p>
+			<p class="my_test">[class="my_test"]红色证明起作用了！(ie6-9支持)</p>
+			<p>[attr="value"] </p>
+		</div>
+		<br/>
+		<div class="test9">
+			<p>9、[attr~="value"] </p>
+			<p class="my test">[class~="test"] 红色证明起作用了！(ie6-9支持)</p>
+			<p>[attr~="value"] </p>
+		</div>
+		<br/>
+		<div class="test10">
+			<p>10、[attr|="value"]</p>
+			<p class="my-test">[class|="my"] 红色证明起作用了！(ie6-9支持)</p>
+			<p>[attr|="value"]</p>
+		</div>
+		<br/>
+		<div class="test11">
+			<p>11、[attr^="value"]</p>
+			<p class="mytest">[class^="my"] 红色证明起作用了！(ie6-9支持)</p>
+			<p>[attr^="value"]</p>
+		</div>
+		<br/>
+		<div class="test12">
+			<p>12、[attr$="value"]</p>
+			<p class="mytest">[class$="test"] 红色证明起作用了！(ie6-9支持)</p>
+			<p>[attr$="value"] </p>
+		</div>
+		<br/>
+		<div class="test13">
+			<p>13、[attr*="value"] </p>
+			<p class="my-test">[class*="te"] 红色证明起作用了！(ie6-9支持)</p>
+			<p>[attr*="value"] </p>
+		</div>
+		<br/>
+		<div class="test14">
+			<div class="png">
+				<p><a href="index2.html">14、background-attachment fixed (jpg) 点击看效果，jpg支持</a></p>
+				<p><a href="index3.html">14、background-attachment fixed (gif) 点击看效果，gif支持</a></p>
+				<p><a href="index4.html">14、background-attachment fixed (png) 点击看效果，png图片ie6不支持</a></p>
+				<p>15、background-image  png支持</p>
+			</div>
+		</div>
+		<br/>
+		<div class="test16">
+			<div class="mytest">
+				<p>16、bottom height implied if top is supplied </p>
+				<p>bottom height implied if top is supplied</p>
+			</div>
+		</div>
+		<br/>
+		<div class="test17">
+			<span class="mytest">17、min-width  span(行内元素)  ie6 ie7 起作用; inline-block ie6中 块级元素不支持</span>
+			<label class="mytest">17、min-width  label(行内元素)  ie6 ie7 起作用;inline-block ie6中 块级元素不支持</label>
+			<div class="mytest">17、min-width   div(块级元素) ie6 ie7  起作用 </div>
+			<p class="mytest">17、min-width  p(块级元素) ie6 ie7 起作用</p>
+		</div>
+		<div class="test18">
+			<div class="mytest">
+				<p>18、max-width 貌似起作用貌似起作用貌似起作用貌似貌似起作用貌似起作用貌似起作用貌似貌似起作用貌似起作用貌似起作用貌似貌似起作用貌似起作用貌似起作用貌似貌似起作用貌似起作用貌似起作用貌似貌似起作用貌似起作用貌似起作用貌似 ie6貌似起作用</p>
+				<p>max-width</p>
+				<p>max-width</p>
+				<p>max-width</p>
+			</div>
+		</div>
+		<div class="test19">
+			<div class="mytest">
+				<p>19、max-height ie6起作用</p>
+				<p>max-height</p>
+				<p>max-height</p>
+				<p>max-height</p>
+				<p>max-height</p>
+				<p>max-height</p>
+				<p>max-height</p>
+			</div>
+		</div>
+		<br/>
+		<div class="test20">
+			20、:empty支持
+			<div class="mytest"></div>
+		</div>
+		<br/>
+		<div class="test21">
+			21、我在最下面 position:fixed ie6支持不好，反复滑动滚动条 定位出现问题
+		</div>
+		<br/>
+		<div>
+			<label>22、可以通过点击label选中复选框<input type="checkbox"></label>
+		</div>
+		<br/>
+		<div class="test22">23、我是document真实存在的 在360安全浏览器里不支持</div>
+		<br/>
+		<div class="test23">24、input:first-child:active ie8有问题
+			<input type="text" value="active" class="mytest"/>
+			<input type="text" value="focus"/>
+		</div>
+		<br/>
+		<div class="test23">
+			25、:checked  :disabled
+			<label><input type="radio" name="sex" checked="checked"><span>男生</span></label>
+			<label><input type="radio" name="sex"><span>女生</span></label>
+			<label><input type="radio" name="sex" disabled="disabled"><span>未知</span></label>
+		</div>
+		<br/>
+		<div class="test24">
+			26、:first-of-type :last-of-type
+			<p>我是p111 :first-of-type</p>
+			<p>我是p222</p>
+			<p>我是p333 :last-of-type</p>
+		</div>
+		<br/>
+		<div class="test25">
+			27、:not(:first-child)
+			<p>我是p111</p>
+			<p>我是p222</p>
+			<p>我是p333</p>
+		</div>
+		<br/>
+		<div class="test26">
+			28、:nth-child(2)
+			<p>我是p111</p>
+			<p>我是p222  :nth-child(2)</p>
+			<p>我是p333</p>
+		</div>
+		<br/>
+		<div class="test27">
+			29、:nth-last-child(5)
+			<p>我是p111</p>
+			<p>我是p222</p>
+			<p>我是p333</p>
+			<p>我是p444</p>
+			<p>我是p555</p>
+			<p>我是p666 :nth-last-child(5)</p>
+			<p>我是p777</p>
+			<div>div我是888</div>
+			<p>我是p888</p>
+			<p>我是p999</p>
+		</div>
+		<br/>
+		<div class="test28">
+			30、:nth-last-of-type(2)
+			<p>我是p111</p>
+			<p>我是p222</p>
+			<p>我是p333</p>
+			<p>我是p444</p>
+			<p>我是p555</p>
+			<div>div我是666</div>
+			<p>我是p777</p>
+			<p>我是p888</p>
+			<p>我是p999 :nth-last-of-type(2)</p>
+			<div>div我是10</div>
+			<p>我是p11</p>
+		</div>
+		<br/>
+		<div class="test29">
+			31、:nth-of-type(2)
+			<p>我是p111</p>
+			<div>div我是666</div>
+			<p>我是p222 :nth-of-type(2)</p>
+			<p>我是p333</p>
+			<p>我是p444</p>
+			<p>我是p555</p>
+			<div>div我是666</div>
+			<p>我是p777</p>
+			<p>我是p888</p>
+			<p>我是p999</p>
+			<div>div我是10</div>
+			<p>我是p11</p>
+		</div>
+		<br/>
+		32、<br/>
+		<div class="test30">
+			<ul>
+				<li><a href="#red">red</a></li>
+				<li><a href="#green">green</a></li>
+				<li><a href="#blue">blue</a></li>
+			</ul>
+			<ul>
+				<li id="red">red</li>
+				<li id="green">green</li>
+				<li id="blue">blue</li>
+			</ul>
+		</div>
+		<br/>
+		<div class="test31">
+			33、opacity:<br/><br/>
+			<div>我是第一层在最下面
+				<div>我是第2层在最上面</div>
+			</div>
+		</div>
+		png图片直接以img形式显示 ie6有问题
+		<br/>
+		<img src="images/r_btn8.png"/>
+		<br/>
+		<br/>
+		<img src="images/r_btn24.png"/>
+		<br/>
+		png24图片无论是直接显示，还是作为背景图，设置透明度，在ie7、ie8下会有黑色边框
+		<br/>没有设置透明度
+		<div class="test32">
+			<div class="img1"><img src="images/r_btn8.png"/></div>
+			<div class="img2"><img src="images/r_btn24.png"/></div>
+			<div class="img3"></div>
+			<div class="img4"></div>
+		</div>
+		<br/>设置了透明度，左侧为img呈现，右侧作为背景
+		<div class="test32 testimg">
+			<div class="img1"><img src="images/r_btn8.png"/></div>
+			<div class="img2"><img src="images/r_btn24.png"/></div>
+			<div class="img3"></div>
+			<div class="img4"></div>
+		</div>
+		<br/>
+		<br/>
+		<br/>
+		ie6效果如下<br/>
+		<img src="images/ie6.png"/>
+		<br/>
+		<br/>
+		ie78效果如下<br/>
+		<img src="images/ie7.png"/>
+		<br/>
+	</body>
+</html>

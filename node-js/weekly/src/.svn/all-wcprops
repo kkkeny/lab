@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/tadu/!svn/ver/77998/tech/trunk/html/dev/frontend_lab/node-js/weekly/src
+END
+server.js
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/tadu/!svn/ver/73618/tech/trunk/html/dev/frontend_lab/node-js/weekly/src/server.js
+END
+Procfile
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/tadu/!svn/ver/72340/tech/trunk/html/dev/frontend_lab/node-js/weekly/src/Procfile
+END
+package.json
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/tadu/!svn/ver/74584/tech/trunk/html/dev/frontend_lab/node-js/weekly/src/package.json
+END
+start.sh
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/tadu/!svn/ver/73916/tech/trunk/html/dev/frontend_lab/node-js/weekly/src/start.sh
+END
+Gruntfile.js
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/tadu/!svn/ver/73456/tech/trunk/html/dev/frontend_lab/node-js/weekly/src/Gruntfile.js
+END
+README.md
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/tadu/!svn/ver/73825/tech/trunk/html/dev/frontend_lab/node-js/weekly/src/README.md
+END
+processes.json
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/tadu/!svn/ver/73618/tech/trunk/html/dev/frontend_lab/node-js/weekly/src/processes.json
+END
+stop.sh
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/tadu/!svn/ver/73403/tech/trunk/html/dev/frontend_lab/node-js/weekly/src/stop.sh
+END

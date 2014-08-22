@@ -1,0 +1,119 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+p {
+    font-size: 35px;
+    font-weight: bold;
+}
+p.fail {
+    color: red;
+}
+h1 {
+    display: none;
+    line-height: 50px;
+}
+h1 span {
+    font-size: 0.5em;
+}
+/*针对ie的hack，要按照版本从高至低的顺序写入，否则IE8\9\10会发生无法识别的错误*/
+.h678910 {
+    display: block\9;
+    color/*\**/: black\9;
+}
+.everythingButIE6{
+	display/**/:block; 
+	color:red;
+}
+/*@formatter:off*/
+.h8910 {
+    display: block\0/;
+    background: #008000 url() center center no-repeat \0/;
+}
+/*@formatter:on*/
+.h910:nth-of-type(28) {
+    display: block\9;
+}
+/*@formatter:off*/
+.h6 {
+    _display: block;
+}
+.h61 {
+    -display: block;
+}
+.h67{
+	*display:block;
+}
+.h671{
+	~display: block;
+}
+.h672{
+	!display: block;
+}
+.h673{
+	@display: block;
+}
+.h674{
+	#display: block;
+}
+.h675{
+	$display: block;
+}
+.h676{
+	%display: block;
+}
+.h677{
+	&display: block;
+}
+.h678{
+	(display: block;
+}
+.h679{
+	)display: block;
+}
+.h6710{
+	+display: block;
+}
+.h6711{
+	=display: block;
+}
+.h6712{
+	`display: block;
+}
+.h6713{
+	,display: block;
+}
+.h6714{
+	.display: block;
+}
+.h6715{
+	[display: block;
+}
+.h6716{
+	]display: block;
+}
+.h6717{
+	?display: block;
+}
+.h6718{
+	:display: block;
+}
+.h6719{
+	<display: block;
+}
+.h6720{
+	>display: block;
+}
+.h6721{
+	/display: block;
+}
+.h6722{
+	|display: block;
+}
+.h67i{
+	color:black !ie;
+}
+.h67i{
+	*display:block;
+	color:red;
+}

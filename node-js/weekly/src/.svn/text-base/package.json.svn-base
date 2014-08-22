@@ -1,0 +1,39 @@
+{ "name": "tos"
+, "description": "tadu-online-system"
+, "version": "0.1.0"
+, "engines": ["node >= 0.8.0"]
+, "main": "server.js"
+, "dependencies":
+  { "ejs": "*"
+  , "ejs-ext": "latest"
+  , "express": "~3.x"
+  , "compound": ">= 1.1.0"
+  , "jugglingdb": ">= 0.1.0"
+  , "jugglingdb-mongodb": ">= 0"
+  , "coffee-script": ">= 1.1.1"
+  , "stylus": "latest"
+  , "seedjs": "latest"
+  , "co-assets-compiler": "*"
+  , "redis": "latest"
+  , "connect-redis": "latest"
+  , "co-cron": "latest"
+  , "hiredis": "latest"
+  , "tadu-mailer": ">= 0.0.1"
+  },
+  "devDependencies":
+  { "nodeunit": "*"
+  , "sinon": "*"
+  , "supertest": ">= 0"
+  , "mocha": ">= 0"
+  , "should": ">= 0"
+  , "semicov": "*"
+  , "co-generators": "*"
+  , "grunt": "~0.4.1"
+  , "grunt-contrib-concat": "~0.3.0"
+  , "grunt-contrib-uglify": "~0.2.2"
+  , "grunt-contrib-cssmin": "~0.7.0"
+  }
+, "scripts":
+  { "test": "./node_modules/.bin/mocha --require test/init.js test/*/*.test.js"
+  }
+}

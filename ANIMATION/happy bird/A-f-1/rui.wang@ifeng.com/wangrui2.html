@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+	<head>
+
+		<title>鸟</title>
+		<style type="">
+			#bg {
+			width:500px;
+			height:500px;
+			position:relative;
+			background: #EAF7FD;
+			margin: 0 auto;
+			}
+			#wangruibee{
+			position: absolute;
+			bottom: 350px;
+			left: 0px;
+			-webkit-animation: bgmove 10s linear infinite;
+			}
+			#wangruibee.back{
+			-webkit-animation: moveback 10s  linear 0s infinite;
+			}
+			#wangruibee.back #bee{
+			background-position: 0 0;
+			-webkit-animation: flyback 0.6s steps(3) 0s infinite;
+			}
+			#bee{
+			width: 22px;
+			height: 24px;
+			position: relative;
+			top: 0;
+			right: 0;
+			background: url(css3.gif) 0 -32px no-repeat;
+			-webkit-animation: fly 0.6s steps(3) 0s infinite;
+			}
+			@-webkit-keyframes bgmove{
+			0%{
+			left: 0;
+			}
+			100%{
+			left: 100%;
+			}
+			}
+			@-webkit-keyframes fly {
+			0% {
+			background-position: 0px -32px;
+			}
+			100% {
+			background-position: -68px -32px;
+			}
+			}
+			@-webkit-keyframes moveback{
+			0%{
+			left: 90%;
+			}
+			100%{
+			left: 0;
+			}
+			}
+			@-webkit-keyframes flyback {
+			0% {
+			background-position: 0px 0px;
+			}
+			100% {
+			background-position: -68px 0px;
+			}
+			}
+		</style>
+	</head>
+	<body>
+		<div id="bg">
+			<div id="wangruibee">
+				<div id="bee"></div>
+			</div>
+		</div>
+		<script type="text/javascript">
+			var width = document.getElementById('bg').offsetWidth;
+			var move = document.getElementById('wangruibee');
+			var bee = document.getElementById('bee');
+
+			var flag = false;
+			move.addEventListener("webkitAnimationIteration", function(e) {
+				if (!flag) {
+					if (this.offsetLeft > width - 40) {
+						this.className = 'back';
+						flag = true;
+					} else {
+						this.className = '';
+					}
+				} else {
+					if (this.offsetLeft < 30) {
+						this.className = '';
+						flag = false;
+					} else {
+						this.className = 'back';
+					}
+				}
+			}, false);
+		</script>
+	</body>
+</html>

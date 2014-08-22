@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+ <title>IE7 {CSS2: auto}</title>
+
+ <!-- Compliance patch for Microsoft browsers -->
+ <!--[if lt IE 9]><script src="../ie7-js/lib/IE9.js"></script><![endif]-->
+
+ <style>
+
+  p[title*="by"] {
+
+   background-color: yellow;
+
+  }
+
+ </style>
+</head>
+
+<body>
+ <script src="ie7-demo.js"></script>
+ <h2>属性选择器 不关心前后有什么，只关注属性里书否出现了attr vlaue p[title*="by"]</h2>
+
+ <p title="hello">title="hello"</p>
+ <p title="bye">title="bye"</p>
+ <p title=" by-e ">title=" by-e "</p>
+ <p title="goodbye">title="goodbye"</p>
+
+ <p>&lt;&nbsp;<a href="index.html">back</a></p>
+</body>
+</html>

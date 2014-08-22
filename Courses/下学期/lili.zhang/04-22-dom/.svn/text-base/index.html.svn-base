@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>04-22作业.html</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    </head>
+    <body>
+        <script>
+            //作业：请编写一段JavaScript脚本生成下面这段DOM结构。要求：使用标准的DOM方法或属性(ie7+,不能用innerHTML、innerText)。
+            //<div id="example" class="box">
+            //    <p>塔读文学</p>
+            //</div>
+            var oDiv = document.createElement("div"),
+                op = document.createElement("p"),
+                opTxt = document.createTextNode("塔读文学");
+                
+                oDiv.setAttribute("id","example");
+                oDiv.setAttribute("class","box");
+                op.appendChild(opTxt);
+                oDiv.appendChild(op);
+                document.body.appendChild(oDiv);
+        </script>
+    </body>
+</html>

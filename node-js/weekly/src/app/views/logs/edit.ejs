@@ -1,0 +1,18 @@
+<form action="/logs/<%= log.id%>" method="post" id="addForm" onkeydown= "if(event.keyCode==13)return false;">
+    <%- csrfTag() %>
+    <input type="hidden" name="_method" value="PUT">
+    <div class="add-content">
+        <label for="username">用户</label><input id="username" value="<%= signedIn().name %>" type="text" readonly="readonly" class="username" name="account" /><br/>
+        <label for="date">日期</label><input id="date" value="<%= formatDate(log.atime)%>" type="text" readonly="readonly" class="date" name="date" /><br/>
+        <label for="target">指标</label><input id="target" type="text" list="indicators" autocomplete="off"  placeholder="双击获取最近内容" class="target-add" name="Log[indicator]" value="<%=log.indicator%>" /><br/>
+        <label for="platform">平台</label><input id="platform" type="text" list="platforms" autocomplete="off"  placeholder="双击获取最近内容" class="platform" name="Log[platform]" value="<%=log.platform%>" /><br/>
+        <label for="state">状态</label><select name="Log[status]" class="state" id="state" value="<%= log.status%>"><option value="0">异常</option><option value="1">正常</option></select><br/>
+        <label for="remarks">备注</label><textarea name="Log[remark]" class="remarks" id="remarks" autofocus><%= log.remark %></textarea><br/>
+        <label for="scheme">解决方案</label><textarea name="Log[method]"  class="scheme" id="scheme"><%=log.method %></textarea>
+    </div>
+    <div class="btn">
+        <button type="submit" data-remote="true" id="addBtnPop" class="addBtn">修改</button>
+        <button id="closeBtn" type="reset" class="closeBtn">关闭</button>
+    </div>
+</form>
+<div class="errorInfo"></div>

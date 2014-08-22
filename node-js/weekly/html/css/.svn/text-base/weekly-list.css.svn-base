@@ -1,0 +1,220 @@
+.department {
+    width: 145px;
+    height: 28px;
+    background: #324f4f;
+    text-align: center;
+    line-height: 28px;
+    color: #ffffff;
+    position: relative;
+}
+.department .triangle-down {
+    position: absolute;
+    bottom: -4px;
+    right: 15px;
+    width: 0;
+    height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 4px solid #324f4f;
+}
+.week-list {
+    width: 950px;
+    margin: 15px auto;
+}
+.content .head {
+    border-bottom: 1px solid #dddddd;
+    height: 36px;
+    line-height: 32px;
+}
+.content .head .myWeekly {
+    float: left;
+    width: 90px;
+    height: 26px;
+    position: relative;
+    top: 10px;
+    border-bottom: 1px solid #259d9d;
+}
+.content .head ul {
+    float: right;
+    /*width: 240px;*/
+}
+.content .head li {
+    height: 32px;
+    float: right;
+    color: #797979;
+}
+.content .head .time, .content .head .addWeekly {
+    border: 1px solid #c4c4c4;
+    display: inline-block;
+    width: 90px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    border-radius: 5px;
+    font-weight: bold;
+    color: #000000;
+}
+.content .head .addWeekly {
+    margin-left: 12px;
+    background: #f1f1f1;
+    cursor: pointer;
+}
+.content table {
+    margin-top: 15px;
+}
+.content table th {
+    padding: 6px 0;
+    background: #eeeeee;
+    text-align: center;
+}
+.content table .th1 {
+    width: 140px;
+}
+.content table .th2 {
+    width: 140px;
+}
+.content table .th3 {
+    width: 50px;
+}
+.content table .th4 {
+    width: 315px;
+}
+.content table .th5 {
+    width: 285px;
+}
+.content table .th-6 {
+    width: 100px;
+}
+.content table td {
+    padding: 10px 0;
+    text-align: center;
+}
+.content table td:last-of-type a:nth-of-type(2) {
+    color: red;
+}
+.content table .left {
+    text-align: left;
+    padding: 6px 6px;
+}
+.content table th, .content table td {
+    border: 1px solid #dddddd;
+}
+.content button {
+    width: 242px;
+    height: 46px;
+    line-height: 46px;
+    background: #345957;
+    display: block;
+    margin-top: 50px;
+    float:right;
+    font-size: 24px;
+    color: #ffffff;
+    border: 0;
+    border-bottom: 3px solid #122f30;
+    border-radius: 5px;
+}
+.content button img {
+    margin-right: 10px;
+    position: relative;
+    top:2px;
+}
+.content button a{
+	color:#fff;
+}
+section.add {
+    width: 450px;
+    height: 465px;
+    margin: 0 auto;
+    border: 1px solid #a9a9a9;
+    position: absolute;
+    top: 100px;
+    left: 50%;
+    margin-left: -225px;
+    background: #ffffff;
+    z-index: 100;
+    display: none;
+}
+.add h3 {
+    height: 26px;
+    background: #ececec;
+    text-align:center;
+    line-height: 26px;
+}
+.add label {
+    width: 60px;
+    display: inline-block;
+    text-align: right;
+    color: #333333;
+    font-weight: bold;
+    margin: 12px 20px;
+}
+.add .username, .add .date {
+    border: 0;
+}
+.add .target-add, .add .platform {
+    width: 225px;
+    height: 30px;
+    line-height: 30px;
+    border: 1px solid #d9d9d9;
+}
+.add .state {
+    width: 80px;
+    height: 30px;
+    border: 1px solid #d9d9d9;
+}
+.add .remarks, .add .scheme {
+    width: 314px;
+    height: 74px;
+    border: 1px solid #d9d9d9;
+}
+.btn {
+    width: 175px;
+    margin: 10px auto;
+}
+.addBtn, .closeBtn {
+    width: 80px;
+    height: 30px;
+    background: #f4f4f4;
+    border: 1px solid #dcdcdc;
+    margin: 0 auto;
+    display: inline-block;
+}
+.addBtn {
+    margin-right: 12px;
+}
+.shade {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0.2;
+    background: #000;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    display: none;
+}
+.errorInfo{
+    font-size: 14px;
+    text-align: center;
+    color: red;
+}
+input.time{
+	cursor:pointer;
+}
+.add-content *{
+    vertical-align: middle;
+}
+div.btn:last-of-type{
+	width:100%;
+	text-align:center;
+}
+button.addBtn:last-of-type{
+	margin: 0;
+}
+.add-content.desc{
+	text-align:center;
+	margin-top:20px;
+}
+textarea[name=desc]{
+	width:90% !important;
+}

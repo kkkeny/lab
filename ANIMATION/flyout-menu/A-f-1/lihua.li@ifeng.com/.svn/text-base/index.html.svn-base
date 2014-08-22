@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no"/>
+<meta name="format-detection" content="telephone=no"/>
+<meta name="format-detection" content="email=no"/>
+<title></title>
+<style type="text/css">
+body,div,ul,li,span{margin:0px;padding:0px;}
+ul{
+	list-style:none;
+} 
+#box{
+	width:30px;
+	height:30px;
+	border: 2px solid black;
+	border-radius:60px;
+	margin:200px;
+}
+.menu{
+	width:30px;
+	height:30px;
+	line-height:30px;
+	background:red;
+	border-radius:60px;
+	position:relative;
+	text-align:center;
+	font-size: 30px;
+	font-weight:bold;
+} 
+.menu:hover{
+	cursor:pointer;
+	-webkit-transform:rotate(-45deg);
+}
+#box ul{
+	top:205px;
+	left:210px;
+	z-index:-999;
+}
+#box ul,#box ul li{
+	width:10px;
+	height:10px;
+	position:absolute;
+}
+#box ul li span{
+	display:block;
+	width:20px;
+	height:20px;
+	line-height:20px;
+	text-align: center;
+	border-radius:60px;
+	background:red;
+	border:1px solid black;
+	position:absolute;
+	-webkit-animation:back 1s ease both;
+	top:0px;
+	left:0px;
+}
+@-webkit-keyframes back{
+	0%{
+		top:200px;
+		-webkit-transform: rotate(0deg);
+	}
+	90%{
+		top:210px;
+		-webkit-transform: rotate(180deg);
+	}
+	100%{
+		top:0px;
+		-webkit-transform: rotate(360deg);
+	}
+}
+
+#box:hover ul li span{
+	-webkit-animation:animation 1s ease both;
+	cursor:pointer;
+}
+@-webkit-keyframes animation{
+    0%{
+    	top:0px;
+    	-webkit-transform: rotate(0deg);
+    }
+    90%{
+    	top: 210px;
+    }
+    100%{
+    	top:200px;
+    	-webkit-transform: rotate(360deg);
+    }
+}
+
+#box ul li:nth-child(1){
+	-webkit-transform:rotate(0);
+}
+#box ul li:nth-child(1) span{
+	-webkit-animation-delay:0.05s;
+}
+#box ul li:nth-child(2){
+	-webkit-transform:rotate(18deg);
+}
+#box ul li:nth-child(2) span{
+	-webkit-animation-delay:0.1s;
+}
+#box ul li:nth-child(3){
+	-webkit-transform:rotate(36deg);
+}
+#box ul li:nth-child(3) span{
+	-webkit-animation-delay:0.15s;
+}
+#box ul li:nth-child(4){
+	-webkit-transform:rotate(54deg);
+}
+#box ul li:nth-child(4) span{
+	-webkit-animation-delay:0.2s;
+}
+#box ul li:nth-child(5){
+	-webkit-transform:rotate(72deg);
+}
+#box ul li:nth-child(5) span{
+	-webkit-animation-delay:0.25s;
+}  
+  
+</style>
+</head>
+<body>
+<div id="box">
+	<div class="menu" id="menu">+</div>
+	<ul>
+		<li><span>1</span></li>
+		<li><span>2</span></li>
+		<li><span>3</span></li>
+		<li><span>4</span></li>
+		<li><span>5</span></li>
+	</ul>
+</div>
+</body>
+</html>

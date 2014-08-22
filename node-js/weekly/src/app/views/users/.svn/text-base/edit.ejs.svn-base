@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title><%- contentFor('title') %></title>
+    <%- stylesheetLinkTag('css/common','css/userInfo') %>
+    <%- javascriptIncludeTag('app', 'validate') %>
+    <%- csrfMetaTag() %>
+</head>
+<body>
+<%- include ../layouts/_header %>
+<%- contentFor('title', 'About') %>
+
+<%- include _aside %>
+<section class="content">
+    <fieldset class="userInfo">
+        <% var form = formFor(user, {action: pathTo.user(user), method: 'PUT', id: "user-form", class: 'form-horizontal'}) %>
+        <%- form.begin() %>
+        <%- errorMessagesFor(user, {message:'数据校验错误'}) %>
+            <label for="username"> 登录名：</label>
+                <input id="username" type="text" class="username" name="name" value="<%= user.name%>" readonly="readonly" /><br/>
+			<label for="nickname"> 姓名：</label>
+                <input id="nickname" type="text" class="nickname" name="User[username]" placeholder="" value="<%= user.username ||'' %>"/><br/>
+			<label for="entry"> 入职日期：</label>
+                <input class="entry" type="date" name="User[joindate]"  value="<%= formatDate(user.joindate)%>" max="<%= formatDate(new Date()*1-1000*60*60*24)%>" />
+			<label for="department">部门：</label>
+			     <span class="depart">
+                    <select id="department" class="department" name="User[department]" value="<%= user.department %>">
+                        <option value="其他">其他</option>
+                        <option value="研发">研发</option>
+                    </select>
+                 </span><br/>
+             <label for="position">组别：</label>
+			     <span class="depart">
+                     <select id="position" class="position" name="User[position]" value="<%= user.position %>">
+                         <option value="编辑器">编辑器</option>
+                         <option value="客户端">客户端</option>
+                         <option value="业务平台">业务平台</option>
+                         <option value="BI">BI</option>
+                         <option value="CMS">CMS</option>
+                         <option value="前端">前端</option>
+                     </select>
+			     </span><br/>
+			<label for="phone">电话：</label>
+                <input type="text" id="phone" name="User[phone]" class="phone" placeholder="移动4G,非一般的感觉" value="<%= user.phone ||'' %>"/><br/>
+			<div id="errorInfo" class="errorInfo"></div>
+			<button type="submit" id="userBtn">保存</button>
+        <%- form.end() %>
+    </fieldset>
+</section>
+
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+
+ <title>IE7 {CSS2: auto}</title>
+
+ <!-- Compliance patch for Microsoft browsers -->
+ <!--[if lt IE 9]><script src="../ie7-js/lib/IE9.js"></script><![endif]-->
+
+ <style>
+
+  div {
+
+   border: silver 1px solid;
+   margin: 0.3em;
+   padding: 0.3em;
+
+  }
+
+  .parent {
+
+   margin: 1em 0.3em 0.3em;
+   
+  }
+
+  .parent > .child {
+
+   background-color: yellow;
+
+  }
+
+ </style>
+</head>
+<body>
+ <script src="ie7-demo.js"></script>
+ <h2>测试父结点下的孩子节点 不是孙子节点</h2>
+
+ <div class="parent">Parent
+  <div class="child">Child1</div>
+  <div class="child">Child2</div>
+ </div>
+ <div class="parent">Parent
+  <div class="baby-sitter">Baby-sitter
+   <div class="child">Child</div>
+  </div>
+ </div>
+
+ <p>&lt;&nbsp;<a href="index.html">back</a></p>
+</body>
+</html>

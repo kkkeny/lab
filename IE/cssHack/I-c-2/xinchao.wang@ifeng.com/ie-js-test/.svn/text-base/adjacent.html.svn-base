@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+
+ <title>IE7 {CSS2: auto}</title>
+
+ <!-- Compliance patch for Microsoft browsers -->
+ <!--[if lt IE 9]><script src="../ie7-js/lib/IE9.js"></script><![endif]-->
+
+ <style>
+
+  h2 + p {
+
+   background-color: yellow;
+
+  }
+
+ </style>
+</head>
+<body>
+ <script src="ie7-demo.js"></script>
+ <h2>紧跟在节点后面的元素 h2+p</h2>
+
+ <p>第一个p标签</p>
+ <p>第二个p标签</p>
+
+ <p>&lt;&nbsp;<a href="index.html">back</a></p>
+ <!-- thanks Menno! -->
+</body>
+</html>

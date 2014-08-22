@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no"/>
+
+<title>摇一摇</title>
+<style type="text/css">
+	*{
+		margin:0;
+		padding:0;
+		width:100%;
+		height:100%;
+	}
+	.bg{
+		background: url(bg.jpg) center center no-repeat;
+		width:100%;
+		height:100%;
+		position:relative;
+		z-index: 2;
+	}
+	#panel{
+		background: #232522 url(yaoyiyao.png) center center no-repeat;
+		position:absolute;
+		top:0px;
+		left:0px;
+		width:100%;
+		height:100%;
+		-webkit-transition: all 1s ease;
+		color:#fff;
+		z-index: 3;
+	}
+	#panel.hidden{
+		top:-100%;
+	}
+	#musicBox{
+		display: none;
+		position:absolute;
+		z-index: 1;
+	}
+</style>
+</head>
+<body>
+	<div class="bg" id="container">
+		<audio id="musicBox" preload="auto" >
+            <source src="shake_match.mp3" type="audio/mpeg">
+        </audio>
+		<div id="panel"></div>
+	</div>
+	<script type="text/javascript" src="images/jquery-1.6.1.min.js"></script>
+	<script type="text/javascript">
+		(function(){
+			if(window.DeviceMotionEvent){
+				window.addEventListener('devicemotion',deviceMotionHandler,false);
+			}
+			
+			var shake_threshold = 10;
+			var last_update = 0;
+			var alpha;
+			var beta;
+			var gamma;
+			var last_alpha;
+			var last_beta;
+			var last_gamma;
+			
+			function deviceMotionHandler(eventData){
+				var acceleration = eventData.accelerationIncludingGravity;
+				var cur_time = new Date().getTime();
+				var diff_time = cur_time - last_update;
+				var diff_alpha = 0;
+				var diff_beta = 0;
+				var diff_gama = 0;
+				last_update = cur_time;
+				
+				if((last_alpha == null)&&(last_beta == null)&&(last_gamma == null)){
+					last_alpha = acceleration.x;
+					last_beta = acceleration.x;
+					last_gamma = acceleration.x;
+					return;
+				}
+				
+				alpha = acceleration.x;
+				beta = acceleration.y;
+				gamma = acceleration.z;
+				
+				diff_alpha = Math.abs(last_alpha-alpha);
+				diff_beta = Math.abs(last_beta-beta);
+				diff_gama = Math.abs(last_gamma-gamma);
+				
+				//var speed = Math.abs(alpha+beta+gamma-last_alpha-last_beta-last_gamma) / diff_time * 10000;
+				
+				if(((diff_alpha > shake_threshold)&&(diff_beta > shake_threshold))||((diff_beta > shake_threshold)&&(diff_gamma > shake_threshold))||((diff_alpha > shake_threshold)&&(diff_gamma > shake_threshold))){
+					document.getElementById('panel').className='hidden';
+					document.getElementById('musicBox').play();
+					setTimeout(function()
+                    {
+                        document.getElementById('panel').className='';
+                    }, 2000)
+					//document.getElementById("container").innerHTML = document.getElementById("container").innerHTML + "<br />" + diff_alpha+ "<br />" + diff_beta+ "<br />" + diff_gama;
+				}
+			}
+		})();
+	</script>
+</body>
+</html>

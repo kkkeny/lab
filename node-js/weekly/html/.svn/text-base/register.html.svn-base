@@ -1,0 +1,60 @@
+<!doctype html>
+<html>	
+	<head>
+		<meta charset="utf-8">
+		<title>用户注册</title>
+		<link rel="stylesheet" href="css/common.css" />
+		<link rel="stylesheet" href="css/register.css" />
+		<script type="text/javascript" src="js/validate.js"></script>
+	</head>
+	<body>
+		<header>
+			<img class="logo" src="images/logo.png" alt="logo" title="logo" />
+			<h1>--日志管理系统平台</h1>
+			<div class="right">
+				<a class="register1" href="">注册</a>
+			</div>
+		</header>
+		<section class="content">
+			<fieldset class="register">
+				<form action="">
+					<label for="username"> 用户名</label><strong>*</strong><input id="username" type="text" class="username" name="account" placeholder="错误提示"/><em>[只能使用公司邮箱]</em><br/>
+					<label for="password"> 密 码</label><strong>*</strong><input id="password" type="password" class="password" name="password" placeholder="错误提示"/><em>[只能使用公司邮箱密码]</em><br/>
+					<label for="repassword">确认密码</label><strong>*</strong><input id="repassword" type="password" class="password" name="password" placeholder="错误提示"/><br/>
+					 <div id="errorInfo" class="errorInfo"></div>
+					<button id="reg">马上注册</button>
+				</form>
+			</fieldset>
+		</section>
+		<footer>
+			<small>Copyright(C) 2008-2014 www.tadu.com All Rights Reserved 版权所有 北京易天新动网络科技有限公司</small>
+		</footer>
+		<script>
+			// var username = document.getElementById('username');
+			// var pwd = document.getElementById('password');
+			// var confirmPwd = document.getElementById('repassword');
+			// var errorInfo = document.getElementById('errorInfo');
+			// var reg = document.getElementById('reg');
+			// reg.onclick = function(){
+			// 	if(username.value.replace(/^\s+/g,"")===""){
+			// 		errorInfo.innerHTML = "用户名不能为空";
+			// 		return false;
+			// 	}else if(pwd.value.replace(/^\s+/g,"")===""){
+			// 		errorInfo.innerHTML = "密码不能为空";
+			// 		return false;
+			// 	}else if(pwd.value.replace(/^\s+|\s+$/g,"").length < 6){
+			// 		errorInfo.innerHTML = "密码不能小于六位";
+			// 		return false;
+			// 	}else if(confirmPwd.value.replace(/^\s+/g,"")===""){
+			// 		errorInfo.innerHTML = "确认密码不能为空";
+			// 		return false;
+			// 	}else if(pwd.value.replace(/^\s+|\s+$/g,"")!==confirmPwd.value.replace(/^\s+|\s+$/g,"")){
+			// 		errorInfo.innerHTML = "两次新密码不一致";
+			// 		return false;
+			// 	}
+			// };
+		</script>
+		
+	</body>
+
+</html>

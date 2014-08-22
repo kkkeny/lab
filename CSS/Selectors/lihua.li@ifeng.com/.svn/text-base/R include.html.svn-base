@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no"/>
+<meta name="format-detection" content="telephone=no"/>
+<meta name="format-detection" content="email=no"/>
+<title></title>
+<style type="text/css">
+body,div,ul,li,h2{
+	margin: 0px;
+	padding: 0px;
+}
+ul{
+	list-style: none;
+}
+.main .box{
+	font-size: 16px;
+	color: red;
+}
+</style>
+</head>
+<body>
+<div class="main">
+	<div class="box">
+		<h2>.main .box h2</h2>
+		<ul>
+			<li>.main .box ul li</li>
+		</ul>
+	</div>
+	<div class="side">.main .side</div>
+</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

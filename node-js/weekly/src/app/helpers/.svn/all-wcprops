@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/tadu/!svn/ver/74221/tech/trunk/html/dev/frontend_lab/node-js/weekly/src/app/helpers
+END
+sessions_helper.js
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/tadu/!svn/ver/72340/tech/trunk/html/dev/frontend_lab/node-js/weekly/src/app/helpers/sessions_helper.js
+END
+users_helper.js
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/tadu/!svn/ver/72340/tech/trunk/html/dev/frontend_lab/node-js/weekly/src/app/helpers/users_helper.js
+END
+microposts_helper.js
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/tadu/!svn/ver/72403/tech/trunk/html/dev/frontend_lab/node-js/weekly/src/app/helpers/microposts_helper.js
+END
+application_helper.js
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/tadu/!svn/ver/74221/tech/trunk/html/dev/frontend_lab/node-js/weekly/src/app/helpers/application_helper.js
+END
+logs_helper.js
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/tadu/!svn/ver/72687/tech/trunk/html/dev/frontend_lab/node-js/weekly/src/app/helpers/logs_helper.js
+END

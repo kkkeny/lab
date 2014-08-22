@@ -1,0 +1,140 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>无标题文档</title>
+		<style type="text/css">
+			div {
+				margin: 300px auto;
+				height: 100px;
+				width: 100px;
+				z-index: 1;
+			}
+			button {
+				color: #a7a7a7;
+				width: 70px;
+				height: 70px;
+				line-height: 60px;
+				-webkit-transition: .9s;
+				border: 5px solid #a39595;
+				font-size: 30px;
+				z-index: 99;
+				border-radius: 50%;
+				box-shadow: 0px 3px 8px #aaa, inset 0px 2px 3px #fff;
+				background-image: -webkit-gradient(linear, left top, left bottom, from(#f7f7f7), to(#e7e7e7));
+				cursor: pointer;
+				position: relative;
+			}
+
+			button:hover {
+				-webkit-transform: rotate(360deg);
+			}
+			button+ ul {
+				position: relative;
+				top: -80px;
+				left: 2px;
+				z-index: 2;
+			}
+			button+ ul li {
+				font-size: 14px;
+				background-image: -webkit-linear-gradient(top, #383838, #111111);
+				width: 40px;
+				height: 40px;
+				list-style: none;
+				color: #F7F7F7;
+				border: 2px solid #000;
+				line-height: 40px;
+				text-align: center;
+				position: absolute;
+				top: 5px;
+				left: 5px;
+				-webkit-transform: translate(10px);
+				opacity: 0;
+				-webkit-border-radius: 26px;
+				position: absolute;
+			}
+			button + ul li span {
+
+				display: block;
+			}
+			button:hover + ul li {
+				opacity: 1;
+			}
+			button:hover + ul li span {
+				-webkit-animation: change 2s linear;
+			}
+			button:hover + ul li:nth-of-type(1) {
+				-webkit-transform: rotate(0deg) translate(200px);
+				-webkit-transition: 2s cubic-bezier(.60,3,.60,0) 0s;
+			}
+			button:hover + ul li:nth-of-type(2) {
+				-webkit-transform: rotate(30deg) translate(200px);
+				-webkit-transition: 2s cubic-bezier(.60,3,.60,0) .1s;
+			}
+			button:hover + ul li:nth-of-type(3) {
+				-webkit-transform: rotate(60deg) translate(200px);
+				-webkit-transition: 2s cubic-bezier(.60,3,.60,0) .2s;
+			}
+			button:hover + ul li:nth-of-type(4) {
+				-webkit-transform: rotate(90deg) translate(200px);
+				-webkit-transition: 2s cubic-bezier(.60,3,.60,0) .3s;
+			}
+
+			button + ul li:nth-of-type(1) {
+				-webkit-transition: 2s cubic-bezier(.60,3,.60,0) .3s;
+			}
+
+			button + ul li:nth-of-type(2) {
+				-webkit-transition: 2s cubic-bezier(.60,3,.60,0) .2s;
+			}
+
+			button + ul li:nth-of-type(3) {
+				-webkit-transition: 2s cubic-bezier(.60,3,.60,0) .1s;
+			}
+
+			button + ul li:nth-of-type(4) {
+				-webkit-transition: 2s cubic-bezier(.60,3,.60,0) 0s;
+			}
+
+			@-webkit-keyframes change{
+			from {
+				-webkit-transform: rotate(0deg);
+			}
+			to {
+				-webkit-transform: rotate(360deg);
+			}
+			}
+		</style>
+	</head>
+
+	<body>
+		<div>
+			<button type="button">
+				+
+
+			</button>
+			<ul>
+				<li>
+					<span>
+						*
+					</span>
+				</li>
+				<li>
+					<span>
+						*
+					</span>
+				</li>
+				<li>
+					<span>
+						*
+					</span>
+				</li>
+				<li>
+					<span>
+						*
+					</span>
+				</li>
+			</ul>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>websocket test</title>
+</head>
+<body>
+	<script>
+		/*
+			//socket main function
+			addEventListener
+			removeEventListener
+			dispatchEvent
+			send
+			close
+			//
+			readyState
+			//connection status
+			CONNECTING 0
+			OPEN   1
+			CLOSEING 2
+			CLOSED 3
+			//connection event
+			onclose
+			onopen
+			onerror
+			onmessage
+
+		*/ 
+		if(WebSocket){
+			var conn = new WebSocket('ws://127.0.0.1:8181');
+			conn.onclose = function(){
+				console.log('server down');
+				//console.log(conn.readyState === WebSocket.CLOSED)
+			}
+			conn.onopen = function(){
+				console.log("client connection server.");
+			}
+
+			conn.onerror = function(error){
+				console.log('client error ' +error)
+			}
+
+			conn.onmessage = function(message){
+				console.log(message.data)
+				try{
+					var json = JSON.parse(message.data);
+				}catch(e){
+					console.log(e)
+					return;
+				}
+			}
+		}
+	</script>
+</body>
+</html>

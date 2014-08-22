@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+		<script type="text/javascript" src="http://api.map.baidu.com/api?v=1.5&ak=479d40820a597d22927eb04c9840b86d"></script>
+		<script type="text/javascript" src="http://developer.baidu.com/map/jsdemo/demo/convertor.js"></script>
+		<title>周围人都在读</title>
+		<style type="text/css">
+			body, html, #mapgis {
+				width: 100%;
+				height: 100%;
+				overflow: hidden;
+				margin: 0;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="mapgis"></div>
+		<div id="window">
+			<h3>hello world</h3>
+		</div>
+	</body>
+</html>
+<script type="text/javascript">
+	if (navigator.geolocation) {
+		navigator.geolocation.getCurrentPosition(function(p) {
+			var latitude = p.coords.latitude;
+			//维度
+			var longitude = p.coords.longitude;
+			//经度
+
+			var map = new BMap.Map("mapgis");
+			// 创建Map实例
+			var point = new BMap.Point(longitude, latitude);
+			// 创建点坐标
+			map.centerAndZoom(point, 15);
+			// 初始化地图,设置中心点坐标和地图级别。
+			map.enableScrollWheelZoom();
+			//启用滚轮放大缩小
+			var marker = new BMap.Marker(point);
+			map.addOverlay(marker);
+			
+			var labelgps = new BMap.Label("浏览器标注",{offset:new BMap.Size(20,-10)});
+			marker.setLabel(labelgps);
+			//marker.setAnimation(BMAP_ANIMATION_BOUNCE);
+
+			marker.enableDragging();
+			//type, target, point, pixel, overlay
+			map.addEventListener("click",function(obj){
+				console.log(obj);
+				var _marker = new BMap.Marker(obj.point);
+				_marker.addEventListener('click',function(){
+					var win = new BMap.InfoWindow("经度：" + obj.point.lng + ",纬度：" + obj.point.lat, {
+						title : '位置信息'
+					});
+					_marker.openInfoWindow(win);
+					console.log(this)
+				})
+				map.addOverlay(_marker);
+			})
+			marker.addEventListener("click", function(obj) {
+				//console.log(arguments);
+				//window.point = obj.point;
+				var win = new BMap.InfoWindow("经度：" + point.lng + ",纬度：" + point.lat, {
+					title : '位置信息'
+				});
+				marker.openInfoWindow(win);
+			});
+
+			map.addControl(new BMap.NavigationControl());
+			// 添加平移缩放控件
+			map.addControl(new BMap.ScaleControl());
+			// 添加比例尺控件
+			map.addControl(new BMap.OverviewMapControl());
+			//添加缩略地图控件
+			map.enableScrollWheelZoom();
+			//启用滚轮放大缩小
+			map.addControl(new BMap.MapTypeControl());
+			//添加地图类型控件
+
+			var menu = new BMap.ContextMenu();
+			var txtMenuItem = [{
+				text : '放大',
+				callback : function() {
+					map.zoomIn()
+				}
+			}, {
+				text : '缩小',
+				callback : function() {
+					map.zoomOut()
+				}
+			}];
+
+			for (var i = 0; i < txtMenuItem.length; i++) {
+				menu.addItem(new BMap.MenuItem(txtMenuItem[i].text, txtMenuItem[i].callback, 100));
+			}
+			
+			map.addContextMenu(menu);
+
+			window.map = map;
+			window.point = point;
+			
+			//坐标转换完之后的回调函数
+			translateCallback = function (point){
+			    var marker = new BMap.Marker(point);
+			    map.addOverlay(marker);
+			    var label = new BMap.Label("我是百度标注哦",{offset:new BMap.Size(20,-10)});
+			    marker.setLabel(label); //添加百度label
+			}
+			
+			setTimeout(function(){
+			    BMap.Convertor.translate(point,0,translateCallback);     //真实经纬度转成百度坐标
+			}, 2000);
+
+		},function(){},{ maximumAge: 3000, timeout: 5000, enableHighAccuracy: true });
+	} else {
+		alert("浏览器不支持定位服务或者你拒绝了使用定位")
+	}
+
+</script>

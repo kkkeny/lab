@@ -1,0 +1,28 @@
+<!DOCTYPE html>  
+<html>  
+<head>  
+    <title>a.html</title> 
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <style type="text/css">
+        body {
+            line-height: 30px;
+        }
+    </style>
+</head>  
+<body>
+    <script>
+        var _width = screen.width*0.8,
+            _height = screen.height*0.8,
+            _left = (screen.width-_width)/2,
+            _top = (screen.height-_height)/2;
+            
+            // screen.width || screen.availWidth
+            
+        //a.html打开一个b.html，b.html的宽高是整个屏幕的80%，将他移到中央的位置
+        var mywin = window.open("b.html","","width="+_width+",height="+_height+",toolbar=yes");
+        //var mywin = window.open("b.html","");
+            //mywin.resizeTo(width,height);
+            mywin.moveTo(_left,_top);
+    </script>
+</body>  
+</html> 

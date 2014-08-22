@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no"/>
+<meta name="format-detection" content="telephone=no"/>
+<meta name="format-detection" content="email=no"/>
+<title></title>
+<style type="text/css">
+a:lang(en){
+	color:red;
+}
+a:lang(yes){
+	color:red;
+}
+q:lang(use){
+	quotes:"前端""中国";
+	color: black;
+}
+</style>
+</head>
+<body>
+<a href="#">a标签</a><br />
+<a href="#" lang="yes">
+	a标签
+	<q lang="use">
+		qqqqqq
+	</q>
+</a>
+</body>
+</html>

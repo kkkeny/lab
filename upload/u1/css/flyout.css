@@ -1,0 +1,164 @@
+li {
+    list-style: none;
+}
+section.menu {
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+    text-align: center;
+    vertical-align: middle;
+    position: relative;
+}
+section.menu > p, section.menu > ul, section.menu > ul > li, section.menu > ul > li > p {
+    width: inherit;
+    height: inherit;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    box-sizing: border-box;
+}
+section.menu p.cross {
+    background: url(../image/wheel.png) center center no-repeat;
+    background-size: contain;
+    -webkit-transition: -webkit-transform .6s ease-in-out;
+    opacity: 0.4;
+}
+section.menu p.turn {
+    -webkit-transform: rotate(360deg);
+}
+section.menu > ul > li:nth-child(2) {
+    -webkit-transform: rotate(18deg);
+    -webkit-animation-delay: 0.1s;
+}
+section.menu > ul > li:nth-child(3) {
+    -webkit-transform: rotate(36deg);
+    -webkit-animation-delay: 0.15s;
+}
+section.menu > ul > li:nth-child(4) {
+    -webkit-transform: rotate(54deg);
+    -webkit-animation-delay: 0.2s;
+}
+section.menu > ul > li:nth-child(5) {
+    -webkit-transform: rotate(72deg);
+    -webkit-animation-delay: 0.25s;
+}
+section.menu > ul > li:nth-child(6) {
+    -webkit-transform: rotate(90deg);
+    -webkit-animation-delay: 0.3s;
+}
+
+section.menu > ul.out > li:nth-child(1) {
+    -webkit-animation-delay: 0.3s;
+}
+section.menu > ul.out > li:nth-child(2) {
+    -webkit-animation-delay: 0.25s;
+}
+section.menu > ul.out > li:nth-child(3) {
+    -webkit-animation-delay: 0.2s;
+}
+section.menu > ul.out > li:nth-child(4) {
+    -webkit-animation-delay: 0.15s;
+}
+section.menu > ul.out > li:nth-child(5) {
+    -webkit-animation-delay: 0.1s;
+}
+section.menu > ul.out > li:nth-child(6) {
+    -webkit-animation-delay: 0s;
+}
+section.menu > ul > li > p {
+    width: inherit;
+    height: inherit;
+    display: inline-block;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    -webkit-transform-origin: center center;
+    -webkit-animation-duration: .6s;
+    -webkit-animation-direction: normal;
+    -webkit-animation-timing-function: ease;
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-fill-mode: both;
+    -webkit-animation-delay: inherit;
+    opacity: 0;
+}
+section.menu > ul > li:nth-child(1) > p{
+    background-image: url(../image/home.png);
+}
+section.menu > ul > li:nth-child(2) > p{
+    background-image: url(../image/cover.png);
+}
+section.menu > ul > li:nth-child(3) > p{
+    background-image: url(../image/cata.png);
+}
+section.menu > ul > li:nth-child(4) > p{
+    background-image: url(../image/fav.png);
+}
+section.menu > ul > li:nth-child(5) > p{
+    background-image: url(../image/fonts.png);
+}
+section.menu > ul > li:nth-child(6) > p{
+    background-image: url(../image/bg.png);
+}
+section.menu > ul > li > p > a {
+	width:inherit;
+	height:inherit;
+	display:inline-block;
+    opacity: 0;
+}
+/*@formatter:off*/
+@-webkit-keyframes flyout
+{
+    from {
+    -webkit-transform: rotate(0deg);
+    top:0px;
+	}
+	90%{
+		top:-202px;
+	}
+	91%{
+		top:-198px;
+	}
+	92%{
+		top:-202px;
+	}
+	93%{
+		top:-198px;
+	}
+	94%{
+		top:-202px;
+	}
+	95%{
+		top:-198px;
+	}
+	96%{
+		top:-202px;
+	}
+	97%{
+		top:-198px;
+	}
+	98%{
+		top:-202px;
+	}
+	99%{
+		top:-198px;
+	}
+	to{
+    -webkit-transform: rotate(720deg);
+    top:-200px;
+    opacity: 1;
+	}
+}
+@-webkit-keyframes flyin
+{
+    from {
+    -webkit-transform: rotate(0deg);
+    top:-200px;
+    opacity: 1;
+	}
+	to{
+    -webkit-transform: rotate(720deg);
+    top:0px;
+    opacity:0;
+	}
+}
+/*@formatter:off*/

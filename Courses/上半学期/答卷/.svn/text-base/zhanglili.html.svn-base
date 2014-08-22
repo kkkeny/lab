@@ -1,0 +1,194 @@
+<!DOCTYPE html>  
+<html>  
+<head>  
+    <title>js考试题</title> 
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/> 
+    <style>  
+    
+    </style>  
+</head>  
+<body>
+	<div id="test8"></div> 
+    <script type="text/javascript">
+    		//1.编写一个函数判断传入的一个参数是什么类型的数据  如果为undefined | null | 0 返回false
+    		function test1(arg){
+    			function testType(arg){
+				switch(typeof arg){
+					case "string":
+						return "string";
+					case "number":
+						return "number";
+					case "object":
+						if(arg instanceof Array){
+							return "Array";
+						}else if(arg instanceof Date){
+							return "Date";
+						}else{
+							return "object";
+						}
+					 case "boolean":
+					 	return "boolean";
+					 case "function":
+					 	return "function";
+					 case "undefined":
+					 	return "undefined";
+					 default:{
+					 	return;
+					 }	
+				}
+			}
+			var result = testType(arg);
+    			if( arg == undefined||arg == null||arg == 0){
+    				return false;
+    			}else{
+    				console.log("test1---您输入的参数的数据类型是："+result);
+    				return result;
+    			}
+    		}
+    		test1(new Date());
+    		
+    		
+    		//2.运用上面的类型检测 编写一个函数接受一个日期类型的参数，打印 2000年01月01日 12：12：12 的日期格式
+    		function test2(date){
+    			if(test1(date) == "Date"){
+    				
+    				function isHasZero(num){
+    					if(num<10){
+    						num = "0"+num;
+    					}
+    					return num;
+    				}
+    				var year = date.getFullYear();
+    				var month = date.getMonth();
+    				var day = date.getDate();
+    				var hours = date.getHours();
+    				var minutes = date.getMinutes();
+    				var seconds = date.getSeconds();
+    				
+    				var the_day = isHasZero(year)+"年"+isHasZero(month)+"月"+isHasZero(day)+"日"+" "+isHasZero(hours)+"："+isHasZero(minutes)+"："+isHasZero(seconds);
+    				console.log("test2---您输入的时间是："+the_day);
+    			}
+    		}
+    		test2(new Date());
+    		
+    		//3.打印 1-99999 相加运算的值  共计运行了多长时间
+    		
+    		function test3(){
+    			var sum = 0;
+    			var num = 0;
+    			var start_time = new Date();
+    			
+    			for(var i=0;i<=99999;i++){
+    				sum = sum+i;
+    			}
+    			
+    			var end_time = new Date();
+    			var time = end_time-start_time;
+    			console.log("test3---相加的结果是："+sum+" ,共用了"+time+"秒");
+    		}
+    		test3();
+    	
+    		//4.编写一个函数传入一个数字（可能是十进制11、八进制011、十六进制0x11等格式），打印该数字的二进制、八进制、十进制、十六进制数是多少。
+    		function test4(num){
+    			var num2 = parseInt(num).toString(2);
+    			var num8 = parseInt(num).toString(8);
+    			var num10 = parseInt(num).toString(10);
+    			var num16 = parseInt(num).toString(16);
+    			console.log("test4---您输入的数字的二进制是："+num2+" 八进制是："+num8+" 十进制是："+num10+" 十六进制是："+num16);
+    		}
+    		test4(110);
+    		
+    		//5.编一个倒计时的函数 接受一个参数秒数(>=3) 每隔一秒打印一次剩余秒数  最后三次秒数分别用!!!  -  !!  - ! - 0
+    		function test5(num){
+    			if(isNaN(num)){
+    				console.log("test5---您输入的不是number类型!");
+    			}else if(num<3){
+    				console.log("test5---您输入的数字<3!");
+    			}else{
+    				var t = setInterval(function(){
+    					if(num==3){
+    						console.log("!!!");
+    					}else if(num==2){
+    						console.log("!!");
+    					}else if(num==1){
+    						console.log("!");
+    					}else if(num==0){
+    						console.log("0");
+    						window.clearInterval(t);
+    					}else{
+    						console.log(num);
+    					}
+    					num--;
+    				},1000);
+    			}
+    		}
+    		test5(5);
+    		
+    		//6.编写一个函数实现数组内容乱序，并以“item-item-item”字符串形式返回
+    		function test6(arr){
+    			var new_arr = [];
+    			var i = arr.length;
+    			for(i;i>0;i--){
+    				var j = parseInt(Math.random()*i);
+	    			new_arr.push(arr[j]);
+				arr.splice(j,1);
+    			}
+    			console.log("test6---乱序的结果是："+new_arr.join("-"));
+			return new_arr.join("-");
+    		}
+    		var arr=[1,2,3,4,6];
+    		test6(arr);
+    		
+    		//7.编写一个函数检测输入的手机号是否合法（必须全数字，前后可以包含空格；检测18|15开头的11位手机号），正确返回true 错误返回false
+    		
+    		function test7(phone){
+    			var the_phone = phone.toString().replace(/(^\s*)|(\s*$)/g,"");
+    			var reg = /^[1][58]\d{9}$/;
+    			if(!reg.test(the_phone)){  
+		        console.log("test7---电话号码格式错误!"); 
+		        return false;  
+		    }else{  
+		        console.log("test7---您的电话号码:"+phone);  
+		        return true;  
+		    }
+    		}
+    		test7("15123456789 ");
+    		
+    		//8.编写一个函数接受一个字符串的片段，将片段内的换行与换行之间的段落用<p>段落</p>表示（必须用到正则）var str = "this is a paragraph\nthis is a paragraph\nthis is a paragraph\nthis is a paragraph\nthis is a paragraph\nthis is a paragraph\n";
+    		
+    		function test8(str){
+    			var reg = /\n\D/gi;
+    			var result = str.split(reg);
+    			for(var i=0;i<result.length;i++){
+    				result[i]="<p>"+result[i]+"</p>";
+    			}
+    			var new_str = result.join("");
+			document.getElementById("test8").innerHTML = new_str;
+    		}
+    		var str = "this is a paragraph\nthis is a paragraph\nthis is a paragraph\nthis is a paragraph\nthis is a paragraph\nthis is a paragraph\n";
+    		test8(str);
+    		
+    		//10.用面向对象的方式 构建一个父类-子类 的继承关系； 体现出私有属性、特有属性、公有属性。
+    		
+    		//父类Father
+		function Father(name,age){
+		    this.name = name;
+		    this.age = age;
+		    this.say = function(){
+		    	    console.log(this.name+"是我的名字");
+		    }
+		}
+		
+    		//子类Son
+		function Son(name,age,sex,phone){
+		    //添加自己的属性
+		    this.sex=sex;
+		    this.phone=phone;
+		    this.mysay()=function(){
+		    	    console.log(this.name+"是我的名字");
+		    };
+		}
+		
+    </script>
+</body>  
+</html> 

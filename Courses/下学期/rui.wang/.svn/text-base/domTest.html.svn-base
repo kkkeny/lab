@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+	</head>
+
+	<body>
+
+		<script>
+			
+				//var oBody = document.getElementsByTagName("body")[0];
+				//var example = document.getElementById("example");
+				var wrDiv = document.createElement("div"),
+				    wrP = document.createElement("p"),
+				    txt = document.createTextNode("塔读文学");
+				
+				//oBody.appendChild(wrDiv);
+
+				wrDiv.setAttribute("id", "example");
+				wrDiv.setAttribute("class", "box");
+                 wrP.appendChild(txt);
+                 wrDiv.appendChild(wrP);
+               document.body.appendChild(wrDiv);
+				
+				//example.appendChild(wrP);
+				
+
+		</script>
+	</body>
+</html>

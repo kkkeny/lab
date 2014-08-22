@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 thansitional//EN" "http://www.w3.org/th/xhtml1/DTD/xhtml1-thansitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>bHtml</title>
+</head>
+    <body>        
+        <script>        
+            /*document.write( navigator.appName + "</p>"+ navigator.appVersion + "</p>");*/
+            function getBrowserInfo() {
+                var agent = navigator.userAgent.toLowerCase() ;
+                
+                var regStr_ie = /IE [\d.]+/gi;
+                var regStr_ff = /firefox\/[\d.]+/g;
+                var regStr_chrome = /chrome\/[\d.]+/g;
+                //IE
+                if(agent.indexOf("msie") > 0) {
+                    return agent.match(regStr_ie) ;
+                }
+                
+                //firefox
+                if(agent.indexOf("firefox") > 0) {
+                    return agent.match(regStr_ff) ;
+                }
+                
+                //Chrome
+                if(agent.indexOf("chrome") > 0) {
+                    return agent.match(regStr_chrome) ;
+                }
+                
+            }
+            document.write(getBrowserInfo());
+            
+            //倒计时弹出确认提醒
+            function clear(){
+                if(confirm("您确定要关闭当前窗口吗？")) {
+                    window.close ();
+                }
+                else{
+                    return false;
+                }
+            }
+            
+            setTimeout(clear(),10000);
+            
+           /*a.html打开一个b.html，b.html的宽高是整个屏幕的80%，将他移到中央的位置，b.html用document输出操作系统，浏览器名称，版本，
+                                倒计时10秒关闭窗口，关闭窗口要有确认提醒，点击ok关闭窗口。*/
+        </script>       
+    </body>
+</html>

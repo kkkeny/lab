@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no"/>
+<meta name="format-detection" content="telephone=no"/>
+<meta name="format-detection" content="email=no"/>
+<title></title>
+<style type="text/css">
+body{
+	width: 30%;
+	margin: 200px auto;
+}
+*{
+ 	margin: 0px;
+ 	padding: 0px;
+	color: red;
+ }
+.demo_class *{
+	color: orange;
+}
+#demo_id *{
+	color: green;
+}
+</style>
+</head>
+<body>
+<h3>通配选择符*</h3>
+<div class="demo_class">
+	<p>通配选择符class</p>
+</div>
+<div id="demo_id">
+	<p>通配选择符ID</p>
+</div>
+</body>
+</html>

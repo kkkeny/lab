@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no"/>
+<meta name="format-detection" content="telephone=no"/>
+<meta name="format-detection" content="email=no"/>
+<title></title>
+<style type="text/css">
+.main, .box{
+	position: relative;
+}
+.main:before { 
+	width: 100%; 
+	position: absolute; 
+	background: #fff; 
+	content:"支持E:before";
+	}
+.box::before { 
+	width: 100%; 
+	position: absolute; 
+	background: #fff; 
+	content:"支持E::before";
+	}
+</style>
+</head>
+<body>
+<div class="main">
+Sorry, 你的浏览器不支持E:before和E::before
+</div>
+<div class="box">
+Sorry, 你的浏览器不支持E:before和E::before
+</div>
+</body>
+</html>
